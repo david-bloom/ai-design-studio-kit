@@ -1,0 +1,92 @@
+# Role -> model assignment.
+# This file is meant to change. Review it at the start of every new project,
+# not just when something breaks. Each project's charter.md snapshots the
+# rows that were active when that project started (see ARCHITECTURE.md §2),
+# so updating this file never rewrites history for a project already underway.
+#
+# last_reviewed: date this row's assignment was last confirmed as still the
+# right call. Update it even if the model didn't change.
+
+creative_director:
+  primary: "claude-opus (Anthropic)"
+  rationale: >
+    Owns the Charter and coordinates every other agent across a
+    multi-session project. Needs the strongest sustained, long-context
+    coordination and tool-use behavior of any role here — this is the
+    agent most exposed if the underlying model degrades over a long
+    project, so weight reliability over creative flair.
+  alternates: ["gpt-5.1-thinking (OpenAI)"]
+  last_reviewed: "2026-09-12"
+
+brand_strategist:
+  primary: "gpt-5.1 (OpenAI)"
+  rationale: >
+    Positioning and narrative work benefits from a model with strong,
+    persuasive natural-language reasoning distinct from the Creative
+    Director's lab, so strategy isn't being both written and coordinated
+    by the same underlying model.
+  alternates: ["claude-opus (Anthropic)", "gemini-3-pro (Google)"]
+  last_reviewed: "2026-09-12"
+
+visual_designer:
+  primary: "gemini-3-pro (Google)"
+  rationale: >
+    Google's models have demonstrated particular strength in native
+    multimodal reasoning plus integrated image generation (Nano Banana /
+    Imagen family), useful for producing actual visual comps and style
+    tiles rather than text descriptions of them.
+  image_generation_backends: ["gemini-3-pro / Nano Banana (Google)", "gpt-image (OpenAI)", "Midjourney (independent lab, aesthetic benchmark)"]
+  alternates: ["gpt-image (OpenAI)"]
+  last_reviewed: "2026-09-12"
+
+marketing_creative_designer:
+  primary: "gpt-image (OpenAI)"
+  rationale: >
+    Marketing/campaign templates frequently require accurate rendered
+    text inside the image (headlines, CTAs, logos-in-layout). OpenAI's
+    and Ideogram's image models have a specific edge on text-in-image
+    fidelity over general-purpose multimodal generation.
+  image_generation_backends: ["gpt-image (OpenAI)", "Ideogram (independent lab, text-in-image specialist)"]
+  alternates: ["gemini-3-pro / Nano Banana (Google)"]
+  last_reviewed: "2026-09-12"
+
+ux_critic:
+  primary: "claude-opus (Anthropic)"
+  rationale: >
+    Heuristic UX critique is a structured-reasoning task, not a
+    generative one — Claude's strength here, and using a different lab
+    than the Visual Designer role means the critic isn't reviewing
+    output for biases baked into the same model family that made it.
+  alternates: ["gpt-5.1-thinking (OpenAI)"]
+  last_reviewed: "2026-09-12"
+
+usability_tester:
+  primary: "grok (xAI)"
+  rationale: >
+    Scenario-based "act like a real, impatient user" simulation benefits
+    from a distinct model voice and a lighter, more blunt response
+    posture than the critique-oriented models above — decorrelates the
+    testing persona from the rest of the pipeline.
+  alternates: ["gemini-3-pro (Google)"]
+  last_reviewed: "2026-09-12"
+
+chaos_agent:
+  primary: "grok (xAI)"
+  rationale: >
+    The Chaos Agent's entire job is to decorrelate from the primary
+    generative pipeline (see ARCHITECTURE.md §5). Running it on a
+    different lab than every generative role above is deliberate, not
+    incidental — same-family variation tends to still share the
+    family's blind spots.
+  alternates: ["deepseek (DeepSeek)", "llama (Meta, open-weight — useful when you want a model with a materially different training distribution)"]
+  last_reviewed: "2026-09-12"
+
+# Notes:
+# - "Demonstrated expertise" claims above are a snapshot as of this file's
+#   last_reviewed dates and this system's Jan 2026 knowledge cutoff. Verify
+#   against current model cards/benchmarks before a project that leans
+#   heavily on one role, especially image generation, where the field moves
+#   fastest.
+# - Nothing in ARCHITECTURE.md depends on a specific model being available.
+#   If a lab is inaccessible for a project, swap the row and note it in
+#   that project's charter.md rather than editing this file's rationale.
