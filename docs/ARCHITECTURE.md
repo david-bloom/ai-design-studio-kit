@@ -3,7 +3,7 @@
 ## 1. Design principles
 
 1. **The brief is a starting point, never a spec.** No generation happens against a brief that hasn't been through exploration first.
-2. **Roles, not a fixed pipeline.** Every project uses only the roles/tracks it needs. A marketing-campaign project may never touch the UX Critic or Usability Tester.
+2. **Roles, not a fixed pipeline.** Every project uses only the roles/tracks it needs. A marketing-campaign project may never touch the Critic.
 3. **Critique is advisory.** Every agent that evaluates another agent's work produces a recommendation, never a gate. David is the Done Decider for every track, every time.
 4. **Model assignment is a config, not code.** Which LLM plays which role is declared in `config/agent-models.yaml` and is expected to change as models improve. Nothing about the process should depend on a specific model being available.
 5. **Sessions are disposable; the Project Charter is not.** Any stage can be re-entered in a new session, days or weeks later, because the Charter and prior stage outputs carry all the state.
@@ -30,11 +30,12 @@ The Charter is a living document. Re-running the brief-development stage mid-pro
 | **Brand Strategist** | Positioning, narrative, voice, values, differentiation. The "why" layer everything else has to be consistent with. | Brand strategy doc, messaging pillars, voice guide |
 | **Visual Designer** | Visual identity and UI-level design: color, type, layout systems, component look-and-feel. | Mockups/comps, style tiles, design-token proposals |
 | **Marketing Creative Designer** | Campaign and template-level creative that *applies* an existing brand/visual system to specific channels (social, email, landing pages, ads). | Campaign concepts, template sets |
-| **UX Critic** | Heuristic evaluation of flows and interfaces — usability, accessibility, information architecture — against the Charter's stated audience and goals. | Advisory critique memos, severity-tagged findings |
-| **Usability Tester** | Simulates real user behavior against a specific flow (distinct from the Critic's heuristic review — this is scenario-driven "walk through it as a user" testing). | Scenario walkthroughs, friction-point log |
+| **Critic** | The single second-opinion role: advisory review of any track's output — heuristic evaluation (usability, accessibility, information architecture, visual/brand consistency) *and* scenario-driven "walk through it as a user" testing, both from one role rather than split across two. Reviews whatever it's pointed at — UX flows, Visual Design, Brand Identity, Marketing Templates — not just UX. Independent from whichever agent generated the work under review (see §4). | Advisory critique memos, severity-tagged findings, scenario walkthroughs |
 | **Chaos Agent** | On-demand forced divergence. Never runs as part of the default path. | Labeled alternative branches (see §5) |
 
-Roles are invoked individually, in whatever order the Creative Director's stage plan calls for — this is not a waterfall. A project might run Brand Strategist → Visual Designer → UX Critic → back to Visual Designer, skipping Marketing Creative Designer entirely.
+Roles are invoked individually, in whatever order the Creative Director's stage plan calls for — this is not a waterfall. A project might run Brand Strategist → Visual Designer → Critic → back to Visual Designer, skipping Marketing Creative Designer entirely.
+
+**History note.** Earlier versions of this kit split heuristic UX critique and scenario-based usability testing into two separate roles (UX Critic, Usability Tester). Consolidated into one Critic role on 2026-09-15 — the split added ceremony without adding a real independence benefit, since both roles were advisory-only and typically assigned to the same model anyway.
 
 ## 4. Model assignment
 
@@ -69,7 +70,7 @@ All Chaos Agent output is clearly labeled as a chaos branch in the project folde
 2. **Strategy** — Brand Strategist (if Brand Identity track active). Can run in parallel with early Visual Design exploration.
 3. **Generate** — the relevant specialist agent(s) per active track, producing first-pass creative.
 4. **Chaos (optional, any time after Generate has something to react to)** — invoked explicitly, produces labeled alternative branches.
-5. **Advisory critique** — UX Critic / Usability Tester where UX track is active; can also be pointed at Visual Design or Marketing Creative output for a second opinion.
+5. **Advisory critique** — the Critic, pointed at whichever track's output needs a second opinion (UX flows, Visual Design, Brand Identity, or Marketing Creative).
 6. **Review & Done-decision** — you, against the Charter's Done Decider checklist, per track.
 
 Any stage can be re-entered independently. There is no requirement to run tracks in lockstep — Brand Identity might be "done" while Visual Design is still iterating.

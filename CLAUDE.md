@@ -2,7 +2,7 @@
 
 This repo is a framework, not an app. Read `docs/ARCHITECTURE.md` before running any project through it if you haven't already this session. Also read `docs/team_charter/AI_COLLABORATION_RULES.md` at session start — it defines roles, approval lanes, and Done criteria for this repo, imported from [ai-project-operating-kit](https://github.com/david-bloom/ai-project-operating-kit) and adapted for a design kit. Its role vocabulary (Main Conductor, QA Agent, etc.) maps onto `ARCHITECTURE.md`'s roles — see the mapping note near the top of `AI_COLLABORATION_RULES.md` §Roles.
 
-Every design track's Done decision is always Hard-Gate tier (`docs/team_charter/STANDING_APPROVAL_LANES.md`) — David's explicit sign-off, never a Standard-tier close by the Creative Director alone, however positive the UX Critic/Usability Tester/Chaos Agent findings are.
+Every design track's Done decision is always Hard-Gate tier (`docs/team_charter/STANDING_APPROVAL_LANES.md`) — David's explicit sign-off, never a Standard-tier close by the Creative Director alone, however positive the Critic/Chaos Agent findings are.
 
 ## Starting a new project
 
@@ -14,9 +14,9 @@ Every design track's Done decision is always Hard-Gate tier (`docs/team_charter/
 ## Running a stage
 
 - Check `charter.md` and the stage log before starting anything — a project may be resumed after a long gap in a fresh session with no memory of prior turns.
-- Only invoke the specialist agents (Brand Strategist, Visual Designer, Marketing Creative Designer, UX Critic, Usability Tester) for tracks marked active in the charter.
+- Only invoke the specialist agents (Brand Strategist, Visual Designer, Marketing Creative Designer, Critic) for tracks marked active in the charter.
 - When acting as a specialist role, adopt that role's model assignment from `config/agent-models.yaml` where feasible (e.g. via the Agent tool with a model override, or by noting the intended model if unavailable in this environment).
-- Critique and testing outputs (UX Critic, Usability Tester) are always advisory. Never phrase them as blocking, and never withhold or gate a track's output on their approval — David decides done, not the agents.
+- Critique and testing outputs (Critic) are always advisory. Never phrase them as blocking, and never withhold or gate a track's output on their approval — David decides done, not the agents.
 - Log every stage run in the charter's Stage log with a one-line pointer to where the output landed.
 
 ## Handing off to another lab (Gemini, Grok, GPT outside Claude)

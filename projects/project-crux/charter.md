@@ -51,18 +51,20 @@ Snapshot of `config/agent-models.yaml` as of 2026-09-15 — see that file for cu
 |---|---|---|
 | Creative Director | claude-opus (Anthropic) | 2026-09-15 |
 | Brand Strategist | gpt-5.1 (OpenAI) | 2026-09-15 |
-| Visual Designer | gemini-3-pro (Google) | 2026-09-15 |
+| Visual Designer | gemini-3-pro (Google) — pending project-level override to GPT-Sol, see Stage log | 2026-09-15 |
 | Marketing Creative Designer | gpt-image (OpenAI) | 2026-09-15 |
-| UX Critic | claude-opus (Anthropic) | 2026-09-15 |
-| Usability Tester | grok (xAI) | 2026-09-15 |
+| Critic | grok (xAI) | 2026-09-15 |
 | Chaos Agent | grok (xAI) | 2026-09-15 |
 
 ## Stage log
 
 - `2026-09-15` — Charter shell created. Process constraints (clean-room, session isolation) recorded ahead of brief. Awaiting pedagogy/features brief from David.
 - `2026-09-15` — Project renamed `design-agency` → `project-crux`; charter reworded to remove the source product's name from repo content entirely (previously present in this file's own process note, defeating the blind-start intent for any generative agent reading it in full).
+- `2026-09-15` — David worked with a Claude Design session in the Creative Director role to draft the brief. A prompt was issued for that session to complete this charter and set a project-level model override: Visual Designer → GPT-Sol. Not yet applied here — pending that session's output being brought back and committed.
+- `2026-09-15` — Global role consolidation (DECISION-0001 / APPROVAL-0001): UX Critic and Usability Tester merged into a single Critic role, assigned Grok. Reflected in `config/agent-models.yaml`, `docs/ARCHITECTURE.md`, and this charter's Model assignment table above.
 
 ## Changelog
 
 - `2026-09-15` — initial charter shell, no origin brief yet.
 - `2026-09-15` — renamed to `project-crux`; scrubbed source-product identity from file content.
+- `2026-09-15` — Model assignment table updated for the UX Critic/Usability Tester → Critic consolidation (DECISION-0001).

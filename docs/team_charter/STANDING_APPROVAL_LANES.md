@@ -57,7 +57,7 @@ Recorded in `docs/activity_log/APPROVALS_LOG.md` — there is no separate index;
 Owner approval is required before — **or** clearance from the relevant Delegated Domain Approver, if the project uses that role, when the decision stays entirely inside their domain and does not touch money, legal, privacy, production, or a second domain:
 
 ```text
-- Any track's Done decision (Visual Design, Brand Identity, Marketing Templates, UX) — always David, always Hard-Gate tier. Per docs/ARCHITECTURE.md, a design task can never be closed at Standard tier by the Main Conductor alone, regardless of QA Agent (UX Critic / Usability Tester / Chaos Agent) verdict.
+- Any track's Done decision (Visual Design, Brand Identity, Marketing Templates, UX) — always David, always Hard-Gate tier. Per docs/ARCHITECTURE.md, a design task can never be closed at Standard tier by the Main Conductor alone, regardless of QA Agent (Critic / Chaos Agent) verdict.
 - Revealing a blind/anonymized project's real product name, category, or origin brief to a generative agent that was deliberately kept blind (the "reveal" step in a clean-room project — see a project's charter.md for whether this applies).
 - Merging Chaos Agent output into a track's primary deliverable, rather than keeping it as a separate, clearly labeled branch under projects/<slug>/chaos/.
 - Material changes to docs/ARCHITECTURE.md, docs/PROJECT_CHARTER_TEMPLATE.md, or config/agent-models.yaml.

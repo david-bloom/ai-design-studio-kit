@@ -12,7 +12,7 @@ GitHub documentation is the source of truth. Chat is useful for discussion, but 
 
 ## Roles
 
-**Role mapping for this kit.** These role names are the operating kit's generic vocabulary; `docs/ARCHITECTURE.md` names the same functions differently. Main Conductor = Creative Director. QA Agent = UX Critic, Usability Tester, and Chaos Agent collectively — each still proposes findings only, per its own role definition in `ARCHITECTURE.md` §3, and none of them gates anything. Implementation Agent = whichever specialist agent (Brand Strategist, Visual Designer, Marketing Creative Designer) is doing generative work for a given stage. Owner is not reinterpreted — that is always David, on every project run through this kit.
+**Role mapping for this kit.** These role names are the operating kit's generic vocabulary; `docs/ARCHITECTURE.md` names the same functions differently. Main Conductor = Creative Director. QA Agent = Critic and Chaos Agent — each still proposes findings only, per its own role definition in `ARCHITECTURE.md` §3, and none of them gates anything. Implementation Agent = whichever specialist agent (Brand Strategist, Visual Designer, Marketing Creative Designer) is doing generative work for a given stage. Owner is not reinterpreted — that is always David, on every project run through this kit.
 
 ### Owner / Final Approver
 

@@ -30,3 +30,18 @@ What was approved or rejected?
 ```
 
 **Conflict rule:** if `Expires` has passed but `Status` still reads `Active`, the approval is treated as expired regardless of the recorded status — the date wins. `Status: Superseded` overrides date-based validity even before expiration.
+
+## APPROVAL-0001 — Consolidate UX Critic and Usability Tester into a single Critic role
+
+**Date:** 2026-09-15
+**Approved By:** David Bloom
+**Related Task:** N/A
+**Decision:** Approved
+
+### Summary
+
+David requested this consolidation directly in conversation. Approves DECISION-0001 and the resulting edits to `docs/ARCHITECTURE.md`, `config/agent-models.yaml`, and the `docs/team_charter/` role-mapping references — a Hard Gate under `STANDING_APPROVAL_LANES.md` ("material changes to docs/ARCHITECTURE.md ... or config/agent-models.yaml").
+
+### Notes
+
+- Owner-initiated request stands as the sign-off for this Hard Gate; no separate review step was needed beyond the Owner's own instruction.

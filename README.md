@@ -15,7 +15,7 @@ Generic AI creative output collapses toward the median — the safest, most stat
 
 ## How it works, in one paragraph
 
-Every project starts as a raw brief. The **Creative Director** agent runs a brief-development conversation with you, producing a **Project Charter** — the seed document that says which output tracks apply (visual design / brand identity / marketing templates / UX), who the audience is, what constraints are real vs. assumed, and what "done" looks like for this specific project. From there, the Creative Director coordinates the relevant specialist agents (Brand Strategist, Visual Designer, Marketing Creative Designer, UX Critic, Usability Tester) across independent, resumable stages — you can walk away and pick a project back up days later. The Chaos Agent can be invoked at any point between stages to force a divergent branch. You review outputs and decide what's done, track by track.
+Every project starts as a raw brief. The **Creative Director** agent runs a brief-development conversation with you, producing a **Project Charter** — the seed document that says which output tracks apply (visual design / brand identity / marketing templates / UX), who the audience is, what constraints are real vs. assumed, and what "done" looks like for this specific project. From there, the Creative Director coordinates the relevant specialist agents (Brand Strategist, Visual Designer, Marketing Creative Designer, Critic) across independent, resumable stages — you can walk away and pick a project back up days later. The Chaos Agent can be invoked at any point between stages to force a divergent branch. You review outputs and decide what's done, track by track.
 
 ## Structure
 
@@ -38,7 +38,7 @@ CLAUDE.md                      how Claude Code should operate this kit day to da
 
 ## Operating model
 
-This kit's day-to-day operating rules — roles, approval lanes, task tiers, Done criteria — are imported from [ai-project-operating-kit](https://github.com/david-bloom/ai-project-operating-kit) and adapted in `docs/team_charter/`. The short version: **David is the Owner and sole Done Decider on every track, every time** — enforced through that kit's own Hard-Gate mechanism, not as a special case. See `docs/team_charter/AI_COLLABORATION_RULES.md` for the full role mapping (Main Conductor = Creative Director; QA Agent = UX Critic/Usability Tester/Chaos Agent).
+This kit's day-to-day operating rules — roles, approval lanes, task tiers, Done criteria — are imported from [ai-project-operating-kit](https://github.com/david-bloom/ai-project-operating-kit) and adapted in `docs/team_charter/`. The short version: **David is the Owner and sole Done Decider on every track, every time** — enforced through that kit's own Hard-Gate mechanism, not as a special case. See `docs/team_charter/AI_COLLABORATION_RULES.md` for the full role mapping (Main Conductor = Creative Director; QA Agent = Critic/Chaos Agent).
 
 For cross-lab roles (Brand Strategist on GPT, Visual Designer on Gemini, Chaos Agent on Grok — see `config/agent-models.yaml`), open that lab's own tool with repo access and hand it `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`; there is no single tool that fans a task out to all labs automatically.
 

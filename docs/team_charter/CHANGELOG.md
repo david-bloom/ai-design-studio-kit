@@ -8,3 +8,10 @@ Append-only chronological log, one entry per material change to `docs/team_chart
 **Decision:** DECISION-NNNN
 **Change (one or two lines):**
 - …
+
+## 2026-09-15 — AI_COLLABORATION_RULES.md, STANDING_APPROVAL_LANES.md
+
+**Approval:** APPROVAL-0001
+**Decision:** DECISION-0001
+**Change (one or two lines):**
+- Role-mapping note and hard-gate list updated for the UX Critic/Usability Tester → Critic role consolidation. See `docs/ARCHITECTURE.md` §3 and `config/agent-models.yaml` for the underlying role/model change.

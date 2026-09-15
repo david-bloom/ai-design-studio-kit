@@ -50,25 +50,22 @@ marketing_creative_designer:
   alternates: ["gemini-3-pro / Nano Banana (Google)"]
   last_reviewed: "2026-09-12"
 
-ux_critic:
-  primary: "claude-opus (Anthropic)"
-  rationale: >
-    Heuristic UX critique is a structured-reasoning task, not a
-    generative one — Claude's strength here, and using a different lab
-    than the Visual Designer role means the critic isn't reviewing
-    output for biases baked into the same model family that made it.
-  alternates: ["gpt-5.1-thinking (OpenAI)"]
-  last_reviewed: "2026-09-12"
-
-usability_tester:
+critic:
   primary: "grok (xAI)"
   rationale: >
-    Scenario-based "act like a real, impatient user" simulation benefits
-    from a distinct model voice and a lighter, more blunt response
-    posture than the critique-oriented models above — decorrelates the
-    testing persona from the rest of the pipeline.
-  alternates: ["gemini-3-pro (Google)"]
-  last_reviewed: "2026-09-12"
+    Single second-opinion role, covering both heuristic critique
+    (usability, accessibility, information architecture, consistency)
+    and scenario-based "act like a real, impatient user" testing —
+    previously split across ux_critic and usability_tester, merged
+    2026-09-15 because the split added ceremony without adding real
+    independence (both were advisory-only and tended to land on the
+    same model anyway). Grok's distinct voice and lighter, blunter
+    response posture decorrelates it from whichever generative role
+    produced the work it's reviewing (e.g. Visual Designer on Gemini,
+    or a project-level override like GPT-Sol) — same-lab critique
+    tends to under-flag that lab's own blind spots.
+  alternates: ["claude-opus (Anthropic)", "gpt-5.1-thinking (OpenAI)"]
+  last_reviewed: "2026-09-15"
 
 chaos_agent:
   primary: "grok (xAI)"
