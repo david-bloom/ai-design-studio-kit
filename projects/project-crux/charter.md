@@ -106,6 +106,7 @@ Snapshot of `config/agent-models.yaml` as of 2026-09-15, with two project-level 
 - `2026-09-15` — Global role consolidation (DECISION-0001 / APPROVAL-0001): UX Critic and Usability Tester merged into a single Critic role, assigned Grok.
 - `2026-09-15` — David decided to expose category-level information (AP Statistics/Biology, test-prep) to the brief-development process — the product's real name and existing design work remain withheld. Resolves the "anonymize category" open question from the charter shell.
 - `2026-09-15` — Claude Design session returned a completed Origin brief and Expanded understanding. Charter completed with Active tracks, Done Decider checklist, Constraint ledger, and Model assignment (Visual Designer → GPT-Sol project-level override) drafted and committed. **Status moved to approved to generate.** Next stage: Visual Design and Brand Identity generation, handed off via `projects/project-crux/handoff/` per `docs/ARCHITECTURE.md` §7.
+- `2026-09-15` — Contamination check on the `/design` (Claude Design) brief-development session: David reviewed the full transcript and found no reference to Cramapple anywhere in it, consistent with the session-isolation constraint holding in practice. Not a formal guarantee that the session's GitHub connector, if any, was pointed away from the Cramapple repo — but no evidence the excluded prior art was used. Treated as resolved; not re-flagged.
 
 ## Changelog
 
