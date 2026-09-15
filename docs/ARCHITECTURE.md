@@ -73,3 +73,9 @@ All Chaos Agent output is clearly labeled as a chaos branch in the project folde
 6. **Review & Done-decision** — you, against the Charter's Done Decider checklist, per track.
 
 Any stage can be re-entered independently. There is no requirement to run tracks in lockstep — Brand Identity might be "done" while Visual Design is still iterating.
+
+## 7. AI-to-AI handoff
+
+The repo is the exchange mechanism between agents on different labs, not David relaying context by hand between chat windows. Before any stage that hands off to a different tool/lab (Gemini, Grok, GPT outside Claude), the current agent (typically the Creative Director) writes a **handoff packet** to `projects/<slug>/handoff/<NNN>-<role>.md`, using `docs/team_charter/HANDOFF_PACKET_TEMPLATE.md`, numbered sequentially so the next agent can find the latest by picking the highest `NNN`. The packet must be self-contained: what to read, what the role is, what NOT to touch, and exactly where output goes — so David only has to say "check the repo," not re-brief each tool by hand.
+
+The receiving agent's prompt (`prompts/CROSS_LAB_SPECIALIST_PROMPT.md` for Gemini/Grok/other cross-lab specialists) is written to look for this file first. Log every handoff in the project's charter Stage log, same as any other stage.

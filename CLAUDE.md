@@ -19,6 +19,10 @@ Every design track's Done decision is always Hard-Gate tier (`docs/team_charter/
 - Critique and testing outputs (UX Critic, Usability Tester) are always advisory. Never phrase them as blocking, and never withhold or gate a track's output on their approval — David decides done, not the agents.
 - Log every stage run in the charter's Stage log with a one-line pointer to where the output landed.
 
+## Handing off to another lab (Gemini, Grok, GPT outside Claude)
+
+Before David opens a session in another tool for a specialist role, write a handoff packet to `projects/<slug>/handoff/<NNN>-<role>.md` (see `docs/ARCHITECTURE.md` §7 and `docs/team_charter/HANDOFF_PACKET_TEMPLATE.md`). Make it self-contained — the receiving agent's prompt tells it to find and read this file first, not wait to be briefed. Log the handoff in the charter's Stage log. When output comes back (David will paste it or point you at where the other tool wrote it), commit it to the path the packet named, and note in the Stage log that the handoff closed.
+
 ## Invoking the Chaos Agent
 
 Never invoke automatically as part of a default stage sequence — only when David asks for it, or you judge output is converging on something generic and flag that judgment to him first. Pick the mechanism (monkey-wrench / transplant / SSoT — see ARCHITECTURE.md §5) that fits the situation, run it, and write output to `projects/<slug>/chaos/`, clearly labeled as a chaos branch. Never merge chaos output into a track's primary output without David explicitly choosing to.
