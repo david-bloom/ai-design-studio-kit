@@ -23,13 +23,25 @@ Every project starts as a raw brief. The **Creative Director** agent runs a brie
 docs/
   ARCHITECTURE.md              full framework spec: roles, stages, chaos mechanisms, model assignment philosophy
   PROJECT_CHARTER_TEMPLATE.md  the seed document every project starts from
+  team_charter/                operating rules imported from ai-project-operating-kit: roles, approval lanes, Done criteria — adapted for a design kit
+  activity_log/                append-only logs: activity, approvals, decisions
+  tasks/                       task template for tracking work at Standard/Hard-Gate tier
 config/
   agent-models.yaml            role → model mapping, with rationale, reviewed as models evolve
 projects/
   <project-slug>/              one folder per project you run through the kit; charter + outputs live here
+prompts/                       new-session prompts for Claude, Codex, and cross-lab specialist agents (Gemini, Grok, etc.)
+scripts/
+  verify-sync.sh               checks a branch is actually pushed before reporting "synced"
 CLAUDE.md                      how Claude Code should operate this kit day to day
 ```
 
+## Operating model
+
+This kit's day-to-day operating rules — roles, approval lanes, task tiers, Done criteria — are imported from [ai-project-operating-kit](https://github.com/david-bloom/ai-project-operating-kit) and adapted in `docs/team_charter/`. The short version: **David is the Owner and sole Done Decider on every track, every time** — enforced through that kit's own Hard-Gate mechanism, not as a special case. See `docs/team_charter/AI_COLLABORATION_RULES.md` for the full role mapping (Main Conductor = Creative Director; QA Agent = UX Critic/Usability Tester/Chaos Agent).
+
+For cross-lab roles (Brand Strategist on GPT, Visual Designer on Gemini, Chaos Agent on Grok — see `config/agent-models.yaml`), open that lab's own tool with repo access and hand it `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`; there is no single tool that fans a task out to all labs automatically.
+
 ## Status
 
-v0.1 — architecture and conventions defined, first real run not yet started. First candidate project: a ground-up rethink of Cramapple's visual and usability design (run *through* this kit, not baked into it).
+v0.1 — architecture, conventions, and operating rules defined. First real project underway: `projects/design-agency/` (charter in progress — a clean-room design run for what is currently Cramapple, without inheriting its existing visual/UX decisions; kept deliberately unnamed as such while in progress).
