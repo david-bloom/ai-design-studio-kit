@@ -44,4 +44,4 @@ For cross-lab roles (Brand Strategist on GPT, Visual Designer on Gemini, Chaos A
 
 ## Status
 
-v0.1 — architecture, conventions, and operating rules defined. First real project underway: `projects/design-agency/` (charter in progress — a clean-room design run for what is currently Cramapple, without inheriting its existing visual/UX decisions; kept deliberately unnamed as such while in progress).
+v0.1 — architecture, conventions, and operating rules defined. First real project underway: `projects/project-crux/` (charter in progress — a clean-room design run for an existing product, without inheriting its existing visual/UX decisions; deliberately unnamed in this repo — see the note at the top of `projects/project-crux/charter.md`).
