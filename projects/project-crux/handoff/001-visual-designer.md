@@ -39,6 +39,8 @@ Next Expected Output:
 - Required: ≥3 genuinely distinct directions; each expresses Open Hand; each legible at laptop size for real Statistics/Biology content (formulas, data/graphs, extended written responses); explicitly labeled advisory/not-final.
 - If you lack repo write access, output clearly delimited blocks labeled with the exact destination paths so a human can commit them.
 
+Note (added 2026-09-16, historical — not a change to what was actually sent): project-crux now uses prompts/UNIVERSAL_SESSION_PROMPT.md, pasted into each tool's persistent project instructions, triggered by "SESSION START: project-crux" — prompts/CROSS_LAB_SPECIALIST_PROMPT.md referenced below is superseded. The block below is preserved as the historical record of what actually governed this handoff when it ran; it is not meant to be reused going forward.
+
 Recommended Prompt for Visual Designer:
 """
 Use prompts/CROSS_LAB_SPECIALIST_PROMPT.md. Project slug: project-crux. You are the Visual Designer (ARCHITECTURE.md §3). Read projects/project-crux/handoff/001-visual-designer.md, then projects/project-crux/charter.md in full. This project is clean-room/blind — do not infer the real product name or category. Produce ≥3 genuinely distinct visual/UI directions for the "Open Hand" study app using String Seed of Thought (§5c): one random seed per direction, derive the direction from it. Write to projects/project-crux/visual/001-directions.md. Your output is advisory; David alone decides "done."
