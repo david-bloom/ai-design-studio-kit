@@ -7,7 +7,7 @@ Task:
 - Handoff 004 (project-crux, Visual Design track) — assemble one consolidated directions file containing **exactly six** options, drawn from the existing 002 and 003 work, so the Critic can review a stable, self-contained set.
 
 Prompts Included:
-- [x] Visual Designer (cross-lab specialist — `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`)
+- [x] Visual Designer (see `prompts/UNIVERSAL_SESSION_PROMPT.md` — triggered by `SESSION START: project-crux`)
 - [ ] Brand Strategist  - [ ] Critic  - [ ] Chaos Agent
 
 ## Why 004 exists
@@ -73,6 +73,10 @@ Assemble in this order. Each entry keeps its full 002/003 spec (palette hex, typ
 
 ## Recommended Prompt for Visual Designer
 
-"""
-Use `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`. Project slug: project-crux. You are the Visual Designer (ARCHITECTURE.md §3). Read `projects/project-crux/handoff/004-visual-designer.md`, then `002-directions.md` and `003-directions.md`. This is a CONSOLIDATION task, not new generation — do not invent directions or restyle existing ones. Assemble `projects/project-crux/visual/004-directions.md` with exactly six options in order: (1) Draw the Door — Influence Lab, carrying the full interactive Move-A spec from 003 and REPLACING the old static Draw the Door; (2) Soft Landing, (3) Pocket Universe, (4) Lantern Fold — all unchanged from 002; (5) Say It Bright original text-only, unchanged from 002; (6) Say It Bright — Three Guide Registers, carrying the full Move-B spec from 003 as a separate new option, with the no-character-constraint-suspension flag prominent. Copy each spec faithfully (palette hex, type, scoring anchors, structure, accessibility). Keep all hard constraints. Clean-room/blind — do not infer the real product name or category. Label the file as the frozen set for Critic review; everything advisory; David alone decides done.
-"""
+As of 2026-09-16, this project no longer uses a hand-written per-handoff "Recommended Prompt" block. Instead:
+
+1. `prompts/UNIVERSAL_SESSION_PROMPT.md` is pasted into GPT-Sol's persistent project instructions (one-time setup, done outside this repo).
+2. David sends `SESSION START: project-crux`.
+3. The universal prompt's own logic has Sol determine it is the Visual Designer (via `config/agent-models.yaml`), read `ARCHITECTURE.md` and this project's `charter.md`, then find this file as the highest-numbered handoff addressed to its role, and act on it directly — the "Why 004 exists" and "The six directions — exact composition" sections above are the actual instructions; no separate prompt text is needed. This is a CONSOLIDATION task, not new generation — Sol must not invent directions or restyle existing ones, only assemble the faithful specs from `002-directions.md` and `003-directions.md` as directed above.
+
+(Historical note: handoffs 001–003 each included, or originally included, a bespoke "Recommended Prompt" block referencing `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`, now superseded — see the notes preserved in those files.)
