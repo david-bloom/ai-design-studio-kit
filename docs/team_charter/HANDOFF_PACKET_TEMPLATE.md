@@ -2,9 +2,11 @@
 
 Use before execution, QA, frontend handoff, complex delegation, or task owner changes — for `Standard` and `Hard-Gate` tier work. `Micro` tier tasks (see `AGENT_OPERATING_MODEL.md`, Task Tiers) skip this template entirely.
 
+**For a project's own generative-stage handoffs** (Brand Strategist, Visual Designer, Marketing Creative Designer, Critic, Chaos Agent), the `Task:` line below identifies the handoff itself — `Handoff <NNN> (project-<slug>, <track>)` — not a `TASK-NNNN` ID. `TASK-NNNN` is reserved for kit-level engineering work tracked in `docs/tasks/` and `docs/activity_log/`; see `docs/ARCHITECTURE.md` §8. Use `TASK-XXXX` as written below only when this packet really is handing off kit-level work with a real task file behind it.
+
 ```text
 Task:
-- TASK-XXXX — Title
+- TASK-XXXX — Title (or, for a project's generative-stage handoff: Handoff <NNN> (project-<slug>, <track>) — Title)
 
 Prompts Included:
 - [ ] Implementation Agent

@@ -80,3 +80,15 @@ Any stage can be re-entered independently. There is no requirement to run tracks
 The repo is the exchange mechanism between agents on different labs, not David relaying context by hand between chat windows. Before any stage that hands off to a different tool/lab (Gemini, Grok, GPT outside Claude), the current agent (typically the Creative Director) writes a **handoff packet** to `projects/<slug>/handoff/<NNN>-<role>.md`, using `docs/team_charter/HANDOFF_PACKET_TEMPLATE.md`, numbered sequentially so the next agent can find the latest by picking the highest `NNN`. The packet must be self-contained: what to read, what the role is, what NOT to touch, and exactly where output goes — so David only has to say "check the repo," not re-brief each tool by hand.
 
 The receiving agent's prompt (`prompts/CROSS_LAB_SPECIALIST_PROMPT.md` for Gemini/Grok/other cross-lab specialists) is written to look for this file first. Log every handoff in the project's charter Stage log, same as any other stage.
+
+## 8. Project folder contents
+
+`projects/<slug>/` holds only what's specific to that project. Everything else — roles, approval lanes, the charter template, model defaults, prompts, scripts — lives once at the repo root and is shared by every project. **Do not create a `docs/`, `tasks/`, or `team_charter/` folder inside a project folder.** Duplicating kit-level governance per project would let one project drift onto different approval rules than another, which is exactly what `docs/team_charter/`'s single-source model exists to prevent.
+
+A project folder should contain:
+
+- **`charter.md`** — required. Carries what a separate per-project "tasks" folder would otherwise duplicate: a Stage log, Done Decider checklist, Constraint ledger, and a Model assignment *snapshot* (including any project-level overrides).
+- **`handoff/`** — handoff packets for this project's stage handoffs, numbered `NNN-role.md`.
+- **Track output folders**, created as tracks actually produce something — e.g. `visual/`, and eventually `brand/`, `chaos/`. Don't pre-create folders for tracks with nothing in them yet.
+
+**Task numbering.** The kit-level `docs/tasks/TASK_TEMPLATE.md` and `TASK-NNNN` IDs (imported from `ai-project-operating-kit`) are for kit-level, engineering-flavored work — installing the operating kit, a role consolidation, a framework change — tracked centrally in `docs/activity_log/`. They are **not** for routine project generative stages. A project's handoff packets and Stage log entries reference each other by the handoff's own number (`001`, `002`, ...) scoped to that project, not a global `TASK-NNNN`. Labeling project work `TASK-NNNN` with no actual task file behind it is a labeling error, not a lighter-weight convention — see the corrected entry in `projects/project-crux/charter.md`'s Stage log for a real example of the mistake and its fix.

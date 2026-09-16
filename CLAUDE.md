@@ -38,3 +38,5 @@ Before stopping, if anything durable changed (repo files, a charter, a decision,
 - Keep project outputs inside `projects/<slug>/` — don't scatter generated files elsewhere in the repo.
 - Prefer editing `charter.md` in place over creating parallel "charter-v2" files; use the changelog section for history.
 - This repo's own docs (`docs/ARCHITECTURE.md`, `config/agent-models.yaml`) are framework-level and generally shouldn't change mid-project — if a project surfaces a real gap in the framework itself, raise it with David rather than quietly patching the framework files as a side effect of project work.
+- Never create a `docs/`, `tasks/`, or `team_charter/` folder inside `projects/<slug>/` — those are kit-level and shared by every project (see `docs/ARCHITECTURE.md` §8). A project folder holds only `charter.md`, `handoff/`, and track output folders.
+- Don't label a project's handoff packets or Stage log entries `TASK-NNNN` — that ID space is for kit-level engineering work tracked in `docs/tasks/`/`docs/activity_log/`, not routine generative stages. Reference a project handoff by its own number (`Handoff 001`, etc.).

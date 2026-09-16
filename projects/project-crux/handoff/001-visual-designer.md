@@ -1,7 +1,7 @@
 # Handoff Packet 001 — Visual Designer
 
 Task:
-- TASK-0002 — Visual Design track: produce multiple distinct visual/UI directions for project-crux's "Open Hand" study app.
+- Handoff 001 (project-crux, Visual Design track) — produce multiple distinct visual/UI directions for project-crux's "Open Hand" study app.
 
 Prompts Included:
 - [x] Visual Designer (cross-lab specialist — see prompts/CROSS_LAB_SPECIALIST_PROMPT.md)
