@@ -7,7 +7,7 @@ Task:
 - Handoff 003 (project-crux, Visual Design track) — take **two** directions from `002-directions.md` and extend each with one targeted move, so David can feel how interactivity and character presence change his read before any Critic pass.
 
 Prompts Included:
-- [x] Visual Designer (cross-lab specialist — `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`)
+- [x] Visual Designer (see `prompts/UNIVERSAL_SESSION_PROMPT.md` — triggered by `SESSION START: project-crux`)
 - [ ] Brand Strategist  - [ ] Critic  - [ ] Chaos Agent
 
 ## Why 003 exists (read before generating)
@@ -87,6 +87,10 @@ For each avatar:
 
 ## Recommended Prompt for Visual Designer
 
-"""
-Use `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`. Project slug: project-crux. You are the Visual Designer (ARCHITECTURE.md §3). Read `projects/project-crux/handoff/003-visual-designer.md`, then `projects/project-crux/visual/002-directions.md` for the two directions you are extending (01 Draw the Door, 05 Say It Bright). This is a FOCUSED PROBE, not a re-generation — do not touch the other three directions. Clean-room/blind — do not infer the real product name or category. Move A: add one genuinely interactive, rubric-teaching beat to 01 (draggable regression line / scrub outlier with live consequence; keyboard + numeric equivalents; tie to a scoring anchor; show the learner's follow-through move). Move B: add three original guide characters to 05 — Seuss-inspired, Aaron-Blabey/"Bad Guys"-inspired, and Sendak/"Wild Things"-inspired — same scene, same supportive job, so David can compare registers. Characters are ORIGINAL and style-inspired only; never copy published IP, never carry scoring meaning, never vend answers or add gamification. Note explicitly that the charter's no-character constraint is suspended for THIS probe by David's instruction. Keep all other hard constraints and real AP content primary. Write to `projects/project-crux/visual/003-directions.md`. Advisory only; David alone decides done.
-"""
+As of 2026-09-16, this project no longer uses a hand-written per-handoff "Recommended Prompt" block. Instead:
+
+1. `prompts/UNIVERSAL_SESSION_PROMPT.md` is pasted into GPT-Sol's persistent project instructions (one-time setup, done outside this repo).
+2. David sends `SESSION START: project-crux`.
+3. The universal prompt's own logic has Sol determine it is the Visual Designer (via `config/agent-models.yaml`), read `ARCHITECTURE.md` and this project's `charter.md`, then find this file as the highest-numbered handoff addressed to its role, and act on it directly — the "Why 003 exists," "Explicit soft-constraint probe," and "The two moves" sections above are the actual instructions; no separate prompt text is needed.
+
+(Historical note: handoffs 001 and 002 each included a bespoke "Recommended Prompt" block referencing `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`, now superseded — see the note preserved in those files.)
