@@ -27,6 +27,10 @@ Before David opens a session in another tool for a specialist role, write a hand
 
 Never invoke automatically as part of a default stage sequence — only when David asks for it, or you judge output is converging on something generic and flag that judgment to him first. Pick the mechanism (monkey-wrench / transplant / SSoT — see ARCHITECTURE.md §5) that fits the situation, run it, and write output to `projects/<slug>/chaos/`, clearly labeled as a chaos branch. Never merge chaos output into a track's primary output without David explicitly choosing to.
 
+## Ending a session
+
+Before stopping, if anything durable changed (repo files, a charter, a decision, a handoff), write a `docs/activity_log/ACTIVITY_LOG.md` entry per its Entry Format — Summary, Pending Decisions, Open Risks/Blockers, Next Required Action, all filled in explicitly (`None` rather than omitted). This is the Session Close Rule (`docs/team_charter/AI_COLLABORATION_RULES.md`) and is separate from a project's own charter Stage log — do both when applicable, not one instead of the other. Push and verify sync before considering the session actually closed.
+
 ## Conventions
 
 - Keep project outputs inside `projects/<slug>/` — don't scatter generated files elsewhere in the repo.

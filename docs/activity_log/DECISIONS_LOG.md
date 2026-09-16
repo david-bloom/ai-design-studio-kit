@@ -55,3 +55,31 @@ Updated: `docs/ARCHITECTURE.md` §1, §3, §6; `config/agent-models.yaml` (ux_cr
 ### Risks / Follow-ups
 
 None currently identified — if a future project genuinely needs heuristic critique and live-scenario testing run independently of each other (e.g. by two different models for extra decorrelation), that's a project-level override in that project's charter, not a reason to re-split the default role.
+
+## DECISION-0002 — Add a Session Close Rule to both ai-project-operating-kit and this kit
+
+**Date:** 2026-09-16
+**Decision Owner:** David Bloom
+**Status:** Approved
+**Related Task:** N/A
+**Area:** Operations
+
+### Context
+
+Both kits had a Startup Rule (what a new session should read) but no counterpart telling an ending session what to record. The Push cadence rule said "push at end of session" without saying what to write, and `ACTIVITY_LOG.md` had no defined entry format at all (unlike `APPROVALS_LOG.md`/`DECISIONS_LOG.md`, which both do). David's stated goal: capture activity and let a new session start seamlessly from where the previous one left off — next steps, pending decisions, and risks included.
+
+### Decision
+
+Add a Session Close Rule to `AI_COLLABORATION_RULES.md` in both `ai-project-operating-kit` (the source) and this kit's adapted copy, paired with the existing Startup Rule. Mandatory whenever a session changed durable state. Add a defined Entry Format to `ACTIVITY_LOG.md` in both, requiring Pending Decisions and Open Risks/Blockers as explicit fields (state `None` rather than omit).
+
+### Rationale
+
+Symmetry with the Startup Rule; closes an actual gap rather than adding ceremony for its own sake — the rule only fires when something durable changed, so a pure discussion/exploration session is unaffected.
+
+### Consequences
+
+Updated in this repo: `docs/team_charter/AI_COLLABORATION_RULES.md`, `docs/activity_log/ACTIVITY_LOG.md` (Entry Format added, first Session Close entry written for 2026-09-16), `CLAUDE.md`. Mirrored upstream in `ai-project-operating-kit`: `AI_COLLABORATION_RULES.md`, `ACTIVITY_LOG.md`, `README.md`, `PROJECT_SETUP.md`.
+
+### Risks / Follow-ups
+
+Watch for the rule becoming rote ("Pending Decisions: None" copy-pasted without genuinely checking) — the value is in someone actually looking, not in the field being present.

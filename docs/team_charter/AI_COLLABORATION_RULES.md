@@ -157,3 +157,20 @@ docs/architecture/, if present
 docs/features/, if present
 docs/flows/, if present
 ```
+
+## Session Close Rule
+
+Before ending a work session — not only when a task or track hits a status checkpoint — write one entry to `docs/activity_log/ACTIVITY_LOG.md` (format in that file) summarizing it, so a **completely new session with no memory of this one** can pick up the work without reading the prior conversation. Startup tells a new session what to read; Session Close is what the ending session leaves behind for it.
+
+Mandatory whenever the session changed any durable state — repo files, a project's `charter.md`, a decision, an approval, a handoff packet. A session that only discussed or explored without changing anything may skip it.
+
+The entry must cover, beyond a bare status update:
+
+- **Summary** — what happened, in enough detail that a fresh reader doesn't need the conversation.
+- **Pending decisions** — anything raised but not yet decided, and who needs to decide it (David, unless a track's decision is explicitly delegated). State `None` explicitly rather than omitting the field.
+- **Open risks / blockers** — anything that could derail the next session if not flagged, including anything relevant to a project's clean-room/blind-start status. `None` explicitly if there aren't any.
+- **Next required action** — the concrete next step, not "continue work."
+
+**Relationship to a project's own `charter.md` Stage log.** These are not redundant. A project's Stage log is that project's narrative — what stage ran, what it produced. An `ACTIVITY_LOG.md` Session Close entry is the kit-level record of a working session, which may span one project, several, or repo-level framework changes that don't belong to any single project. Update both when applicable: the Stage log for what happened to a specific project, the Session Close entry for what happened in the session.
+
+Push before ending the session and verify sync (`scripts/verify-sync.sh`) before considering the session closed — an entry that isn't actually on the remote doesn't help the next session.

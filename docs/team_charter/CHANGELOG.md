@@ -15,3 +15,10 @@ Append-only chronological log, one entry per material change to `docs/team_chart
 **Decision:** DECISION-0001
 **Change (one or two lines):**
 - Role-mapping note and hard-gate list updated for the UX Critic/Usability Tester → Critic role consolidation. See `docs/ARCHITECTURE.md` §3 and `config/agent-models.yaml` for the underlying role/model change.
+
+## 2026-09-16 — AI_COLLABORATION_RULES.md
+
+**Approval:** APPROVAL-0002
+**Decision:** DECISION-0002
+**Change (one or two lines):**
+- Added the Session Close Rule, paired with the existing Startup Rule: write an `ACTIVITY_LOG.md` entry before ending any session that changed durable state. Mirrored upstream in `ai-project-operating-kit`.

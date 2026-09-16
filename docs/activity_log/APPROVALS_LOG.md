@@ -45,3 +45,18 @@ David requested this consolidation directly in conversation. Approves DECISION-0
 ### Notes
 
 - Owner-initiated request stands as the sign-off for this Hard Gate; no separate review step was needed beyond the Owner's own instruction.
+
+## APPROVAL-0002 — Add a Session Close Rule to both kits
+
+**Date:** 2026-09-16
+**Approved By:** David Bloom
+**Related Task:** N/A
+**Decision:** Approved
+
+### Summary
+
+David requested this directly in conversation. Approves DECISION-0002 and the resulting edits to `docs/team_charter/AI_COLLABORATION_RULES.md` and `docs/activity_log/ACTIVITY_LOG.md` in this repo, and the mirrored changes in `ai-project-operating-kit` — a Hard Gate under `STANDING_APPROVAL_LANES.md` ("material changes to `docs/team_charter/` documents").
+
+### Notes
+
+- Owner-initiated request stands as the sign-off for this Hard Gate.
