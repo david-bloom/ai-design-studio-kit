@@ -1,5 +1,15 @@
 # Cross-Lab Specialist Agent Prompt
 
+> **Status: Superseded (2026-09-16).** Replaced by `prompts/UNIVERSAL_SESSION_PROMPT.md` for
+> project-level (`projects/<slug>/`) work — that file is now what gets pasted into every tool's
+> persistent project instructions, including Claude/`/design`. It does the same job this file did
+> (orient a cross-lab tool to the repo, confirm role, enforce clean-room and advisory-only rules)
+> but works for **every** role, including Creative Director, by having each session look up its
+> own role from `config/agent-models.yaml` / the project charter instead of being hardcoded as
+> "a specialist, not a conductor" the way this file was. **Kept for historical record** — the
+> content below is what actually governed handoffs 001 and 002 in `projects/project-crux/` at the
+> time they ran. Do not paste this file into a new session; use `UNIVERSAL_SESSION_PROMPT.md`.
+
 For any model/tool this kit assigns to a specialist creative role via `config/agent-models.yaml` — Gemini, Grok, or another lab's tool used outside a Codex-style coding-agent context. Unlike `CLAUDE_NEW_SESSION_PROMPT.md` and `CODEX_NEW_SESSION_PROMPT.md`, this kit ships no dedicated Gemini/Grok startup prompt from the source operating kit — this is a from-scratch adaptation for ai-design-studio-kit's specialist roles (Brand Strategist, Visual Designer, Marketing Creative Designer, Critic, Chaos Agent), not the Main-Conductor/Implementation/QA vocabulary those two files use.
 
 ```text
