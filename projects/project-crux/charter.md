@@ -87,13 +87,13 @@ Drafted here as a starting point — David is the Done Decider and should edit t
 
 ## Model assignment (snapshot at project start)
 
-Snapshot of `config/agent-models.yaml` as of 2026-09-15, with two project-level overrides — see that file for current global rationale.
+Snapshot of `config/agent-models.yaml` as of 2026-09-15, with project-level overrides — see that file for current global rationale. **"GPT-Sol" is David's name for his Codex (OpenAI) instance** — same tool, both roles below.
 
 | Role | Model | Snapshot date |
 |---|---|---|
 | Creative Director | claude-opus (Anthropic) | 2026-09-15 |
-| Brand Strategist | gpt-5.1 (OpenAI) | 2026-09-15 |
-| Visual Designer | **GPT-Sol (OpenAI) — project-level override** of the global default (Gemini). Rationale: David trusts Sol specifically for this kind of visual design work. | 2026-09-15 |
+| Brand Strategist | **Codex / GPT-Sol (OpenAI) — project-level override** of the global default (gpt-5.1). | 2026-09-16 |
+| Visual Designer | **Codex / GPT-Sol (OpenAI) — project-level override** of the global default (Gemini). Rationale: David trusts Sol specifically for this kind of design work. | 2026-09-15 |
 | Marketing Creative Designer | N/A — track not active this pass | 2026-09-15 |
 | Critic | grok (xAI) — global default, not overridden. Rationale: reviewing GPT-Sol's Visual Design and Brand Identity output from a different lab preserves the decorrelation `ARCHITECTURE.md` §4 calls for, and matches David's stated intent for Critic as an "outside QA" on design decisions. | 2026-09-15 |
 | Chaos Agent | grok (xAI) | 2026-09-15 |
@@ -109,6 +109,7 @@ Snapshot of `config/agent-models.yaml` as of 2026-09-15, with two project-level 
 - `2026-09-15` — Contamination check on the `/design` (Claude Design) brief-development session: David reviewed the full transcript and found no reference to Cramapple anywhere in it, consistent with the session-isolation constraint holding in practice. Not a formal guarantee that the session's GitHub connector, if any, was pointed away from the Cramapple repo — but no evidence the excluded prior art was used. Treated as resolved; not re-flagged.
 - `2026-09-15` — Handoff packet 001 (Visual Design track) committed to `projects/project-crux/handoff/001-visual-designer.md`. Assigns GPT-Sol (per Model assignment) to produce ≥3 genuinely distinct visual/UI directions for the "Open Hand" concept, using String Seed of Thought (§5c) to counter convergence. Output destination: `projects/project-crux/visual/001-directions.md`. Awaiting GPT-Sol's output.
 - `2026-09-16` — Corrected a labeling error: the handoff packet had borrowed the kit-level `TASK-NNNN` numbering (as "TASK-0002") from `docs/tasks/TASK_TEMPLATE.md`, which has no corresponding task file anywhere. Project-level generative work is tracked via this Stage log and the handoff packet's own numbering (`NNN-role.md`), not the kit's engineering-task apparatus — see `docs/ARCHITECTURE.md` §2 (new "Project folder contents" note) for the documented convention.
+- `2026-09-16` — Corrected the Model assignment table: Brand Strategist was still showing the global default (gpt-5.1) when it should be a project-level override to Codex/GPT-Sol, same tool as the Visual Designer override. Clarified that "GPT-Sol" is David's name for his Codex instance, not a separate model.
 
 ## Changelog
 
