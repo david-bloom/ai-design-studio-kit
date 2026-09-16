@@ -22,3 +22,10 @@ Append-only chronological log, one entry per material change to `docs/team_chart
 **Decision:** DECISION-0002
 **Change (one or two lines):**
 - Added the Session Close Rule, paired with the existing Startup Rule: write an `ACTIVITY_LOG.md` entry before ending any session that changed durable state. Mirrored upstream in `ai-project-operating-kit`.
+
+## 2026-09-16 — AI_COLLABORATION_RULES.md
+
+**Approval:** APPROVAL-0003
+**Decision:** DECISION-0003
+**Change (one or two lines):**
+- Added `SESSION START` / `SESSION CLOSE` trigger phrases (matching the existing `SYNC` convention), explicit that GitHub is authoritative over any tool's chat history. Mirrored upstream in `ai-project-operating-kit`.

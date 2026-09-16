@@ -83,3 +83,31 @@ Updated in this repo: `docs/team_charter/AI_COLLABORATION_RULES.md`, `docs/activ
 ### Risks / Follow-ups
 
 Watch for the rule becoming rote ("Pending Decisions: None" copy-pasted without genuinely checking) — the value is in someone actually looking, not in the field being present.
+
+## DECISION-0003 — Add SESSION START / SESSION CLOSE trigger phrases, for every tool
+
+**Date:** 2026-09-16
+**Decision Owner:** David Bloom
+**Status:** Approved
+**Related Task:** N/A
+**Area:** Operations
+
+### Context
+
+The Startup Rule and Session Close Rule (DECISION-0002) exist, but nothing gave a human a short, consistent phrase to invoke them on demand — especially in tools without Claude Code's automatic session orientation (GPT-Sol, Grok). David asked for this explicitly for `/design` "and all AI involved," and separately flagged that GitHub must remain the source of truth for every tool, not just Claude.
+
+### Decision
+
+Add `SESSION START` and `SESSION CLOSE` as trigger phrases, matching the existing `SYNC` handshake's convention (full word, uppercase, standalone). Documented in `AI_COLLABORATION_RULES.md`, `README.md`, `CLAUDE.md`, and `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`, each with an explicit statement that GitHub is authoritative over any tool's own chat history. Mirrored upstream in `ai-project-operating-kit` (its two new-session prompts too).
+
+### Rationale
+
+One consistent phrase per action, usable in any tool, removes the need for David to re-explain the startup/close-out process differently to Claude, GPT-Sol, and Grok. Stating "GitHub wins over chat" explicitly, not just implicitly via the Source-of-Truth Rule, matters most for tools with no built-in habit of checking the repo first.
+
+### Consequences
+
+Updated in this repo: `docs/team_charter/AI_COLLABORATION_RULES.md`, `README.md`, `CLAUDE.md`, `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`. Mirrored upstream in `ai-project-operating-kit`: `AI_COLLABORATION_RULES.md`, `README.md`, `prompts/CLAUDE_NEW_SESSION_PROMPT.md`, `prompts/CODEX_NEW_SESSION_PROMPT.md`.
+
+### Risks / Follow-ups
+
+A tool without repo read access can't actually act on `SESSION START` beyond acknowledging it — worth confirming each cross-lab tool David uses can at least read `ai-design-studio-kit` before relying on the trigger there.

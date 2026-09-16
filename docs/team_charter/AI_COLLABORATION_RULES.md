@@ -174,3 +174,40 @@ The entry must cover, beyond a bare status update:
 **Relationship to a project's own `charter.md` Stage log.** These are not redundant. A project's Stage log is that project's narrative — what stage ran, what it produced. An `ACTIVITY_LOG.md` Session Close entry is the kit-level record of a working session, which may span one project, several, or repo-level framework changes that don't belong to any single project. Update both when applicable: the Stage log for what happened to a specific project, the Session Close entry for what happened in the session.
 
 Push before ending the session and verify sync (`scripts/verify-sync.sh`) before considering the session closed — an entry that isn't actually on the remote doesn't help the next session.
+
+## Session Start Trigger — `SESSION START`
+
+The spoken/typed cue for the Startup Rule above, for use with **any tool involved in this kit** — Claude, GPT-Sol, Grok, or any other cross-lab specialist, not only ones that apply the rule automatically. Same convention as `SYNC` above: a full word, uppercase, standalone.
+
+**GitHub is the source of truth for every tool, not just Claude's.** Per the Source-of-Truth Rule above: if it is not written in the `ai-design-studio-kit` repo, it does not exist for operating purposes, regardless of what any tool's own chat history says. `SESSION START` exists specifically so a tool with no built-in habit of reading the repo first (GPT-Sol, Grok, any cross-lab specialist without Claude Code's automatic orientation) is told, in words it will act on, to treat the repo as authoritative before generating anything.
+
+Trigger:
+
+```text
+SESSION START
+```
+
+When given, the agent should:
+
+- Read the docs listed in the Startup Rule, plus the active project's `charter.md` in full if one is in play. Do not substitute anything said earlier in this chat for what's actually in those files — if the two conflict, the repo wins.
+- Read the most recent entries in `docs/activity_log/ACTIVITY_LOG.md` (Index), especially the last Session Close entry, to pick up its Pending Decisions and Open Risks/Blockers.
+- Report: current project/track state, anything carried over from the last Session Close entry, and the next required action — before doing anything else.
+
+## Session Close Trigger — `SESSION CLOSE`
+
+The spoken/typed cue for the Session Close Rule above.
+
+Trigger:
+
+```text
+SESSION CLOSE
+```
+
+When given, the agent should:
+
+- Write the `ACTIVITY_LOG.md` entry per its Entry Format — Summary, Pending Decisions, Open Risks/Blockers, Next Required Action, each explicit (`None` rather than omitted).
+- Update the active project's `charter.md` Stage log too, if the session touched a project — these are complementary, not either/or (see above).
+- Push and verify sync if it has repo write access; otherwise output the entry content clearly labeled with its destination path for David to commit.
+- State plainly whether it was actually written to the repo or handed back for manual commit.
+
+`SESSION START`, `SESSION CLOSE`, and `SYNC` are three distinct triggers: `SESSION START` orients at the very beginning, `SYNC` refreshes mid-session, `SESSION CLOSE` wraps up before stopping. Use the same three phrases in every tool touching this kit — Claude, GPT-Sol, Grok, or otherwise — so David doesn't need a different cue per tool.

@@ -60,3 +60,18 @@ David requested this directly in conversation. Approves DECISION-0002 and the re
 ### Notes
 
 - Owner-initiated request stands as the sign-off for this Hard Gate.
+
+## APPROVAL-0003 — Add SESSION START / SESSION CLOSE trigger phrases
+
+**Date:** 2026-09-16
+**Approved By:** David Bloom
+**Related Task:** N/A
+**Decision:** Approved
+
+### Summary
+
+David requested this directly in conversation, for `/design` and all AI involved. Approves DECISION-0003 and the resulting edits to `docs/team_charter/AI_COLLABORATION_RULES.md`, `README.md`, `CLAUDE.md`, and `prompts/CROSS_LAB_SPECIALIST_PROMPT.md` in this repo, and the mirrored changes in `ai-project-operating-kit` — a Hard Gate under `STANDING_APPROVAL_LANES.md` ("material changes to `docs/team_charter/` documents").
+
+### Notes
+
+- Owner-initiated request stands as the sign-off for this Hard Gate.
