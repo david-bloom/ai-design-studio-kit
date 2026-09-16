@@ -19,25 +19,32 @@ creative_director:
   last_reviewed: "2026-09-12"
 
 brand_strategist:
-  primary: "gpt-5.1 (OpenAI)"
+  primary: "Codex / GPT-Sol (OpenAI)"
   rationale: >
-    Positioning and narrative work benefits from a model with strong,
-    persuasive natural-language reasoning distinct from the Creative
-    Director's lab, so strategy isn't being both written and coordinated
-    by the same underlying model.
-  alternates: ["claude-opus (Anthropic)", "gemini-3-pro (Google)"]
-  last_reviewed: "2026-09-12"
+    David's Codex instance ("GPT-Sol") is trusted directly for this
+    work; promoted from a project-crux-level override to the global
+    default 2026-09-16. Note the tradeoff this creates: it's the same
+    tool as the Visual Designer default below, so the two generative
+    roles are no longer decorrelated from each other by lab choice —
+    only the Critic (Grok, a different lab from both) provides
+    independent review now. If a future project needs Brand Strategist
+    and Visual Designer decorrelated from each other specifically, not
+    just critiqued by a third lab, override one of them at the project
+    level rather than treating that as this file's default case.
+  alternates: ["gpt-5.1 (OpenAI)", "claude-opus (Anthropic)", "gemini-3-pro (Google)"]
+  last_reviewed: "2026-09-16"
 
 visual_designer:
-  primary: "gemini-3-pro (Google)"
+  primary: "Codex / GPT-Sol (OpenAI)"
   rationale: >
-    Google's models have demonstrated particular strength in native
-    multimodal reasoning plus integrated image generation (Nano Banana /
-    Imagen family), useful for producing actual visual comps and style
-    tiles rather than text descriptions of them.
-  image_generation_backends: ["gemini-3-pro / Nano Banana (Google)", "gpt-image (OpenAI)", "Midjourney (independent lab, aesthetic benchmark)"]
-  alternates: ["gpt-image (OpenAI)"]
-  last_reviewed: "2026-09-12"
+    David's Codex instance ("GPT-Sol") is trusted directly for this
+    work; promoted from a project-crux-level override to the global
+    default 2026-09-16. See brand_strategist above for the
+    decorrelation tradeoff this creates between the two generative
+    roles now sharing one tool.
+  image_generation_backends: ["gpt-image (OpenAI)", "gemini-3-pro / Nano Banana (Google)", "Midjourney (independent lab, aesthetic benchmark)"]
+  alternates: ["gemini-3-pro (Google)", "gpt-image (OpenAI)"]
+  last_reviewed: "2026-09-16"
 
 marketing_creative_designer:
   primary: "gpt-image (OpenAI)"
@@ -61,8 +68,8 @@ critic:
     independence (both were advisory-only and tended to land on the
     same model anyway). Grok's distinct voice and lighter, blunter
     response posture decorrelates it from whichever generative role
-    produced the work it's reviewing (e.g. Visual Designer on Gemini,
-    or a project-level override like GPT-Sol) — same-lab critique
+    produced the work it's reviewing (e.g. Brand Strategist or Visual
+    Designer, both now Codex/GPT-Sol by default) — same-lab critique
     tends to under-flag that lab's own blind spots.
   alternates: ["claude-opus (Anthropic)", "gpt-5.1-thinking (OpenAI)"]
   last_reviewed: "2026-09-15"

@@ -90,3 +90,18 @@ David requested a per-project initiation phrase directly in conversation. Approv
 ### Notes
 
 - Owner-initiated request stands as the sign-off for this Hard Gate.
+
+## APPROVAL-0005 — Promote Codex/GPT-Sol to the global default for Brand Strategist and Visual Designer
+
+**Date:** 2026-09-16
+**Approved By:** David Bloom
+**Related Task:** N/A
+**Decision:** Approved
+
+### Summary
+
+David requested this directly in conversation. Approves DECISION-0005 and the resulting edit to `config/agent-models.yaml` — a Hard Gate under `STANDING_APPROVAL_LANES.md` ("material changes to ... `config/agent-models.yaml`").
+
+### Notes
+
+- Owner-initiated request stands as the sign-off for this Hard Gate. Note the accepted tradeoff recorded in DECISION-0005: Brand Strategist and Visual Designer no longer decorrelated from each other by lab choice.

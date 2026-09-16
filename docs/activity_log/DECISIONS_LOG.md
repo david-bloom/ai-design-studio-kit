@@ -139,3 +139,31 @@ Updated: `docs/team_charter/AI_COLLABORATION_RULES.md` (both trigger definitions
 ### Risks / Follow-ups
 
 None identified.
+
+## DECISION-0005 — Promote Codex/GPT-Sol to the global default for Brand Strategist and Visual Designer
+
+**Date:** 2026-09-16
+**Decision Owner:** David Bloom
+**Status:** Approved
+**Related Task:** N/A
+**Area:** Architecture
+
+### Context
+
+Codex/GPT-Sol was assigned as a project-crux-level override for both Brand Strategist and Visual Designer (the latter originally, the former corrected in afterward). David decided this should be the default for all future projects, not a project-specific choice.
+
+### Decision
+
+`config/agent-models.yaml`: `brand_strategist.primary` and `visual_designer.primary` both changed to "Codex / GPT-Sol (OpenAI)". Former defaults (`gpt-5.1`, `gemini-3-pro`) moved to `alternates`.
+
+### Rationale
+
+David trusts this tool directly for both roles. Recorded explicitly in the rationale text: this means the two generative roles are no longer decorrelated from each other by lab choice — only the Critic (Grok, a different lab from both) provides independent review now. That's a real tradeoff, not a null one, so a note was added instructing a future project that needs Brand Strategist and Visual Designer decorrelated from each other specifically (not just critiqued by a third lab) to override one of them at the project level.
+
+### Consequences
+
+Updated: `config/agent-models.yaml` (both rows' `primary`, `alternates`, and the `critic` row's example text, which referenced the old defaults). `projects/project-crux/charter.md`'s Model assignment table updated to drop "project-level override" framing — these are now the project inheriting the current global default, not an exception to it.
+
+### Risks / Follow-ups
+
+Watch whether Brand Strategist and Visual Designer output starts converging on similar ideas across projects specifically because they share a tool — that's the risk this decision explicitly accepted, not an unknown one.
