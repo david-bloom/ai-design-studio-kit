@@ -23,11 +23,29 @@ Most recent entries (full chronological list follows below). Once this log grows
 
 Every entry — task-level or session-close — uses this shape.
 
+- Session Close — 2026-09-16 (2)
 - Session Close — 2026-09-16
 - Critic Role Consolidation — 2026-09-15
 - Operating Kit Installed — 2026-09-15
 
 ---
+
+## Session Close — 2026-09-16 (2)
+
+**Task:** Session summary — project folder conventions documented, session triggers made project-scoped, Codex/GPT-Sol promoted to global default, Handoff 002 issued and resolved
+**Status:** N/A (session-level entry, spans several changes)
+**Summary:** Answered David's question on what belongs in `projects/<slug>/` vs. the repo root by adding `docs/ARCHITECTURE.md` §8 ("Project folder contents") — kit-level `docs/`, `tasks/`, `team_charter/` are never duplicated per project. That surfaced a real bug: Handoff 001 had labeled itself `TASK-0002` with no actual task file behind it; fixed across the handoff packet, charter Stage log, and ACTIVITY_LOG, and documented the `TASK-NNNN`-is-kit-level-only convention in `HANDOFF_PACKET_TEMPLATE.md` and `CLAUDE.md`. Parameterized `SESSION START`/`SESSION CLOSE` with an optional project slug (`SESSION START: project-crux`) per David's request for a per-project initiation phrase, avoiding a new phrase per project (DECISION-0004/APPROVAL-0004). Wrote self-teach onboarding prompts for `/design`, Codex, and Grok covering the full framework; corrected the Codex role note after David clarified Codex/GPT-Sol plays both Brand Strategist and Visual Designer, not an undefined role — first as a project-crux override, then (per David's explicit instruction) promoted to the **global default** in `config/agent-models.yaml` (DECISION-0005/APPROVAL-0005), with the resulting decorrelation tradeoff (Brand Strategist and Visual Designer no longer on different labs from each other) recorded in the rationale text, not left implicit. `/design` (Creative Director) reviewed Handoff 001's output, found it converged (same emotional register, same 2-column structure, inspiration set unused), and drafted Handoff 002 as a corrective re-brief; committed to the repo with one flag added on commit (its model recommendation referenced the pre-DECISION-0005 default). David resolved that flag by choosing to run 002 on Sol anyway, accepting that no model switch would help decorrelate it from 001's convergence. Handoff 002's output (5 directions, `projects/project-crux/visual/002-directions.md`) was then committed **directly by David outside this session** (commits `0a4c312`, `55de244`) — not authored or reviewed here.
+
+**Pending Decisions:**
+- Whether Handoff 002's output actually satisfies the divergence mandate (emotional temperature, palette, structure, interactivity spread) and the inspiration-cluster requirement — not yet reviewed by this session or by the Critic. David or a future session to assess.
+- Whether the Codex/GPT-Sol decorrelation tradeoff (DECISION-0005) needs revisiting if Brand Strategist and Visual Designer output starts reading as too similar across future projects — flagged as a thing to watch, not an open question requiring action now.
+
+**Open Risks / Blockers:**
+- 002's output has not been checked against Handoff 002's own requirements or routed to the Critic (Grok) yet — the next concrete step before any Done consideration for the Visual Design track.
+- Two open items native to the project-crux brief itself, carried forward from the prior Session Close entry: app name/final brand (deferred), and whether the two learner profiles become explicit modes or one adaptive interface (non-blocking).
+
+**Next Owner:** David Bloom
+**Next Required Action:** Review `projects/project-crux/visual/002-directions.md` against Handoff 002's divergence axes and inspiration-cluster requirement; if it holds up, hand off to the Critic (Grok) for independent review.
 
 ## Session Close — 2026-09-16
 
