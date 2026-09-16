@@ -103,6 +103,8 @@ Decorrelation call (Creative Director recommendation — **David to confirm befo
 - Close with a comparative table plotting the set on the divergence axes (emotional temperature, palette, structure, interactivity) so the spread is auditable at a glance.
 - If you lack repo write access, output clearly delimited blocks labeled with the exact destination paths so a human can commit them.
 
+> **Note (added 2026-09-16, historical — not a change to what was actually sent):** project-crux now uses `prompts/UNIVERSAL_SESSION_PROMPT.md`, pasted into each tool's persistent project instructions, triggered by `SESSION START: project-crux` — `prompts/CROSS_LAB_SPECIALIST_PROMPT.md` referenced below is superseded. The block below is preserved as the historical record of what actually governed this handoff when it ran; it is not meant to be reused going forward.
+
 ## Recommended Prompt for Visual Designer
 
 """
