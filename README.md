@@ -42,7 +42,7 @@ This kit's day-to-day operating rules — roles, approval lanes, task tiers, Don
 
 For cross-lab roles (Brand Strategist on GPT, Visual Designer on Gemini, Chaos Agent on Grok — see `config/agent-models.yaml`), open that lab's own tool with repo access and hand it `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`; there is no single tool that fans a task out to all labs automatically.
 
-**GitHub is the source of truth — for every tool, not just Claude.** If a decision, a brief, or a model assignment isn't written into this repo, it doesn't count for operating purposes, no matter which tool's chat history it lives in. Two short trigger phrases, usable in any tool: `SESSION START` (read the repo and the last Session Close entry before doing anything) and `SESSION CLOSE` (write this session's `ACTIVITY_LOG.md` entry — summary, pending decisions, open risks, next action — before stopping). See `docs/team_charter/AI_COLLABORATION_RULES.md`.
+**GitHub is the source of truth — for every tool, not just Claude.** If a decision, a brief, or a model assignment isn't written into this repo, it doesn't count for operating purposes, no matter which tool's chat history it lives in. Two short trigger phrases, usable in any tool: `SESSION START` (read the repo and the last Session Close entry before doing anything) and `SESSION CLOSE` (write this session's `ACTIVITY_LOG.md` entry — summary, pending decisions, open risks, next action — before stopping). Add a project slug to scope either one to a specific project — `SESSION START: project-crux`, `SESSION CLOSE: project-crux` — so the session follows both this kit's shared rules and that project's own charter, without a new phrase needed per project. See `docs/team_charter/AI_COLLABORATION_RULES.md`.
 
 ## Status
 

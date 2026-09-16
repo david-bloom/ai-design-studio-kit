@@ -111,3 +111,31 @@ Updated in this repo: `docs/team_charter/AI_COLLABORATION_RULES.md`, `README.md`
 ### Risks / Follow-ups
 
 A tool without repo read access can't actually act on `SESSION START` beyond acknowledging it — worth confirming each cross-lab tool David uses can at least read `ai-design-studio-kit` before relying on the trigger there.
+
+## DECISION-0004 — Parameterize SESSION START / SESSION CLOSE with a project slug
+
+**Date:** 2026-09-16
+**Decision Owner:** David Bloom
+**Status:** Approved
+**Related Task:** N/A
+**Area:** Operations
+
+### Context
+
+David asked for an initiation phrase specific to each project, so a session follows both this kit's shared rules and that project's own guidance. A unique phrase per project would need new documentation every time a project is created and would grow without bound.
+
+### Decision
+
+Extend the existing `SESSION START` / `SESSION CLOSE` triggers (DECISION-0003) with an optional project-slug parameter: `SESSION START: <project-slug>` and `SESSION CLOSE: <project-slug>` (e.g. `SESSION START: project-crux`). The plain form stays kit-level only; the scoped form additionally reads/updates that project's `charter.md` and `handoff/` folder.
+
+### Rationale
+
+One consistent phrase pattern, not a new word per project. Scales to any future project with zero additional documentation — only the slug changes.
+
+### Consequences
+
+Updated: `docs/team_charter/AI_COLLABORATION_RULES.md` (both trigger definitions), `README.md`, `CLAUDE.md`, `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`. Not mirrored upstream in `ai-project-operating-kit` — that kit doesn't have this kit's multi-project-per-repo structure, so the parameterized form doesn't apply there.
+
+### Risks / Follow-ups
+
+None identified.

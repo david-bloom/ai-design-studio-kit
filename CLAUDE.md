@@ -2,7 +2,7 @@
 
 This repo is a framework, not an app. Read `docs/ARCHITECTURE.md` before running any project through it if you haven't already this session. Also read `docs/team_charter/AI_COLLABORATION_RULES.md` at session start — it defines roles, approval lanes, and Done criteria for this repo, imported from [ai-project-operating-kit](https://github.com/david-bloom/ai-project-operating-kit) and adapted for a design kit. Its role vocabulary (Main Conductor, QA Agent, etc.) maps onto `ARCHITECTURE.md`'s roles — see the mapping note near the top of `AI_COLLABORATION_RULES.md` §Roles.
 
-**GitHub is the source of truth — always, for every tool.** If it isn't written into this repo, it doesn't count for operating purposes, regardless of what's in any chat history, including this one. If David sends `SESSION START`, do the full orientation above plus read the last Session Close entry in `docs/activity_log/ACTIVITY_LOG.md`. If he sends `SESSION CLOSE`, see "Ending a session" below.
+**GitHub is the source of truth — always, for every tool.** If it isn't written into this repo, it doesn't count for operating purposes, regardless of what's in any chat history, including this one. If David sends `SESSION START`, do the full orientation above plus read the last Session Close entry in `docs/activity_log/ACTIVITY_LOG.md`. If he sends `SESSION START: <project-slug>` (e.g. `SESSION START: project-crux`), also read that project's `charter.md` in full and the latest file in its `handoff/` folder, and scope your state report to that project. `SESSION CLOSE` and `SESSION CLOSE: <project-slug>` are the matching close-out forms — see "Ending a session" below.
 
 Every design track's Done decision is always Hard-Gate tier (`docs/team_charter/STANDING_APPROVAL_LANES.md`) — David's explicit sign-off, never a Standard-tier close by the Creative Director alone, however positive the Critic/Chaos Agent findings are.
 
@@ -31,7 +31,7 @@ Never invoke automatically as part of a default stage sequence — only when Dav
 
 ## Ending a session
 
-Before stopping, if anything durable changed (repo files, a charter, a decision, a handoff), write a `docs/activity_log/ACTIVITY_LOG.md` entry per its Entry Format — Summary, Pending Decisions, Open Risks/Blockers, Next Required Action, all filled in explicitly (`None` rather than omitted). This is the Session Close Rule (`docs/team_charter/AI_COLLABORATION_RULES.md`) and is separate from a project's own charter Stage log — do both when applicable, not one instead of the other. Push and verify sync before considering the session actually closed.
+Before stopping, if anything durable changed (repo files, a charter, a decision, a handoff), write a `docs/activity_log/ACTIVITY_LOG.md` entry per its Entry Format — Summary, Pending Decisions, Open Risks/Blockers, Next Required Action, all filled in explicitly (`None` rather than omitted). This is the Session Close Rule (`docs/team_charter/AI_COLLABORATION_RULES.md`) and is separate from a project's own charter Stage log — do both when applicable, not one instead of the other. If David sends `SESSION CLOSE: <project-slug>`, that project's Stage log update is explicitly part of the close-out, not optional. Push and verify sync before considering the session actually closed.
 
 ## Conventions
 

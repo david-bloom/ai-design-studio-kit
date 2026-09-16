@@ -185,13 +185,24 @@ Trigger:
 
 ```text
 SESSION START
+SESSION START: <project-slug>
 ```
 
-When given, the agent should:
+The plain form orients at the kit level only. The **project-scoped form**, `SESSION START: <project-slug>` (e.g. `SESSION START: project-crux`), is the one to use whenever a session is about to work on a specific project — it's the single phrase that ensures the session follows both this kit's shared rules and that project's own guidance, without David having to re-explain either.
 
-- Read the docs listed in the Startup Rule, plus the active project's `charter.md` in full if one is in play. Do not substitute anything said earlier in this chat for what's actually in those files — if the two conflict, the repo wins.
+When given the plain form, the agent should:
+
+- Read the docs listed in the Startup Rule.
 - Read the most recent entries in `docs/activity_log/ACTIVITY_LOG.md` (Index), especially the last Session Close entry, to pick up its Pending Decisions and Open Risks/Blockers.
-- Report: current project/track state, anything carried over from the last Session Close entry, and the next required action — before doing anything else.
+- Report: current kit-level state, anything carried over from the last Session Close entry, and the next required action — before doing anything else.
+
+When given the project-scoped form, the agent should do all of the above, **plus**:
+
+- Read `projects/<project-slug>/charter.md` in full — Origin brief, Expanded understanding, Active tracks, Done Decider checklist, Constraint ledger, and Model assignment (including any project-level overrides).
+- Read the highest-numbered file in `projects/<project-slug>/handoff/` if that folder exists, so an assigned specialist role picks up its own instructions without being re-briefed.
+- Report state scoped to that project specifically: which tracks are active and their status against the Done Decider checklist, the last entry in the project's own Stage log, and the next required action for that project — not just the kit-level summary.
+
+Do not substitute anything said earlier in this chat for what's actually in these files — if the two conflict, the repo wins (per the Source-of-Truth Rule above).
 
 ## Session Close Trigger — `SESSION CLOSE`
 
@@ -201,13 +212,20 @@ Trigger:
 
 ```text
 SESSION CLOSE
+SESSION CLOSE: <project-slug>
 ```
 
-When given, the agent should:
+The plain form closes out a kit-level session. The **project-scoped form**, `SESSION CLOSE: <project-slug>`, is the one to use whenever the session worked on a specific project — it makes updating that project's own record an explicit part of closing out, not something to remember separately.
+
+When given the plain form, the agent should:
 
 - Write the `ACTIVITY_LOG.md` entry per its Entry Format — Summary, Pending Decisions, Open Risks/Blockers, Next Required Action, each explicit (`None` rather than omitted).
-- Update the active project's `charter.md` Stage log too, if the session touched a project — these are complementary, not either/or (see above).
 - Push and verify sync if it has repo write access; otherwise output the entry content clearly labeled with its destination path for David to commit.
 - State plainly whether it was actually written to the repo or handed back for manual commit.
 
-`SESSION START`, `SESSION CLOSE`, and `SYNC` are three distinct triggers: `SESSION START` orients at the very beginning, `SYNC` refreshes mid-session, `SESSION CLOSE` wraps up before stopping. Use the same three phrases in every tool touching this kit — Claude, GPT-Sol, Grok, or otherwise — so David doesn't need a different cue per tool.
+When given the project-scoped form, the agent should do all of the above, **plus**:
+
+- Update `projects/<project-slug>/charter.md`'s Stage log with what happened this session for that project — new stage runs, handoffs sent or received, tracks that moved closer to (or reached) Done. These are complementary, not either/or: the kit-level `ACTIVITY_LOG.md` entry and the project's Stage log both get updated, in the same close-out.
+- If the project's own charter changed (e.g. a Done Decider checklist was satisfied, a constraint was resolved), reflect that explicitly rather than leaving it implied by the Stage log narrative alone.
+
+`SESSION START`, `SESSION CLOSE`, and `SYNC` are three distinct triggers: `SESSION START` orients at the very beginning, `SYNC` refreshes mid-session, `SESSION CLOSE` wraps up before stopping. Use the same phrases — plain or project-scoped — in every tool touching this kit: Claude, GPT-Sol, Grok, or otherwise. No new phrase is needed as new projects are added; only the slug changes.

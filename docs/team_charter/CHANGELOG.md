@@ -29,3 +29,10 @@ Append-only chronological log, one entry per material change to `docs/team_chart
 **Decision:** DECISION-0003
 **Change (one or two lines):**
 - Added `SESSION START` / `SESSION CLOSE` trigger phrases (matching the existing `SYNC` convention), explicit that GitHub is authoritative over any tool's chat history. Mirrored upstream in `ai-project-operating-kit`.
+
+## 2026-09-16 — AI_COLLABORATION_RULES.md
+
+**Approval:** APPROVAL-0004
+**Decision:** DECISION-0004
+**Change (one or two lines):**
+- Parameterized `SESSION START` / `SESSION CLOSE` with an optional project slug (`SESSION START: project-crux`) so one phrase pattern scales to any project without new documentation per project. Not mirrored upstream — `ai-project-operating-kit` has no equivalent multi-project structure.

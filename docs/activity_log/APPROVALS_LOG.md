@@ -75,3 +75,18 @@ David requested this directly in conversation, for `/design` and all AI involved
 ### Notes
 
 - Owner-initiated request stands as the sign-off for this Hard Gate.
+
+## APPROVAL-0004 — Parameterize SESSION START / SESSION CLOSE with a project slug
+
+**Date:** 2026-09-16
+**Approved By:** David Bloom
+**Related Task:** N/A
+**Decision:** Approved
+
+### Summary
+
+David requested a per-project initiation phrase directly in conversation. Approves DECISION-0004 and the resulting edits to `docs/team_charter/AI_COLLABORATION_RULES.md`, `README.md`, `CLAUDE.md`, and `prompts/CROSS_LAB_SPECIALIST_PROMPT.md` — a Hard Gate under `STANDING_APPROVAL_LANES.md` ("material changes to `docs/team_charter/` documents").
+
+### Notes
+
+- Owner-initiated request stands as the sign-off for this Hard Gate.
