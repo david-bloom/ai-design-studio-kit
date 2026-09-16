@@ -55,8 +55,7 @@ Produce **≥4 directions**, and the *set* must genuinely spread across these ax
 ## Model assignment for this run
 
 Decorrelation call (Creative Director recommendation — **David to confirm before dispatch**):
-- 001 ran on **GPT-Sol** and converged. Recommend running 002 on the global-default Visual Designer, **Gemini-3-pro**, to get a different training distribution — or run **both Gemini and GPT-Sol in parallel** and compare. Keeping Sol solo is the weakest option for widening the field.
-- Whichever is chosen, note it in the charter's Stage log and Model-assignment snapshot as a project-level decision for this run.
+- 001 ran on **GPT-Sol** and converged. Will run 002 on Sol again before assessing alternate models. 
 
 > **Flag added on commit (Claude Code, 2026-09-16):** this recommendation predates or was drafted independently of `config/agent-models.yaml` DECISION-0005, which promoted Codex/GPT-Sol to the **global default** for Visual Designer (Gemini and GPT-image are now alternates, not the default). The underlying goal here — get a training distribution different from whatever produced 001 — still holds; the "run the global default instead" framing above no longer matches current config.
 >
