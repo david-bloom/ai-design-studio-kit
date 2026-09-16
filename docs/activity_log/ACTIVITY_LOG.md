@@ -23,12 +23,24 @@ Most recent entries (full chronological list follows below). Once this log grows
 
 Every entry — task-level or session-close — uses this shape.
 
+- Session Close — 2026-09-16 (3)
 - Session Close — 2026-09-16 (2)
 - Session Close — 2026-09-16
 - Critic Role Consolidation — 2026-09-15
 - Operating Kit Installed — 2026-09-15
 
 ---
+
+## Session Close — 2026-09-16 (3)
+
+**Task:** Session summary — project-crux visual directions, place modes, rendered review library, and guide-concept library
+**Status:** N/A (session-level summary; Visual Design and UX remain under review)
+**Summary:** GPT-Sol/Codex, acting as project-crux Visual Designer, completed the requested Visual Design sequence through the six-option frozen set (`visual/004-directions.md`) and four additive curriculum-scale place modes (`visual/006-place-mode.md`). The independent Critic review at `critic/005-review.md` informed the place-mode extension but did not make an approval or Done decision. This session then created a GitHub-native visual review library on branch `codex/project-crux-visual-mocks`: ten inspectable HTML/CSS/JS comps and matching 1440 × 900 PNG plates covering all six working-mode directions plus place modes for Options 1, 2, 4, and 5; per-option manifests and shared AP content fixtures; a Markdown review board; and a separate reusable `visual/guide-concepts/` library with stable IDs GC-001 through GC-003, concept records, generation provenance, guardrails, contact sheets, and a same-scene comparison. Browser QA confirmed all ten comps load without page errors or broken images and all review PNGs are exactly 1440 × 900. Work was committed as `121f33434fce8775d17e423e09e30d80d9ab0dd3`, pushed and remotely verified, and opened for review as PR #3. No direction was selected and no track was marked Done.
+
+**Pending Decisions:** David and the Creative Director need to decide which directions merit further prototyping, revision, combination testing, or retirement; whether any guide register should receive a refinement pass; and when PR #3 should merge to `main`.
+**Open Risks / Blockers:** The three guide illustrations are deliberately labeled V1 and their concept files record meaningful deviations from the written designs; they should not be mistaken for settled character designs. The renderings are review comps, not usability evidence or accessibility-conformance proof. Until PR #3 is merged, the review library is authoritative on its pushed feature branch rather than `main`.
+**Next Owner:** David Bloom / Creative Director
+**Next Required Action:** Review PR #3 and `projects/project-crux/visual/mocks/review-board.md` against the charter's Visual Design and UX Done Decider checklists, then issue the next numbered handoff for any selected refinement or validation work. David alone decides whether either track is Done.
 
 ## Session Close — 2026-09-16 (2)
 
