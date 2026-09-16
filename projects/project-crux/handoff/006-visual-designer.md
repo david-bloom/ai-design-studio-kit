@@ -7,7 +7,7 @@ Task:
 - Handoff 006 (project-crux, Visual Design track) — design the curriculum-scale **"place" / overview mode** for the front-running directions, expressed natively in each direction's existing visual system. This closes the one set-level gap the Critic surfaced that blocks a UX Done Decider item regardless of which direction ultimately wins.
 
 Prompts Included:
-- [x] Visual Designer (cross-lab specialist — `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`)
+- [x] Visual Designer (see `prompts/UNIVERSAL_SESSION_PROMPT.md` — triggered by `SESSION START: project-crux`)
 - [ ] Brand Strategist  - [ ] Critic  - [ ] Chaos Agent
 
 ## Why 006 exists (CD interpretation of the Critic advisory)
@@ -76,6 +76,10 @@ Each place-mode proposal must, in that direction's own palette/type/motif/intera
 
 ## Recommended Prompt for Visual Designer
 
-"""
-Use `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`. Project slug: project-crux. You are the Visual Designer (ARCHITECTURE.md §3). Read `projects/project-crux/handoff/006-visual-designer.md`, then `projects/project-crux/charter.md` (the place/overview mode requirement + Done Decider), then `projects/project-crux/visual/004-directions.md` for the visual systems you're extending, and `projects/project-crux/critic/005-review.md` for context on the gap. TASK: design the curriculum-scale PLACE / OVERVIEW mode — missing across the set — for four directions only: (1) Draw the Door — Influence Lab, (2) Soft Landing, (4) Lantern Fold, (5) Say It Bright text-only. Each place mode must, in that direction's OWN palette/type/motif/interaction: show the curriculum as navigable terrain for AP Stats AND Bio; make mastery legible at a glance WITHOUT gamification/streaks/scores/leaderboards; give a calm low-decision default entry for Learner B while letting Learner A pull more from the same view (one adaptive system); and show the place↔working-mode transition. Keep all hard constraints — do NOT reuse the earned/lost scoring anchors for map status, and action/interactive colors never score. Do NOT redesign the six working modes; this is additive. Skip Pocket Universe (3) and Three Guide Registers (6) beyond an optional one-paragraph note. Clean-room/blind — do not infer the real product name/category. Write to `projects/project-crux/visual/006-place-mode.md`. Advisory only; David alone decides done.
-"""
+As of 2026-09-16, this project no longer uses a hand-written per-handoff "Recommended Prompt" block. Instead:
+
+1. `prompts/UNIVERSAL_SESSION_PROMPT.md` is pasted into GPT-Sol's persistent project instructions (one-time setup, done outside this repo).
+2. David sends `SESSION START: project-crux`.
+3. The universal prompt's own logic has Sol determine it is the Visual Designer (via `config/agent-models.yaml`), read `ARCHITECTURE.md` and this project's `charter.md`, then find this file as the highest-numbered handoff addressed to its role, and act on it directly — the "Why 006 exists," "Scope," and "What the place mode must do" sections above are the actual instructions; no separate prompt text is needed. This is an ADDITIVE extension, not a re-generation and not a selection — do not redesign the six working modes from 004, and only produce place modes for the four in-scope directions.
+
+(Historical note: handoffs 001–004 each included, or originally included, a bespoke "Recommended Prompt" block referencing `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`, now superseded — see the notes preserved in those files.)
