@@ -44,3 +44,7 @@ Entry shape:
 ## 2026-09-17T19:49Z — recovery — kit — claude-code
 - Landed @ f4ae2fc: 
 - Note: Recovery: seven merged or superseded branches deleted; STATE regenerated
+
+## 2026-09-17T19:50Z — recovery — kit — claude-code
+- Landed @ 78988ee: projects/project-crux/visual/mocks/README.md; projects/project-crux/visual/mocks/review-board.md
+- Note: Recovery: update mock library counts from six to seven for Option 07
