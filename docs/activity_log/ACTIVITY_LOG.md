@@ -70,3 +70,8 @@ Entry shape:
 ## 2026-09-17T21:29Z — governance — kit — claude-code
 - Landed @ 6d9d032: 
 - Note: records for merged PR #7: revises field, superseding blocked handoffs
+
+## 2026-09-17T21:44Z — output-landed — project-crux/013 — claude-code
+- Landed @ 6d930fd: projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-bio-warmwhite.html; projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-bio-warmwhite.png; projects/project-crux/visual/mocks/option-07-challenger/warm-white/manifest.md
+- Status: dispatched → landed
+- Next: orchestrator: accept or return
