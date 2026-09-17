@@ -321,7 +321,7 @@ echo "repository:   $(git remote get-url origin)"; echo "handoff:      ${ID:-non
 echo "main sha:     $(git rev-parse --short=7 origin/main)  (work commit $SHA_A)"
 for o in "${OUTPUTS[@]}"; do
   if on_main "$o"; then
-    if [ $EVENT = output-landed ]; then echo "verified:     $o @ $(git log -1 --format=%h origin/main -- "$o")"
+    if [ $EVENT = output-landed ] || in_list "${NEWSTATUS:-$STATUS}" landed accepted superseded returned; then echo "verified:     $o @ $(git log -1 --format=%h origin/main -- "$o")"
     else echo "to overwrite: $o (current @ $(git log -1 --format=%h origin/main -- "$o"); a new SHA here means landed)"; fi
   elif [ $EVENT = output-landed ]; then echo "MISSING:      $o"; AVAIL=no
   else echo "pending:      $o (not yet produced)"; fi; done
