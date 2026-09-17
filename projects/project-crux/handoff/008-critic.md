@@ -91,3 +91,14 @@ Support your answer against 007's own anti-convergence protocol, specifically:
 ## Recommended Prompt for Critic
 
 As of 2026-09-16, this project uses `prompts/UNIVERSAL_SESSION_PROMPT.md`, pasted into Grok's persistent project instructions, triggered by `SESSION START: project-crux`. The universal prompt's own logic has Grok determine it is the Critic (via `config/agent-models.yaml`), read `ARCHITECTURE.md` and this project's `charter.md`, then find this file as the highest-numbered handoff addressed to its role, and act on it directly — the sections above are the actual instructions; no separate prompt text is needed.
+
+## Amendments
+
+### 2026-09-17 — claude-code
+
+Reason: Recovery under DECISION-0006 — record the provenance of this packet's output. Clarification only; `role`, `lane`, `inputs`, and `outputs` are unchanged, and `critic/008-divergence-gate.md` itself is not edited.
+
+Change:
+Provenance: critic/008 was committed 22:28 EDT 2026-09-16 and rewritten 22:42 (commit 6374cde) under David's git identity; whether Grok re-ran or another actor edited the file is not determinable. Treated as Grok's verdict per David.
+
+Specialist notified: no
