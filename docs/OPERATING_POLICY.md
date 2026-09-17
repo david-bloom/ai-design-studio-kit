@@ -31,7 +31,7 @@ A handoff's output is complete only when it is **available**. A pushed branch, a
 - `judgment` — two independent contexts before either sees the other. Critic passes, Done-adjacent selection input, constraint changes. Cross-lab preferred; a fresh same-lab context is acceptable for compliance/audit critique.
 - `divergence` — generating options where convergence is the known risk. Improve the brief first; then a second lab or a Chaos mechanism (`ARCHITECTURE.md` §5); never automatic.
 
-**Model** is recorded separately from actor (`model:` in the header) and is required only in `judgment` and `divergence` lanes; `unspecified` is permitted elsewhere.
+**Model** is recorded separately from actor (`model:` in the header). In the `judgment` and `divergence` lanes `publish --dispatch` refuses to dispatch with `model: unspecified`; `unspecified` is permitted in `routine`.
 
 ## 3. Authority
 
@@ -73,8 +73,8 @@ Everything else (branch policy, validation, approval boundaries) defaults from t
 |---|---|---|
 | `draft` | Orchestrator | being written |
 | `ready` | `handoff-check` | header valid, every input available, `source_sha` stamped |
-| `dispatched` | Orchestrator (via `publish`) | sent to the actor; body frozen; `frozen_hash` stamped |
-| `landed` | `publish` | outputs verified on `main` |
+| `dispatched` | Orchestrator (via `publish`) | `handoff-check` passes again at that moment; sent to the actor; body frozen; `frozen_hash` stamped |
+| `landed` | `publish` | `handoff-check` (including the freeze check) passes, then outputs verified on `main` |
 | `accepted` / `returned` | Orchestrator | evaluated; `returned` means a superseding handoff follows |
 | `blocked` | Orchestrator, or a script with a reason | cannot proceed |
 | `superseded` | Orchestrator | replaced by a later handoff named in its `supersedes:` |
@@ -103,7 +103,7 @@ A session with no `HANDOFF:` line is an orientation session: it reads state and 
 
 ## 5. Airlock (actors without repository write access)
 
-The specialist returns exactly one block per declared file, plus an asset block per binary, in the format given in `prompts/UNIVERSAL_SESSION_PROMPT.md` §Airlock. The steward (`claude-code`) fetches any export URL immediately, lands the files at the declared paths, and records provenance trailers (`Generated-By`, `Integrated-By`, `Integration-Type: airlock`, `Source-Artifact`, `Content-Modified`). The raw return is kept beside the landed file as `<name>.airlock.txt` when the steward changed anything beyond whitespace, so the change is diffable.
+The specialist returns exactly one block per declared file, plus an asset block per binary, in the format given in `prompts/UNIVERSAL_SESSION_PROMPT.md` §Airlock. The steward (`claude-code`) fetches any export URL immediately, lands the files at the declared paths, and records provenance trailers (`Generated-By`, `Integrated-By`, `Integration-Type: airlock`, `Source-Artifact`, `Content-Modified`). Modification is verified by the script, not asserted: `--content-modified none` means the landed file is byte-identical to the return (a raw copy, if present, must match); `formatting-only` requires the raw return at `<output>.airlock.txt` for every landed text output and passes only if the two are identical after removing all whitespace; `substantive` is exceptional, requires the raw copy and a `--reason`, and is recorded in the commit trailers. A normal airlock landing is `none` or `formatting-only`.
 
 ## 6. Git policy
 
@@ -112,7 +112,8 @@ The specialist returns exactly one block per declared file, plus an asset block 
 - **Direct to `main`** (derived by `publish` from the diff, never chosen by an agent): a single new packet; a packet header/amendment change; a single new text file under `projects/<slug>/{handoff,critic,chaos,visual,brand,ux,marketing}/`; generated `STATE.md`, index, and log.
 - **Short-lived branch, auto-merged** (`<slug>/<NNN>-<role>`): anything else — multiple output files, any binary, mock libraries, asset collections. `publish` creates the branch, commits, merges with `--no-ff`, pushes, deletes the branch. No one is asked.
 - **Human-review PR** (David views the diff): changes to this file, `docs/ARCHITECTURE.md`, `docs/PROJECT_CHARTER_TEMPLATE.md`, `config/agent-models.yaml`, `CLAUDE.md`, or `prompts/`; deleting or replacing accepted design files; destructive restructuring; a conflict the scripts cannot classify. A Done decision is a `DECISIONS_LOG.md` entry, not a PR.
-- **Every branch ends** merged-and-deleted, superseded-and-deleted, or `blocked` with an owner and next action in `STATE.md`. Unmerged 48h after last push = stale, listed in `STATE.md`. Deleting a branch with unmerged content requires David.
+- **Every branch ends** merged-and-deleted, superseded-and-deleted, or `blocked`; a blocked branch's owner and next action are recorded in the `## Blocked` section of the handoff that owns it. Unmerged 48h after last push = stale, listed in `STATE.md`. Deleting a branch with unmerged content requires David.
+- **Human-review changes are never auto-merged.** When a `governance` or `recovery` diff touches a protected path (this file, `docs/ARCHITECTURE.md`, the charter template, `config/agent-models.yaml`, `CLAUDE.md`, `prompts/`, `scripts/`), deletes anything under `projects/`, or modifies a file that is a declared output of a `landed` or `accepted` handoff, `publish` commits it to a `review/…` branch, pushes that branch, and stops. David merges the PR in GitHub; the records are written afterwards with `publish --regen` and a `governance` event.
 - **Workflow events** (commit trailer `Workflow-Event:`): `handoff-created`, `status-changed`, `output-landed`, `governance`, `recovery`. Only `output-landed`, `governance`, and `recovery` write an Activity Log entry.
 
 ## 7. Binaries
@@ -121,7 +122,7 @@ Keep canonical review assets in git; no LFS until every participating tool is co
 
 ## 8. Records
 
-- `docs/STATE.md` — **generated** by `publish`; never hand-edited. Current `main` SHA, per-project open handoffs with derived next action, blocked items, proposed decisions awaiting David, unmerged and stale branches.
+- `docs/STATE.md` — **generated** by `publish`; never hand-edited. The workflow commit it was generated through (the records commit carrying the file follows it on `main`, so the file cannot name its own SHA), per-project open handoffs with derived next action, proposed decisions awaiting David, unmerged and stale branches.
 - `projects/<slug>/handoff/README.md` — **generated** index of that project's handoffs (ID, role, status, lane, actor, output @ SHA).
 - `docs/activity_log/ACTIVITY_LOG.md` — the one operational log. One compact entry per `output-landed`, `governance`, or `recovery` event, written by `publish`. No session diaries.
 - `docs/activity_log/DECISIONS_LOG.md` — real decisions only, with the approval recorded inside the entry. `Status: Proposed` entries appear in `STATE.md` as pending David.
