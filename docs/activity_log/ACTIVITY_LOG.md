@@ -23,10 +23,29 @@ Most recent entries (full chronological list follows below). Once this log grows
 
 Every entry — task-level or session-close — uses this shape.
 
+- Session Close — 2026-09-16 (3)
 - Session Close — 2026-09-16 (2)
 - Session Close — 2026-09-16
 - Critic Role Consolidation — 2026-09-15
 - Operating Kit Installed — 2026-09-15
+
+---
+
+## Session Close — 2026-09-16 (3)
+
+**Task:** Session summary — project-crux: universal session prompt adopted, handoffs 003-008 landed/executed, working-mode challenger (007, "The Blue Hour Cabinet") produced and color-resolved, warm-white plates committed
+**Status:** N/A (session-level entry, spans several changes)
+**Summary:** Claude Code (executor/committer role on this project only — not a role in `config/agent-models.yaml`) landed a series of pre-drafted and brief-derived artifacts for project-crux, verifying each against real repo state before and after commit. Adopted `prompts/UNIVERSAL_SESSION_PROMPT.md` as the single `SESSION START` prompt for every tool (Claude/`/design`, GPT-Sol, Grok), superseding `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`. Committed and verified handoffs 003-004 (Visual Designer, focused probe + consolidation), 005 (first Critic review, real and severity-tagged), 006 (place/overview mode), 007 (working-mode challenger, executed by Sol as "The Blue Hour Cabinet" — a cyanotype/photogram specimen-drawer system), and 008 (Critic divergence gate: "Genuinely divergent, or a reskin?"). A separate color study (David + CD, outside this repo) locked the challenger's register at grade 4a (warm paper-white surround; green and red rejected) — recorded in `projects/project-crux/visual/007b-color-resolution.md`. The canonical grade-4a renders were fetched from Claude Design serve URLs and committed as two self-contained files (`mocks/option-07-challenger/warm-white/blue-hour-{stats,bio}-warmwhite.html`, ~1MB each, verified byte-identical via raw download and git blob SHA), superseding an earlier five-file dependency-chain plan that was corrected in `007b` and `008` before either was acted on. Caught and corrected several stale/broken references along the way (a missing `visual/001-directions.md` the charter referenced but never actually contained; four handoffs shipped with a since-superseded prompt reference; a missing Critic handoff for 005; a would-be P2 blocker in 008 resolved before dispatch).
+
+**Pending Decisions:**
+- Grok's answer to handoff 008's divergence gate question — not yet run this session.
+- David's eventual head-to-head between "The Blue Hour Cabinet" (challenger) and the in-house synthesis — depends on 008's outcome and is explicitly Hard-Gate, David's call alone.
+
+**Open Risks / Blockers:**
+- None new. `charter.md`'s own Stage log carries the full project-crux detail; this entry is the kit-level session-close summary per the Session Close Rule's "both get updated" requirement.
+
+**Next Owner:** David Bloom
+**Next Required Action:** Dispatch Grok via `SESSION START: project-crux` to run handoff 008 against the committed warm-white plates.
 
 ---
 
