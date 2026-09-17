@@ -1,7 +1,7 @@
 ---
 handoff: project-crux/010
 role: critic
-status: dispatched
+status: landed
 lane: judgment
 actor: grok
 model: grok-4
