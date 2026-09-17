@@ -1,7 +1,7 @@
 ---
 handoff: project-crux/012
 role: visual-designer
-status: blocked
+status: superseded
 lane: routine
 actor: codex
 model: unspecified
