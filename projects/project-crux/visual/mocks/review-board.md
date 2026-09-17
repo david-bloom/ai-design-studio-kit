@@ -1,4 +1,4 @@
-# Project Crux — seven-direction visual review board
+# Project Crux — visual review board (six frozen directions plus the 007 challenger)
 
 > Advisory review set. These renderings are not final or approved, and they do not indicate a selection. David alone decides when Visual Design or UX is done.
 
