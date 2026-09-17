@@ -1,7 +1,7 @@
 ---
 handoff: project-crux/009
 role: critic
-status: landed
+status: accepted
 lane: routine
 actor: claude-code
 model: unspecified
