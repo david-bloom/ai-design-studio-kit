@@ -115,3 +115,16 @@ The default failure mode is regression to the safe warm-generic middle. These ar
 ## Session start
 
 Dispatch by opening the tool with **"SESSION START: project-crux"**. The universal session prompt self-detects the Visual Designer role and reads this packet — **the body of this packet IS the instruction set**; no bespoke per-handoff prompt is needed.
+
+## Amendments
+
+### 2026-09-17 — claude-code
+
+Reason: Recovery under DECISION-0006. This packet referenced material that was not on `main` at the time, and one reference had no resolvable target. Clarification only — `role`, `lane`, `inputs`, and `outputs` are unchanged.
+
+Change:
+- **`guide-concepts/` resolves to `projects/project-crux/visual/guide-concepts/`.** That directory was stranded on the unmerged PR #3 branch when this packet was written; it is on `main` as of the PR #3 recovery landing (work commit `10d72f8`, 2026-09-17).
+- **The mock library this packet references is on `main`** as of the same recovery landing: `projects/project-crux/visual/mocks/` for Options 01–06, plus the shared renderer and fixtures. Option 07's own plates were already on `main` as declared outputs of this packet.
+- **The in-house three-column synthesis this packet argues against has no file in this repository.** It exists only as the prose description inside this packet's own "Why 007 exists" section. It is therefore out of record: it cannot be opened, cited, or compared against as an artifact unless David supplies it. Any head-to-head between the synthesis and the Blue Hour Cabinet challenger is, on the current record, a comparison against a description rather than against a design file.
+
+Specialist notified: no
