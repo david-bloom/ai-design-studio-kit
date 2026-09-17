@@ -19,8 +19,9 @@ On `SESSION START: <slug>` read, in order: `docs/STATE.md`, `projects/<slug>/cha
 7. When output is landed: read it, then `scripts/publish <slug>/<NNN> --actor claude-code --set-status accepted|returned`. A `returned` packet is followed by a superseding packet (`supersedes: <slug>/<NNN>`).
 8. Escalate to David only: Done decisions, scope or hard-constraint changes, deletions, withheld-identity reveals, publishing outside the repo, and conflicts the scripts cannot classify.
 
-## Steward duties (mechanical; Claude Code performs them for its own work and for all airlock returns)
+## Steward duties (mechanical; Claude Code performs them for its own work, for Codex branch intake, and for all airlock returns)
 
+- **Branch intake (Codex cloud):** Codex pushes only its declared outputs on `codex/<slug>-<NNN>-<role>`. Land with: `git fetch origin <branch>`, `git checkout origin/<branch> -- <each declared output>`, then `scripts/publish <slug>/<NNN> --actor claude-code --generated-by codex --source "branch <branch> @ <sha>" --content-modified none`. After the receipt says yes, `git push origin --delete <branch>` (its content is on `main`, so this is superseded-and-deleted, not a deletion of unmerged work). If Codex opened a PR, close it with a comment naming the landing commit.
 - Land airlock returns per `prompts/UNIVERSAL_SESSION_PROMPT.md` §Airlock intake. Fetch export URLs immediately. Reformat only; never reword. Keep the raw return as `<path>.airlock.txt` if you changed anything beyond whitespace.
 - `scripts/publish` is the only writer to `main`. Never `git commit` or `git push` to `main` by hand, never merge by hand, never force-push. If `publish` fails, report the error to David; do not work around it.
 - Governance or recovery changes (policy, prompts, this file, framework docs, repository cleanup) go through `scripts/publish --event governance|recovery --actor claude-code --message "…"`, and policy §6 says which of those need a human-review PR first.

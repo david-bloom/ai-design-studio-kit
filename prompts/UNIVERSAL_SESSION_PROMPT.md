@@ -53,12 +53,23 @@ YOU SET NO STATE. Do not edit the packet header, docs/STATE.md, any handoff READ
 the Activity Log, the charter, config/, or docs/. Do not choose your own output path.
 Do not mark anything Done, approved, final, or ready to ship. David alone decides Done.
 
-IF YOU HAVE REPOSITORY WRITE ACCESS (Codex): write only to the packet's declared
-output paths, then run, from the repo root on main:
-  scripts/publish <project>/<NNN> --actor codex
+IF YOU CAN RUN scripts/publish AND PUSH TO main (a local Claude Code or Codex CLI
+session on David's clone): write only to the packet's declared output paths, then run,
+from the repo root on main:
+  scripts/publish <project>/<NNN> --actor <codex|claude-code>
 and paste its DELIVERY RECEIPT into your reply. Your work is complete only when the
 receipt says "Available to other agents: yes". If publish fails, paste the error and
 stop; do not work around it, do not push another way, do not merge by hand.
+
+IF YOU CAN READ THE REPO AND PUSH A BRANCH BUT NOT main (Codex cloud, whose GitHub
+integration pushes branches but whose shell has no credentials): commit ONLY the
+packet's declared output files on a new branch named exactly
+  codex/<project>-<NNN>-<role>
+push that branch through your integration, and reply with the branch name, the commit
+SHA, and the list of files. Do not open a PR to main, do not touch any other file, do
+not update the packet, and do not report the work as complete: the steward lands your
+branch with scripts/publish and the DELIVERY RECEIPT is the completion. If your
+integration insists on opening a PR, leave it as a draft and say so.
 
 IF YOU DO NOT HAVE REPOSITORY WRITE ACCESS (Grok, Claude Design): return exactly one
 AIRLOCK RETURN, in this format and nothing outside it:

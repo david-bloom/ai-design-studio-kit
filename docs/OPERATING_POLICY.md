@@ -37,7 +37,7 @@ A handoff's output is complete only when it is **available**. A pushed branch, a
 
 - **David** — Done decisions for every track; scope and constraint changes; deleting project content; revealing deliberately withheld information; publishing outside the repo; anything the scripts cannot classify. Never routine merges.
 - **Orchestrator** (a Claude Code session with write access; Claude Design is a canvas, never the author of record) — owns the charter; picks the next handoff and its lane; writes the packet; runs `handoff-check`; dispatches; sets `accepted` or `returned`; decides brief-vs-lab-vs-Chaos; accountable for repository hygiene outcomes. Never hand-edits generated files. Never commits to `main` except through `scripts/publish`.
-- **Steward** — a scripted capability (`scripts/handoff-check`, `scripts/publish`), not a tool. Run by whichever repository-capable actor owns the landing: `codex` for Codex-produced work, `claude-code` for its own work and for all airlock returns. The steward may normalize filenames, encoding, formatting, and paths. It may not rewrite substantive content; any substantive change is a new version with its own provenance.
+- **Steward** — a scripted capability (`scripts/handoff-check`, `scripts/publish`), not a tool. Run by whichever actor can push `main` from the shell where it runs: today that is `claude-code` on David's local clone, for its own work, for Codex branch intake (§5), and for all airlock returns. Codex runs it itself only from a surface with push credentials (a local Codex CLI on the same clone), never from Codex cloud. The steward may normalize filenames, encoding, formatting, and paths. It may not rewrite substantive content; any substantive change is a new version with its own provenance.
 - **Specialists** — produce exactly the declared outputs of the named handoff. Set no lifecycle state. Edit no logs, state, index, charter, config, or governance. Choose no output location.
 - **Critic / Chaos Agent** — advisory only, always. Output goes to its own file. Never overwrites the work under review.
 
@@ -101,7 +101,11 @@ ROLE: visual-designer
 
 A session with no `HANDOFF:` line is an orientation session: it reads state and reports; it produces nothing.
 
-## 5. Airlock (actors without repository write access)
+## 5. Branch intake and airlock (actors that cannot run `publish`)
+
+**Branch intake.** An actor whose integration can push a branch but whose shell cannot push `main` (Codex cloud) commits only its declared outputs on `codex/<slug>-<NNN>-<role>` and reports branch and SHA. The steward (`claude-code`) checks those exact paths out of the branch, lands them with `publish --generated-by codex --source "branch … @ …" --content-modified none`, and deletes the branch once the receipt says available. The branch is never merged as a branch; the outputs are landed as files.
+
+**Airlock.**
 
 The specialist returns exactly one block per declared file, plus an asset block per binary, in the format given in `prompts/UNIVERSAL_SESSION_PROMPT.md` §Airlock. The steward (`claude-code`) fetches any export URL immediately, lands the files at the declared paths, and records provenance trailers (`Generated-By`, `Integrated-By`, `Integration-Type: airlock`, `Source-Artifact`, `Content-Modified`). Modification is verified by the script, not asserted: `--content-modified none` means the landed file is byte-identical to the return (a raw copy, if present, must match); `formatting-only` requires the raw return at `<output>.airlock.txt` for every landed text output and passes only if the two are identical after removing all whitespace; `substantive` is exceptional, requires the raw copy and a `--reason`, and is recorded in the commit trailers. A normal airlock landing is `none` or `formatting-only`.
 
