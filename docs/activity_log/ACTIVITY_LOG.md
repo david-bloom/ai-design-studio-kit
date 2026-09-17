@@ -75,3 +75,7 @@ Entry shape:
 - Landed @ 6d930fd: projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-bio-warmwhite.html; projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-bio-warmwhite.png; projects/project-crux/visual/mocks/option-07-challenger/warm-white/manifest.md
 - Status: dispatched → landed
 - Next: orchestrator: accept or return
+
+## 2026-09-17T21:53Z — governance — kit — claude-code
+- Landed @ 67092b5: 
+- Note: records for merged PR #8: v1 machinery retired; Policy 2.0 migration complete
