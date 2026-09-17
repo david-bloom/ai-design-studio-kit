@@ -57,3 +57,8 @@ Entry shape:
 - Landed @ efa6f8b: projects/project-crux/critic/010-review-board-check.md
 - Status: dispatched → landed
 - Next: orchestrator: accept or return
+
+## 2026-09-17T20:37Z — output-landed — project-crux/011 — claude-code
+- Landed @ 0c26287: projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-stats-warmwhite.png; projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-bio-warmwhite.png; projects/project-crux/visual/mocks/option-07-challenger/warm-white/manifest.md
+- Status: dispatched → landed
+- Next: orchestrator: accept or return
