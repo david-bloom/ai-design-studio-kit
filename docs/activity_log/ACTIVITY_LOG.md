@@ -48,3 +48,7 @@ Entry shape:
 ## 2026-09-17T19:50Z — recovery — kit — claude-code
 - Landed @ 78988ee: projects/project-crux/visual/mocks/README.md; projects/project-crux/visual/mocks/review-board.md
 - Note: Recovery: update mock library counts from six to seven for Option 07
+
+## 2026-09-17T19:53Z — recovery — kit — claude-code
+- Landed @ feb0150: projects/project-crux/visual/mocks/README.md; projects/project-crux/visual/mocks/review-board.md
+- Note: Recovery: correct mock index wording (six frozen directions plus the 007 challenger)
