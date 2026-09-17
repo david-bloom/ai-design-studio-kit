@@ -57,3 +57,17 @@ The no-character constraint is suspended for this probe only by David's explicit
 ![Three guide register comparison](option-06-three-guide-registers/working.png)
 
 The stable guide concepts, provenance, guardrails, and future exploration slots live in `../guide-concepts/`.
+
+## 07 — The Blue Hour Cabinet, challenger
+
+The Handoff 007 working-mode challenger. It is not one of the six frozen directions, and Handoff 007 did not ask for a place / overview mode.
+
+Working mode — AP Statistics, rubric specimen drawer and exposure table:
+
+![Blue Hour Cabinet working mode, AP Statistics](option-07-challenger/working-stats.png)
+
+Working mode — AP Biology, same cabinet system across subjects:
+
+![Blue Hour Cabinet working mode, AP Biology](option-07-challenger/working-bio.png)
+
+The two plates above show the original Prussian dark surround. That surround is superseded: the colour register was settled at grade 4a (warm paper-white surround) in `../007b-color-resolution.md`. The canonical grade-4a renders are `option-07-challenger/warm-white/blue-hour-stats-warmwhite.html` and `blue-hour-bio-warmwhite.html`, each self-contained and openable directly; there are no PNG plates for them.

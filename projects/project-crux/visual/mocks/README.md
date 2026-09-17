@@ -14,10 +14,13 @@ This folder turns the six frozen directions in `../004-directions.md` and the fo
 | 04 — Lantern Fold | `option-04-lantern-fold/working.html` + `.png` | `overview.html` + `.png` |
 | 05 — Say It Bright, text-only | `option-05-say-it-bright/working.html` + `.png` | `overview.html` + `.png` |
 | 06 — Say It Bright: Three Guide Registers | `option-06-three-guide-registers/working.html` + `.png` | Inherits Option 05 if advanced; deferred by Handoff 006 |
+| 07 — The Blue Hour Cabinet, challenger | `option-07-challenger/working-stats.html` + `.png`, `working-bio.html` + `.png`; canonical grade-4a renders in `option-07-challenger/warm-white/` (HTML only) | Not in scope of Handoff 007, which is a working-mode challenger |
 
 The HTML files are deterministic comps with a few local interactions for review: selecting map locations, scrubbing the Influence Lab outlier, adjusting Pocket Universe oxygen, stepping through Lantern Fold leaves, and changing Say It Bright scenes. PNGs are canonical 1440 × 900 review snapshots for GitHub and human sharing.
 
 Guide exploration is maintained separately in `../guide-concepts/`. Option 06 references stable guide IDs rather than owning the character assets.
+
+Option 07 is the Handoff 007 working-mode challenger and is not one of the six frozen directions in `../004-directions.md`. Its colour register was settled separately at grade 4a in `../007b-color-resolution.md`; the `working-stats.png` / `working-bio.png` plates show the superseded dark surround, and the files in `option-07-challenger/warm-white/` are the canonical renders.
 
 ## Boundaries
 
