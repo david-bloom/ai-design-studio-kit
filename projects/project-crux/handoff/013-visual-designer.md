@@ -1,12 +1,12 @@
 ---
 handoff: project-crux/013
 role: visual-designer
-status: ready
+status: dispatched
 lane: routine
 actor: codex
 model: unspecified
 source_sha: 49f4af4
-frozen_hash:
+frozen_hash: a05ee2fba05b7fbd79db7776f54fc61e56e1b7748639bb3376f138addf555421
 inputs:
   - projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-bio-warmwhite.html
   - projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-stats-warmwhite.html
