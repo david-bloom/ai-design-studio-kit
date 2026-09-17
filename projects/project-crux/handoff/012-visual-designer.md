@@ -1,7 +1,7 @@
 ---
 handoff: project-crux/012
 role: visual-designer
-status: dispatched
+status: blocked
 lane: routine
 actor: codex
 model: unspecified
@@ -113,3 +113,6 @@ You can push a branch but not `main`. Commit **only your two declared outputs** 
 - `blue-hour-bio-warmwhite.png` at 1440 × 900, under 500 KB, with the readout on three lines and the prediction bar and footer inside the frame.
 - `manifest.md` updated to record the resolved font stack, any substitution found, the re-render and its command, and the three explicit confirmations.
 - In your return: the branch and SHA, the font-stack report, the final byte size, whether optimization was applied, and confirmation of the three checks.
+
+## Blocked
+2026-09-17 — claude-code: Root cause is in the plate HTML (column flexbox makes each <sub> a block row), not the render environment; fonts verified loaded by Codex. Needs a packet that may modify the Bio HTML plate; the revise path arrives with PR #7.
