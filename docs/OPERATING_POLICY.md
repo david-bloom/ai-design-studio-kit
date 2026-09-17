@@ -62,6 +62,7 @@ inputs:
 outputs:
   - projects/project-crux/visual/009-example.md
 supersedes: none
+revises: none          # optional; a landed/accepted handoff whose outputs this packet overwrites
 ---
 ```
 
@@ -81,7 +82,7 @@ Everything else (branch policy, validation, approval boundaries) defaults from t
 
 A specialist sets no state. A Critic review is its own handoff; there is no `reviewed` state.
 
-**Re-delivery.** A packet's outputs must not already exist on `main`, with one exception: a packet whose `supersedes:` names a `returned` handoff may declare that handoff's output paths again and overwrite them. This is how a returned deliverable is replaced; the defective version stays in history.
+**Re-delivery and revision.** A packet's outputs must not already exist on `main`, with two exceptions. A packet whose `supersedes:` names a `returned` or `blocked` handoff may declare that handoff's output paths again and overwrite them (re-delivery; the defective version stays in history). A packet whose `revises:` names a `landed` or `accepted` handoff may declare that handoff's output paths and overwrite them (revision; the revised handoff keeps its status, and the Orchestrator's dispatch is the authorization). Revising an accepted deliverable is ordinary project work; it is not a Done decision and does not touch the human-review gate, which applies to governance and recovery events.
 
 **Freeze.** From `dispatched` onward the body above `## Amendments` is frozen at `frozen_hash`. Amendments may not change `role`, `lane`, `inputs`, or `outputs`; a change to any of those is a superseding handoff. Amendment format:
 

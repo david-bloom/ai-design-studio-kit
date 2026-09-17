@@ -75,7 +75,7 @@ regen_state() {
       for p in $(ls "projects/$slug/handoff/"[0-9][0-9][0-9]-*.md 2>/dev/null | sort); do
         hdr_present "$p" || continue; st=$(hdr_get "$p" status); id=$(hdr_get "$p" handoff)
         in_list "$st" accepted superseded && continue
-        [ "$st" = returned ] && grep -lqs "^supersedes: $id\$" "projects/$slug/handoff/"[0-9][0-9][0-9]-*.md && continue   # returned and already superseded = closed
+        in_list "$st" returned blocked && grep -lqs "^supersedes: $id\$" "projects/$slug/handoff/"[0-9][0-9][0-9]-*.md && continue   # returned/blocked and already superseded = closed
         any=1; role=$(hdr_get "$p" role); lane=$(hdr_get "$p" lane); actor=$(hdr_get "$p" actor)
         echo "| $id | $role | **$st** | $lane | $actor | $(next_action_for "$st" "$actor" "$role") |"
       done
@@ -320,7 +320,9 @@ AVAIL=yes; echo "---"; echo "DELIVERY RECEIPT"
 echo "repository:   $(git remote get-url origin)"; echo "handoff:      ${ID:-none}"; echo "event:        $EVENT"; echo "integration:  $INTEG"
 echo "main sha:     $(git rev-parse --short=7 origin/main)  (work commit $SHA_A)"
 for o in "${OUTPUTS[@]}"; do
-  if on_main "$o"; then echo "verified:     $o @ $(git log -1 --format=%h origin/main -- "$o")"
+  if on_main "$o"; then
+    if [ $EVENT = output-landed ]; then echo "verified:     $o @ $(git log -1 --format=%h origin/main -- "$o")"
+    else echo "to overwrite: $o (current @ $(git log -1 --format=%h origin/main -- "$o"); a new SHA here means landed)"; fi
   elif [ $EVENT = output-landed ]; then echo "MISSING:      $o"; AVAIL=no
   else echo "pending:      $o (not yet produced)"; fi; done
 [ $INTEG = branch ] && echo "branch:       $BR merged --no-ff and deleted" || echo "branch:       none (direct to main)"
