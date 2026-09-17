@@ -1,12 +1,12 @@
 ---
 handoff: project-crux/010
 role: critic
-status: ready
+status: dispatched
 lane: judgment
 actor: grok
-model: unspecified
+model: grok-4
 source_sha: 20bff2b
-frozen_hash:
+frozen_hash: 523d6af14191fc808d47e9a3d7ba264f0d50efe4f6a9af27dff41c2d3118c20e
 inputs:
   - projects/project-crux/charter.md
   - projects/project-crux/visual/mocks/review-board.md
