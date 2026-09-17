@@ -40,3 +40,7 @@ Entry shape:
 ## 2026-09-17T19:44Z — recovery — kit — claude-code
 - Landed @ 63f7be7: projects/project-crux/handoff/008-critic.md
 - Note: Recovery: amend handoff 008 — record provenance of critic/008-divergence-gate.md
+
+## 2026-09-17T19:49Z — recovery — kit — claude-code
+- Landed @ f4ae2fc: 
+- Note: Recovery: seven merged or superseded branches deleted; STATE regenerated
