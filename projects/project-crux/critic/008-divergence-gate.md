@@ -1,7 +1,13 @@
 # Divergence Gate 008 — Blue Hour Cabinet Challenger
 
 > **Advisory / not final / selects nothing.**  
-> Critic (Grok) review per the single-question brief in handoff 008. David alone decides. This file is additive only.
+> Critic (Grok) review per Handoff 008. David alone decides. This file is additive only.
+
+---
+
+## Color-resolution context (restated before any judgment)
+
+I understand and accept the packet’s “CD color-resolution context note”: the original dark-surround PNGs are superseded. Grade 4a (warm paper-white surround, dark chrome, Prussian→lamplight center field, sand drawers) is a **settled surface variable**. I opened and inspected the two canonical warm-white HTML plates (`blue-hour-stats-warmwhite.html` and `blue-hour-bio-warmwhite.html`). I will not re-litigate surround lightness or use the unrendered dark plates’ surround color as evidence either way. Divergence is judged on the WORLD that is constant across grades: specimen-cabinet structure, cyanotype/photogram concept, mineral thread, and exclusive anchors.
 
 ---
 
@@ -11,33 +17,50 @@
 
 ---
 
-## Defense
+## Defense of the single question
 
-The single question is whether the challenger’s *world* is genuinely divergent from the in-house synthesis and the six prior directions, or merely a reskin of one of them. Color grade (Prussian vs. the settled 4a warm-white surface variable) is treated as non-decisive; the constant world elements under test are the specimen-cabinet concept, cyanotype photogram medium, hand-couched mineral thread, and the exclusive scoring anchors (solar registration flower / fired-clay severed filament).
+**Genuinely divergent, or a reskin?**
 
-### Author’s four-feature thumbnail falsifiability test
+The plates I viewed (warm-white grade 4a) show a three-column working shell whose skin and soul are not a recoloring or collage of the in-house synthesis or of any of the six directions in `004-directions.md`.
 
-The write-up’s own falsifiability claim lists four features that must survive thumbnail comparison:
+### Against 007’s own anti-convergence protocol
 
-1. **Predominantly Prussian-blue cyanotype field** — **Pass.** Both plates open as deep blue exposure tables. The field is the dominant surface, not a tint applied to a cream or parchment base. At thumbnail the blue mass is the first thing that reads.
-2. **Pale exposure silhouettes** — **Fail (partial).** The diagrams are clean, high-contrast line-and-fill science graphics. They do not read as light-exposed cloth photograms with the characteristic soft bloom, chemical irregularity, or botanical silhouette quality the medium claim asserts. The “photogram” is more conceptual label than rendered craft on the plates themselves.
-3. **Rectilinear specimen drawers** — **Pass.** Left rubric drawer and right negative-rack sleeves are explicitly drawer/sleeve geometry with quiet edges and label hierarchy. They are legible as cabinet furniture even at small size and do not match Soft Landing’s floating cards, Lantern Fold’s folio leaves, or the synthesis’s warm panels.
-4. **One visibly tacked mineral thread crossing the scientific model** — **Pass.** The cyan causal trace is present, labeled, and functionally tied to the manipulation (point → fit → statistics; concentration → water potential → cell volume). It is a continuous, single-path interaction language that none of the six directions used.
+**1. Four disqualifiers**
 
-**Score: 3 / 4 features survive.** The missing feature is the one that was supposed to carry the picture-book tactility of the cyanotype medium. The plates therefore deliver a coherent *cabinet + thread* world more strongly than a fully realized cyanotype world.
+- Not merely “soft and warm”: the center remains a high-contrast Prussian exposure table; the drawers are specimen furniture, not soft-card islands. **Clears.**
+- Not the synthesis palette family: even under the settled warm-white surround, the dominant center field is still deep cyanotype blue with mineral-cyan interaction language. The synthesis is warm-cream / muted violet-coral / soft-serif paper. **Clears.**
+- Not mistakable for one of the six or the synthesis in a lineup: no prior direction uses specimen drawers + cyanotype field + single continuous mineral thread as the causal interaction language. Soft Landing = floating cards; Draw the Door = hand-drawn routes on canvas; Pocket Universe = jewel continuous field; Lantern Fold = parchment accordion; Say It Bright = poster scenes; character option = characters. **Clears.**
+- Whimsy carried by craft/medium/voice rather than mascots/toy-colors/rounded-everything/reward-motion/emoji: the plates contain none of the forbidden devices. Wonder is attempted via the cabinet metaphor and the thread. **Clears** (with the craft-quality caveat below).
+
+**2. Mandatory net-new signature and named tactile craft**
+
+The claimed medium is cyanotype photogram + hand-couched thread. The thread is real and functional on both plates (visible, labeled, tied to the manipulation). The specimen-drawer system is real. The cyanotype claim is only partially rendered: the center fields are deep blue and labeled “Exposure Table,” but the diagrams themselves are clean vector science graphics rather than light-exposed cloth with chemical bloom or irregular silhouette quality. **Severity: Notable** — the medium specificity is stronger in the written direction than on the plates. Still net-new relative to the six; it is not dressed-up Soft Landing or Lantern Fold.
+
+**3. Falsifiability of the author’s own distinctiveness paragraph**
+
+The four-feature thumbnail claim is checkable, not a mood statement. Applied to the warm-white plates I actually saw:
+
+| Feature | Result |
+|---------|--------|
+| Predominantly Prussian-blue cyanotype field (center) | **Pass** — center remains the dominant blue mass |
+| Pale exposure silhouettes | **Fail (partial)** — diagrams read as ordinary high-contrast science illustration |
+| Rectilinear specimen drawers | **Pass** — left and right panels are drawer/sleeve geometry |
+| One visibly tacked mineral thread | **Pass** — present, continuous, functionally labeled on both Stats and Bio |
+
+3/4 survive under the settled color grade. The claim is therefore partially falsified on craft execution but not on world identity.
 
 ### Reskin-stress paragraph
 
-If the Prussian field is swapped for the settled warm-white grade, does the challenger collapse into the synthesis or into any of the six? No. The synthesis is described as warm-cream / muted violet-coral / soft-serif paper; removing blue does not produce that surface language. Soft Landing remains card-islands; Draw the Door remains hand-drawn routes on canvas without sewn causal traces or specimen drawers; Pocket Universe remains jewel-dark continuous field; Lantern Fold remains parchment accordion; Say It Bright remains poster typography and scene steps; the character option is character-led. The three-column bones are shared with the synthesis by design (the packet fixed them), but the world that skins those bones—cabinet drawers, exclusive flower/filament anchors, single mineral thread as interaction trace—is not a re-coloring of any prior direction. The plates are not a reskin.
+Holding the warm-white surround fixed (the settled grade), does the remaining world collapse into the synthesis or any of the six? No. The synthesis occupies warm-cream panels with muted violet-coral and soft-serif paper; the Blue Hour plates keep a Prussian exposure-table center, exclusive solar-flower / fired-clay-filament anchors, and a single mineral-cyan causal thread that none of the six used. Soft Landing’s card islands, Draw the Door’s hand-drawn routes, Pocket Universe’s continuous jewel field, Lantern Fold’s parchment leaves, and Say It Bright’s poster steps remain visually distinct even when the surround is the same warm paper. The three-column bones are shared by design (Handoff 007 fixed them); the skin and interaction language that occupy those bones are not a reskin.
 
 ### Secondary doubts (weighed, not allowed to displace the single question)
 
-- **Craft rendered vs. asserted.** The cyanotype medium is asserted more than rendered. The diagrams lack the photographic exposure quality that would make “photogram” undeniable at a glance. This is a real craft gap; it weakens the whimsy claim but does not turn the world into a reskin of something that already exists.
-- **Register hit.** The cool, nocturnal, scientific-cabinet register is distinct from the warm-generic synthesis and from Soft Landing’s restorative calm. Whether it ultimately supplies the “children’s-literature comfort a nervous student wants to open” is a separate taste and user-test question; on the divergence axis it clears the prior set.
-- **Signature-vs-comfort trade.** The plates prioritize a nameable signature (Blue Hour Cabinet / cyan thread / specimen drawers) over immediate soft comfort. That is the intended trade of the challenger brief. It does not convert the work into a reskin.
+- **Craft rendered vs. asserted (Notable):** the cyanotype photogram quality is asserted more strongly in prose than rendered on the plates. This weakens the “children’s-literature tactility via medium” claim but does not convert the world into a prior direction.
+- **Register hit:** the cool scientific-cabinet center under a warm surround is a deliberate hybrid. Whether it ultimately supplies the comfort a nervous student wants is a later taste/user-test question; on the divergence axis it is distinct from the warm-generic synthesis.
+- **Signature-vs-comfort trade:** the plates prioritize a nameable signature (Blue Hour Cabinet / specimen drawers / mineral thread) over immediate soft comfort. That is the brief’s intended trade and does not make the work a reskin.
 
-### Judgment of the plates, not the write-up’s ambition
+### Final note on the plates actually judged
 
-The plates show a usable three-column working mode with exclusive scoring anchors, a clear help ladder, and a functional mineral-thread interaction language that generalizes from Statistics to Biology. The world is coherent and visually ownable. The single place the plates fall short of the write-up is the photogram craft itself—the silhouettes read as ordinary science illustration rather than light-exposed cloth. That shortfall is a rendering gap inside an otherwise divergent world, not evidence that the world is a reskin of the synthesis or of any of the six.
+I judged the two warm-white HTML plates I fetched and opened. They deliver a coherent, ownable working-mode world whose structural and interaction language are not present in the synthesis or the six prior directions. The single material shortfall is photogram craft fidelity. That shortfall is a rendering gap inside a divergent world, not evidence of reskin.
 
-**Verdict remains: Divergent.**
+**Verdict: Divergent.**
