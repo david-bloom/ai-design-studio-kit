@@ -66,3 +66,7 @@ Entry shape:
 ## 2026-09-17T20:52Z — governance — kit — claude-code
 - Landed @ 795872b: 
 - Note: records for merged PR #6: pilot script fixes (re-delivery, whole-return raw files, receipt wording)
+
+## 2026-09-17T21:29Z — governance — kit — claude-code
+- Landed @ 6d9d032: 
+- Note: records for merged PR #7: revises field, superseding blocked handoffs
