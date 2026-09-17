@@ -28,3 +28,7 @@ Entry shape:
 ## 2026-09-17T19:42Z — recovery — kit — claude-code
 - Landed @ 6469853: projects/project-crux/visual/001-directions.md
 - Note: Recovery: land visual/001-directions.md from stranded branch (Codex, 2026-09-15) with historical note
+
+## 2026-09-17T19:43Z — recovery — kit — claude-code
+- Landed @ e7c0048: projects/project-crux/visual/mocks/README.md; projects/project-crux/visual/mocks/review-board.md
+- Note: Recovery: index Option 07 (Blue Hour Cabinet challenger, incl. warm-white grade-4a renders) in mocks README and review board
