@@ -32,3 +32,7 @@ Entry shape:
 ## 2026-09-17T19:43Z — recovery — kit — claude-code
 - Landed @ e7c0048: projects/project-crux/visual/mocks/README.md; projects/project-crux/visual/mocks/review-board.md
 - Note: Recovery: index Option 07 (Blue Hour Cabinet challenger, incl. warm-white grade-4a renders) in mocks README and review board
+
+## 2026-09-17T19:43Z — recovery — kit — claude-code
+- Landed @ 3c36729: projects/project-crux/handoff/007-visual-designer.md
+- Note: Recovery: amend handoff 007 — resolve guide-concepts/ path, note mocks now on main, record that the in-house synthesis has no file
