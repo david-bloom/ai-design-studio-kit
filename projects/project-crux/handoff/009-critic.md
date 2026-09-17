@@ -1,12 +1,12 @@
 ---
 handoff: project-crux/009
 role: critic
-status: ready
+status: dispatched
 lane: routine
 actor: claude-code
 model: unspecified
 source_sha: 899c3c2
-frozen_hash:
+frozen_hash: fdb8ee352d097dc80e9e4e0e4846fc7b9f190357012c71ec6cd7406a7821373c
 inputs:
   - projects/project-crux/charter.md
   - projects/project-crux/critic/005-review.md
