@@ -2,7 +2,7 @@
 
 > Status: advisory review material — not final, approved, or ready to ship. David alone decides when Visual Design or UX is done.
 
-This folder turns the six frozen directions in `../004-directions.md` and the four additive place modes in `../006-place-mode.md` into inspectable laptop-first review plates. GitHub is the source of truth.
+This folder turns the seven frozen directions in `../004-directions.md` and the four additive place modes in `../006-place-mode.md` into inspectable laptop-first review plates. GitHub is the source of truth.
 
 ## Review set
 

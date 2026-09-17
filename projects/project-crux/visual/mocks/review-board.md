@@ -1,4 +1,4 @@
-# Project Crux — six-direction visual review board
+# Project Crux — seven-direction visual review board
 
 > Advisory review set. These renderings are not final or approved, and they do not indicate a selection. David alone decides when Visual Design or UX is done.
 
