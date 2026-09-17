@@ -1,7 +1,7 @@
 ---
 handoff: project-crux/006
 role: visual-designer
-status: landed
+status: accepted
 lane: routine
 actor: codex
 model: unspecified
