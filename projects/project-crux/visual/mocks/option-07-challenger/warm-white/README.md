@@ -1,0 +1,1 @@
+CD's canonical grade-4a "warm white" renders of the Handoff-007 challenger (Stats + Bio), self-contained. Sol's Prussian originals are the sibling working-stats/working-bio files. Advisory — selects nothing.
