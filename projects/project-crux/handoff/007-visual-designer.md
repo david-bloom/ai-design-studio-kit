@@ -17,6 +17,8 @@ outputs:
   - projects/project-crux/visual/mocks/option-07-challenger/working-stats.png
   - projects/project-crux/visual/mocks/option-07-challenger/working-bio.html
   - projects/project-crux/visual/mocks/option-07-challenger/working-bio.png
+  - projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-stats-warmwhite.html
+  - projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-bio-warmwhite.html
 supersedes: none
 legacy: true
 ---
@@ -126,5 +128,14 @@ Change:
 - **`guide-concepts/` resolves to `projects/project-crux/visual/guide-concepts/`.** That directory was stranded on the unmerged PR #3 branch when this packet was written; it is on `main` as of the PR #3 recovery landing (work commit `10d72f8`, 2026-09-17).
 - **The mock library this packet references is on `main`** as of the same recovery landing: `projects/project-crux/visual/mocks/` for Options 01–06, plus the shared renderer and fixtures. Option 07's own plates were already on `main` as declared outputs of this packet.
 - **The in-house three-column synthesis this packet argues against has no file in this repository.** It exists only as the prose description inside this packet's own "Why 007 exists" section. It is therefore out of record: it cannot be opened, cited, or compared against as an artifact unless David supplies it. Any head-to-head between the synthesis and the Blue Hour Cabinet challenger is, on the current record, a comparison against a description rather than against a design file.
+
+Specialist notified: no
+
+### 2026-09-17 — claude-code (legacy header correction)
+
+Reason: Legacy packet (`legacy: true`, no `frozen_hash`) whose header the Policy 2.0 migration wrote after the fact. Correcting it to record what 007 actually delivered is bookkeeping, not a scope change under §4.
+
+Change:
+- Added to `outputs`: `projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-stats-warmwhite.html` and `projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-bio-warmwhite.html`. These canonical grade-4a plates, landed 2026-09-16 via `007b-color-resolution.md` from Claude Design's export, are part of 007's accepted deliverable set; recorded so a revising packet can name them.
 
 Specialist notified: no
