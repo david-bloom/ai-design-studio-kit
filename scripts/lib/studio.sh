@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Shared helpers for scripts/handoff-check and scripts/publish.
-# Bash + git + awk + sed + sha256sum only. No other dependencies.
+# Bash 3.2+ (macOS default) + git + awk + sed. No other dependencies; GNU/BSD differences are wrapped below.
 
 POLICY_VERSION="2.0"
 BASELINE_TAG="design-studio-operating-model-v1"
@@ -13,6 +13,14 @@ LIMIT_IMAGE=512000      # 500 KB
 LIMIT_FILE=2097152      # 2 MB
 LIMIT_COMMIT=10485760   # 10 MB
 STALE_SECONDS=172800    # 48 h
+
+# portable wrappers (GNU coreutils vs. BSD/macOS)
+sha256() { if command -v sha256sum >/dev/null 2>&1; then sha256sum | cut -c1-64; else shasum -a 256 | cut -c1-64; fi; }
+fsize()  { stat -c %s "$1" 2>/dev/null || stat -f %z "$1"; }
+epoch_to_date() { date -u -d @"$1" +%Y-%m-%d 2>/dev/null || date -u -r "$1" +%Y-%m-%d; }
+lower()  { printf '%s' "$1" | tr '[:upper:]' '[:lower:]'; }
+# read lines from a command into an array (bash 3.2 has no mapfile): read_into ARR cmd args...
+read_into() { local _n=$1; shift; eval "$_n=()"; local _l; while IFS= read -r _l; do eval "$_n+=(\"\$_l\")"; done < <("$@"); }
 
 RED=$'\033[31m'; GRN=$'\033[32m'; YEL=$'\033[33m'; NC=$'\033[0m'
 FAILS=0; WARNS=0
@@ -64,7 +72,7 @@ body_frozen() {  # file -> body after front matter, up to (excluding) "## Amendm
 frozen_hash() {  # file -> sha256 over role/lane/inputs/outputs + frozen body
   { echo "role=$(hdr_get "$1" role)"; echo "lane=$(hdr_get "$1" lane)"
     echo "inputs:"; hdr_list "$1" inputs; echo "outputs:"; hdr_list "$1" outputs
-    echo "body:"; body_frozen "$1"; } | sha256sum | cut -c1-64
+    echo "body:"; body_frozen "$1"; } | sha256
 }
 
 # --- handoff id / path helpers ---

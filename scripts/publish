@@ -19,7 +19,7 @@
 #   --source "<desc>"         airlock landing: where it came from (paste, serve URL, export)
 #   --content-modified none|formatting-only|substantive   (airlock; default none; verified against <output>.airlock.txt)
 #   --allow-large             override size limits (needs --reason)
-set -euo pipefail
+set -eo pipefail
 cd "$(git rev-parse --show-toplevel)"
 . scripts/lib/studio.sh
 
@@ -92,7 +92,7 @@ regen_state() {
       git merge-base --is-ancestor "$ref" origin/main 2>/dev/null && continue
       any=1; ahead=$(git rev-list --count origin/main.."$ref"); age=$(( $(date +%s) - ts ))
       flag=""; [ $age -gt $STALE_SECONDS ] && flag=" **STALE** (>48h)"
-      echo "- \`${ref#origin/}\` — $ahead commit(s) ahead, last push $(date -u -d @"$ts" +%Y-%m-%d)$flag"
+      echo "- \`${ref#origin/}\` — $ahead commit(s) ahead, last push $(epoch_to_date "$ts")$flag"
     done < <(git for-each-ref refs/remotes/origin --format='%(refname:short) %(committerdate:unix)')
     [ $any = 1 ] || echo "- none"
     echo; echo "Open PRs are not derivable offline — check GitHub. Every branch must end merged-and-deleted, superseded-and-deleted, or blocked; a blocked branch's owner and next action are recorded in the \`## Blocked\` section of the handoff that owns it (policy §6)."; echo
@@ -137,7 +137,7 @@ PKT=""; STATUS=""; SLUG=""; NNN=""; FROLE=""; PACTOR=""; PLANE=""; declare -a OU
 if [ -n "$ID" ]; then
   PKT=$(packet_from_id "$ID") || die "no single packet for id $ID"
   path_parts "$PKT" || die "bad packet path $PKT"
-  STATUS=$(hdr_get "$PKT" status); PACTOR=$(hdr_get "$PKT" actor); PLANE=$(hdr_get "$PKT" lane); mapfile -t OUTPUTS < <(hdr_list "$PKT" outputs)
+  STATUS=$(hdr_get "$PKT" status); PACTOR=$(hdr_get "$PKT" actor); PLANE=$(hdr_get "$PKT" lane); read_into OUTPUTS hdr_list "$PKT" outputs
 fi
 GEN_FILES=(docs/STATE.md docs/activity_log/ACTIVITY_LOG.md); for s in $(ls projects/); do [ -d "projects/$s/handoff" ] && GEN_FILES+=("projects/$s/handoff/README.md"); done
 
@@ -223,7 +223,7 @@ if [ -n "$GENBY" ] && [ "$GENBY" != "$ACTOR" ]; then
     case $CMOD in
       none) if [ -f "$raw" ]; then cmp -s "$raw" "$o" || die "content-modified=none but $o differs from its raw return $raw"; fi;;
       formatting-only) [ -f "$raw" ] || die "content-modified=formatting-only requires the raw return at $raw for each landed output"
-        [ "$(tr -d '[:space:]' < "$raw" | sha256sum)" = "$(tr -d '[:space:]' < "$o" | sha256sum)" ] || die "$o differs from $raw beyond whitespace: that is substantive, not formatting-only";;
+        [ "$(tr -d '[:space:]' < "$raw" | sha256)" = "$(tr -d '[:space:]' < "$o" | sha256)" ] || die "$o differs from $raw beyond whitespace: that is substantive, not formatting-only";;
       substantive) [ -f "$raw" ] || die "content-modified=substantive requires the raw return at $raw for each landed output";;
     esac
   done
@@ -232,8 +232,8 @@ fi
 
 # --- size policy
 total=0; big=""
-for c in "${WORK[@]}"; do [ -f "$c" ] || continue; sz=$(stat -c %s "$c"); total=$((total+sz))
-  case "${c,,}" in *.png|*.jpg|*.jpeg|*.gif|*.webp) lim=$LIMIT_IMAGE;; *) lim=$LIMIT_FILE;; esac
+for c in "${WORK[@]}"; do [ -f "$c" ] || continue; sz=$(fsize "$c"); total=$((total+sz))
+  case "$(lower "$c")" in *.png|*.jpg|*.jpeg|*.gif|*.webp) lim=$LIMIT_IMAGE;; *) lim=$LIMIT_FILE;; esac
   [ $sz -gt $lim ] && big="$big $c($((sz/1024))KB)"; done
 [ $total -gt $LIMIT_COMMIT ] && big="$big TOTAL($((total/1024))KB)"
 if [ -n "$big" ]; then

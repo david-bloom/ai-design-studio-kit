@@ -8,7 +8,7 @@
 # dispatched -> validation + freeze check against frozen_hash
 # later      -> freeze check + report only
 # exit 0 = pass, 1 = fail, 2 = usage/error
-set -euo pipefail
+set -eo pipefail
 cd "$(git rev-parse --show-toplevel)"
 . scripts/lib/studio.sh
 
@@ -27,7 +27,7 @@ ID=$(hdr_get "$PKT" handoff); ROLE=$(hdr_get "$PKT" role); STATUS=$(hdr_get "$PK
 LANE=$(hdr_get "$PKT" lane); ACTOR=$(hdr_get "$PKT" actor); MODEL=$(hdr_get "$PKT" model)
 SUP=$(hdr_get "$PKT" supersedes); LEGACY=$(hdr_get "$PKT" legacy); SRC=$(hdr_get "$PKT" source_sha)
 FROZEN=$(hdr_get "$PKT" frozen_hash)
-mapfile -t INPUTS < <(hdr_list "$PKT" inputs); mapfile -t OUTPUTS < <(hdr_list "$PKT" outputs)
+read_into INPUTS hdr_list "$PKT" inputs; read_into OUTPUTS hdr_list "$PKT" outputs
 
 for k in handoff role status lane actor supersedes; do
   [ -n "$(hdr_get "$PKT" $k)" ] && ok "header: $k = $(hdr_get "$PKT" $k)" || fail "header: missing $k"
