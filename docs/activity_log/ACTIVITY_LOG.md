@@ -62,3 +62,7 @@ Entry shape:
 - Landed @ 0c26287: projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-stats-warmwhite.png; projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-bio-warmwhite.png; projects/project-crux/visual/mocks/option-07-challenger/warm-white/manifest.md
 - Status: dispatched → landed
 - Next: orchestrator: accept or return
+
+## 2026-09-17T20:52Z — governance — kit — claude-code
+- Landed @ 795872b: 
+- Note: records for merged PR #6: pilot script fixes (re-delivery, whole-return raw files, receipt wording)
