@@ -36,3 +36,7 @@ Entry shape:
 ## 2026-09-17T19:43Z — recovery — kit — claude-code
 - Landed @ 3c36729: projects/project-crux/handoff/007-visual-designer.md
 - Note: Recovery: amend handoff 007 — resolve guide-concepts/ path, note mocks now on main, record that the in-house synthesis has no file
+
+## 2026-09-17T19:44Z — recovery — kit — claude-code
+- Landed @ 63f7be7: projects/project-crux/handoff/008-critic.md
+- Note: Recovery: amend handoff 008 — record provenance of critic/008-divergence-gate.md
