@@ -20,3 +20,7 @@ Entry shape:
 - Landed @ 3090784: projects/project-crux/critic/009-decision-brief.md
 - Status: dispatched → landed
 - Next: orchestrator: accept or return
+
+## 2026-09-17T19:41Z — recovery — kit — claude-code
+- Landed @ 10d72f8: projects/project-crux/visual/guide-concepts/GUIDE_BRIEF.md; projects/project-crux/visual/guide-concepts/README.md; projects/project-crux/visual/guide-concepts/comparisons/register-comparison-001.md; projects/project-crux/visual/guide-concepts/comparisons/register-comparison-001.png; projects/project-crux/visual/guide-concepts/concepts/GC-001-fizzbit/concept.md; projects/project-crux/visual/guide-concepts/concepts/GC-001-fizzbit/contact-sheet.png; projects/project-crux/visual/guide-concepts/concepts/GC-002-moxie-quill/concept.md; projects/project-crux/visual/guide-concepts/concepts/GC-002-moxie-quill/contact-sheet.png … (42 files)
+- Note: Recovery: land PR #3 mock library and guide-concept library (Codex, 2026-09-16)
