@@ -84,6 +84,8 @@ A specialist sets no state. A Critic review is its own handoff; there is no `rev
 
 **Re-delivery and revision.** A packet's outputs must not already exist on `main`, with two exceptions. A packet whose `supersedes:` names a `returned` or `blocked` handoff may declare that handoff's output paths again and overwrite them (re-delivery; the defective version stays in history). A packet whose `revises:` names a `landed` or `accepted` handoff may declare that handoff's output paths and overwrite them (revision; the revised handoff keeps its status, and the Orchestrator's dispatch is the authorization). Revising an accepted deliverable is ordinary project work; it is not a Done decision and does not touch the human-review gate, which applies to governance and recovery events.
 
+**Legacy headers.** Packets marked `legacy: true` (001–008, written pre-policy) had their headers added by the migration after the fact and carry no frozen hash. The Orchestrator may correct a legacy header, including its `outputs`, to record what history shows that handoff actually delivered; each correction is noted under `## Amendments`. This is bookkeeping, not a scope change, and applies to legacy packets only.
+
 **Freeze.** From `dispatched` onward the body above `## Amendments` is frozen at `frozen_hash`. Amendments may not change `role`, `lane`, `inputs`, or `outputs`; a change to any of those is a superseding handoff. Amendment format:
 
 ```markdown
@@ -132,7 +134,7 @@ Keep canonical review assets in git; no LFS until every participating tool is co
 - `docs/STATE.md` — **generated** by `publish`; never hand-edited. The workflow commit it was generated through (the records commit carrying the file follows it on `main`, so the file cannot name its own SHA), per-project open handoffs with derived next action, proposed decisions awaiting David, unmerged and stale branches.
 - `projects/<slug>/handoff/README.md` — **generated** index of that project's handoffs (ID, role, status, lane, actor, output @ SHA).
 - `docs/activity_log/ACTIVITY_LOG.md` — the one operational log. One compact entry per `output-landed`, `governance`, or `recovery` event, written by `publish`. No session diaries.
-- `docs/activity_log/DECISIONS_LOG.md` — real decisions only, with the approval recorded inside the entry. `Status: Proposed` entries appear in `STATE.md` as pending David.
+- `docs/activity_log/DECISIONS_LOG.md` — real decisions only, with the approval recorded inside the entry. `Status: Proposed` entries appear in `STATE.md` as pending David. The v1 approvals log, changelog, task template, engineering task workflow, and per-tool prompts were retired after the migration pilots (DECISION-0006); their history is in git and in `docs/activity_log/archive/`.
 - The charter's Stage log is historical as of cutover and is no longer updated; the handoff index replaces it. The charter's changelog remains for charter content changes.
 
 ## 9. Session start

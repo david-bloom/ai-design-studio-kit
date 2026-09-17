@@ -25,7 +25,7 @@ docs/
   PROJECT_CHARTER_TEMPLATE.md  the seed document every project starts from
   OPERATING_POLICY.md          the operational rulebook (Policy-Version 2.0): availability, roles, handoff lifecycle, git policy
   STATE.md                     generated current state — what a new session reads first
-  team_charter/                retained principles from ai-project-operating-kit (core only; the rest is superseded)
+  team_charter/                AI_COLLABORATION_RULES.md: the principles retained from ai-project-operating-kit
   activity_log/                generated activity log, decisions log, archive of the v1 log
 config/
   agent-models.yaml            role → model mapping, with rationale, reviewed as models evolve
