@@ -1,5 +1,7 @@
 # Cross-Lab Specialist Agent Prompt
 
+> **Superseded (Policy-Version 2.0, 2026-09-17).** This file is retained for history only and is no longer operative in this kit; `docs/OPERATING_POLICY.md` governs. It will be deleted after the migration pilots (see `docs/activity_log/DECISIONS_LOG.md` DECISION-0006). Do not follow it.
+
 > **Status: Superseded (2026-09-16).** Replaced by `prompts/UNIVERSAL_SESSION_PROMPT.md` for
 > project-level (`projects/<slug>/`) work — that file is now what gets pasted into every tool's
 > persistent project instructions, including Claude/`/design`. It does the same job this file did

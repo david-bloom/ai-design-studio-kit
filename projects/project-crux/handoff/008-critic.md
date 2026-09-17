@@ -1,3 +1,26 @@
+---
+handoff: project-crux/008
+role: critic
+status: landed
+lane: judgment
+actor: grok
+model: unspecified
+source_sha:
+frozen_hash:
+inputs:
+  - projects/project-crux/charter.md
+  - projects/project-crux/visual/007-working-mode-challenger.md
+  - projects/project-crux/handoff/007-visual-designer.md
+  - projects/project-crux/visual/004-directions.md
+  - projects/project-crux/visual/007b-color-resolution.md
+  - projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-stats-warmwhite.html
+  - projects/project-crux/visual/mocks/option-07-challenger/warm-white/blue-hour-bio-warmwhite.html
+outputs:
+  - projects/project-crux/critic/008-divergence-gate.md
+supersedes: none
+legacy: true
+---
+
 # Handoff Packet 008 — Critic (Divergence Gate)
 
 > **Destination in repo:** `projects/project-crux/handoff/008-critic.md`

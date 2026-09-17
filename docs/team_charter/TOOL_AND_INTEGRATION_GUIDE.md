@@ -1,5 +1,7 @@
 # AI Design Studio Kit Tool and Integration Guide
 
+> **Superseded (Policy-Version 2.0, 2026-09-17).** This file is retained for history only and is no longer operative in this kit; `docs/OPERATING_POLICY.md` governs. It will be deleted after the migration pilots (see `docs/activity_log/DECISIONS_LOG.md` DECISION-0006). Do not follow it.
+
 **Status:** Draft / Approved  
 **Owner:** David Bloom
 

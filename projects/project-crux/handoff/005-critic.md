@@ -1,3 +1,21 @@
+---
+handoff: project-crux/005
+role: critic
+status: accepted
+lane: judgment
+actor: grok
+model: unspecified
+source_sha:
+frozen_hash:
+inputs:
+  - projects/project-crux/charter.md
+  - projects/project-crux/visual/004-directions.md
+outputs:
+  - projects/project-crux/critic/005-review.md
+supersedes: none
+legacy: true
+---
+
 # Handoff Packet 005 — Critic
 
 > **Destination in repo:** `projects/project-crux/handoff/005-critic.md`

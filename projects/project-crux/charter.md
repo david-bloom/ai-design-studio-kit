@@ -100,6 +100,8 @@ Snapshot of `config/agent-models.yaml` as of 2026-09-16 — see that file for cu
 
 ## Stage log
 
+> **Historical as of Policy-Version 2.0 (2026-09-17).** No longer updated. Operational history and status now live in the generated `projects/project-crux/handoff/README.md`; current state in `docs/STATE.md`. Entries below are preserved verbatim. Known corrections to this narrative: `visual/001-directions.md` was never missing, it sits on the unmerged branch `codex/project-crux-visual-directions` (commit `ba6b5f0`); the `mocks/`, `guide-concepts/`, and review-board files referenced by handoff 007 exist on the open PR #3 branch `codex/project-crux-visual-mocks` at `projects/project-crux/visual/{mocks,guide-concepts}/`; and Grok's handoff 008 output was already on `main` (commit `0ce5ea0`) when the last entry below said it had not yet run.
+
 - `2026-09-15` — Charter shell created. Process constraints (clean-room, session isolation) recorded ahead of brief. Awaiting pedagogy/features brief from David.
 - `2026-09-15` — Project renamed `design-agency` → `project-crux`; charter reworded to remove the source product's name from repo content entirely.
 - `2026-09-15` — David worked with a Claude Design session in the Creative Director role to draft the brief.

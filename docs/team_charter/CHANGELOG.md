@@ -1,5 +1,7 @@
 # Team Charter Changelog
 
+> **Superseded (Policy-Version 2.0, 2026-09-17).** This file is retained for history only and is no longer operative in this kit; `docs/OPERATING_POLICY.md` governs. It will be deleted after the migration pilots (see `docs/activity_log/DECISIONS_LOG.md` DECISION-0006). Do not follow it.
+
 Append-only chronological log, one entry per material change to `docs/team_charter/`. Checked on every `SYNC`. Per-doc `Version`/`Last Updated` headers are not used — git history plus the `APPROVAL-NNNN` / `DECISION-NNNN` references below are sufficient.
 
 ## YYYY-MM-DD — [Doc Name(s)]

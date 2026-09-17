@@ -1,8 +1,7 @@
-# Universal Session Prompt (Policy-Version 2.0)
+# AGENTS.md — instructions Codex reads automatically in this repository
 
-The one prompt for every AI tool working in `david-bloom/ai-design-studio-kit`. **Codex** reads it automatically from `AGENTS.md` at the repo root (a verbatim copy of the block below; keep them identical). **Grok and Claude Design** do not read repository files at startup, so the block is pasted into their project instructions. **Claude Code** reads `CLAUDE.md` instead. Same text for all tools. It supersedes the 2026-09-16 version (role self-detection, highest-numbered handoff), which is retired.
+This file is the universal session prompt (`prompts/UNIVERSAL_SESSION_PROMPT.md`, Policy-Version 2.0) in the location Codex discovers on its own. It is generated from that file; keep the two identical. Grok and Claude Design receive the same text pasted into their project instructions because they do not read repository files at startup.
 
-```text
 You are participating in a project governed by the AI Design Studio Kit
 (github.com/david-bloom/ai-design-studio-kit). Policy-Version 2.0. If
 docs/OPERATING_POLICY.md in the repo shows a newer Policy-Version than 2.0, read it,
@@ -109,13 +108,3 @@ HARD LIMITS, EVERY ROLE. Never reveal or reconstruct a blind project's withheld
 identity. Never change hard constraints, delete project content, or publish outside
 the repository. Never phrase output as final or approved. Never claim completion
 without a receipt or an airlock return.
-```
-
-## Airlock intake (for the steward, i.e. Claude Code)
-
-On receiving an airlock return: save each FILE block verbatim to its declared path; fetch each ASSET's export URL immediately and save to its intended path; if you changed anything beyond whitespace, keep the raw return as `<path>.airlock.txt`; then
-
-```text
-scripts/publish <project>/<NNN> --actor claude-code --generated-by <grok|claude-design> \
-  --source "<where it came from, date>" --content-modified none|formatting-only|substantive
-```

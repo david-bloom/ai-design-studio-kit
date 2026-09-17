@@ -1,5 +1,7 @@
 # Claude New Session Prompt
 
+> **Superseded (Policy-Version 2.0, 2026-09-17).** This file is retained for history only and is no longer operative in this kit; `docs/OPERATING_POLICY.md` governs. It will be deleted after the migration pilots (see `docs/activity_log/DECISIONS_LOG.md` DECISION-0006). Do not follow it.
+
 ```text
 Before doing any work, read this project's current GitHub documentation. GitHub documentation is the source of truth. Do not rely on prior chat memory unless it has been recorded in GitHub.
 

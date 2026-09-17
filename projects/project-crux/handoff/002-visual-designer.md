@@ -1,3 +1,21 @@
+---
+handoff: project-crux/002
+role: visual-designer
+status: accepted
+lane: divergence
+actor: codex
+model: unspecified
+source_sha:
+frozen_hash:
+inputs:
+  - projects/project-crux/charter.md
+  - projects/project-crux/visual/001-directions.md
+outputs:
+  - projects/project-crux/visual/002-directions.md
+supersedes: project-crux/001
+legacy: true
+---
+
 # Handoff Packet 002 — Visual Designer
 
 > Drafted by the Creative Director (Claude Design, `/design`) for David to commit. Supersedes the *task* of 001 (produce first-pass directions); 001 remains in the repo as prior context and as the record of what convergence to avoid.
