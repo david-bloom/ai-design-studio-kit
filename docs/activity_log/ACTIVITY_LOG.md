@@ -52,3 +52,8 @@ Entry shape:
 ## 2026-09-17T19:53Z — recovery — kit — claude-code
 - Landed @ feb0150: projects/project-crux/visual/mocks/README.md; projects/project-crux/visual/mocks/review-board.md
 - Note: Recovery: correct mock index wording (six frozen directions plus the 007 challenger)
+
+## 2026-09-17T20:05Z — output-landed — project-crux/010 — claude-code
+- Landed @ efa6f8b: projects/project-crux/critic/010-review-board-check.md
+- Status: dispatched → landed
+- Next: orchestrator: accept or return
