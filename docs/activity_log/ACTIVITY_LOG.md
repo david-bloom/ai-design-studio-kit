@@ -11,3 +11,7 @@ Entry shape:
 - Next: <derived next action>
 - Note: <message, if any>
 ```
+
+## 2026-09-17T19:22Z — governance — kit — claude-code
+- Landed @ 65bda0d: docs/activity_log/DECISIONS_LOG.md
+- Note: Cutover to Policy 2.0: DECISION-0006 approved, state regenerated
