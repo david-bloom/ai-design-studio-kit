@@ -167,3 +167,33 @@ Updated: `config/agent-models.yaml` (both rows' `primary`, `alternates`, and the
 ### Risks / Follow-ups
 
 Watch whether Brand Strategist and Visual Designer output starts converging on similar ideas across projects specifically because they share a tool — that's the risk this decision explicitly accepted, not an unknown one.
+
+## DECISION-0006 — Adopt Operating Policy 2.0 (main-only availability, explicit dispatch, scripted steward)
+
+**Date:** 2026-09-17
+**Decision Owner:** David Bloom
+**Status:** Proposed
+**Related Task:** N/A
+**Area:** Operations
+
+### Context
+
+An independent architecture review (2026-09-17) of this repo's history found three structural defects behind every observed operating failure: "durable" and "available" were defined as the same thing (a pushed branch counted as source of truth, so `visual/001-directions.md` on an unmerged branch and the PR #3 mock library were invisible to every reader of `main`); state was narrated in three places and never recorded (the Activity Log's own next action was stale nine minutes after it was written); and the integrating role had no definition while the conducting role (Claude Design) had no write access. The imported engineering task machinery (tiers, seven statuses, task template, separate approvals log and changelog) was never used by project work and could not have caught any of these failures.
+
+### Decision
+
+Adopt `docs/OPERATING_POLICY.md` (Policy-Version 2.0) as the single operational rulebook. Availability means on `main` at a recorded SHA. Handoffs carry a YAML header with an explicit lifecycle and stated authority per transition; sessions are dispatched with an explicit handoff ID and role and never infer either. The Repository Steward is a scripted capability (`scripts/handoff-check`, `scripts/publish`) run by whichever repository-capable actor owns a landing; `publish` is the only writer to `main` and every workflow commit carries receipt trailers. `docs/STATE.md`, each project's handoff index, and the Activity Log are generated. Claude Code is the Orchestrator of record; Claude Design is a canvas whose output enters through the airlock. The unused operating-kit machinery is superseded in this kit (banners added now; files deleted after the migration pilots). The upstream `ai-project-operating-kit` is unchanged.
+
+### Rationale
+
+Each safeguard maps to an observed failure: main-only availability to the stranded 001 and PR #3; explicit dispatch to the universal prompt's self-contradictory role detection; the receipt and generated state to the stale log; trailers to the loss of commit provenance (all actors committing as one author); the freeze rule to packets edited after dispatch.
+
+### Consequences
+
+Governance PR introduces the policy, scripts, prompt, `CLAUDE.md`, legacy headers on handoffs 001–008, the archived v1 Activity Log, and this entry. Separate recovery task afterwards for PR #3, `001-directions.md`, option 07 in the mock index, the `guide-concepts/` path, and stale branches. Two-handoff pilot before retired files are deleted or CI is added.
+
+### Risks / Follow-ups
+
+Codex's ability to run the scripts is unverified until the Codex pilot. Read access to `main` for Grok and Claude Design must be confirmed at preflight. Binary growth is bounded by policy §7 limits, not LFS, until every tool is confirmed to resolve LFS pointers.
+
+**Approval:** recorded by David merging the governance PR; this entry's Status is set to Approved in the cutover governance commit.

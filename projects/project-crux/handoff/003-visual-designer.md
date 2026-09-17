@@ -1,3 +1,21 @@
+---
+handoff: project-crux/003
+role: visual-designer
+status: accepted
+lane: divergence
+actor: codex
+model: unspecified
+source_sha:
+frozen_hash:
+inputs:
+  - projects/project-crux/charter.md
+  - projects/project-crux/visual/002-directions.md
+outputs:
+  - projects/project-crux/visual/003-directions.md
+supersedes: none
+legacy: true
+---
+
 # Handoff Packet 003 — Visual Designer
 
 > **Destination in repo:** `projects/project-crux/handoff/003-visual-designer.md`

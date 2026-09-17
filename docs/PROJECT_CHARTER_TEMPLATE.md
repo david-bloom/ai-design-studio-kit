@@ -51,9 +51,7 @@ Copy the relevant rows from `config/agent-models.yaml` as of this project's star
 
 ## Stage log
 
-Running log of which stages have run, when, and a one-line pointer to their output location. Not a full history — just enough to resume after a break.
-
-- `YYYY-MM-DD` — Charter drafted.
+Not maintained by hand as of Policy-Version 2.0. Operational history is the generated `projects/<slug>/handoff/README.md`; current state is `docs/STATE.md`. Use this section only for a one-line pointer if a project predates the policy.
 
 ## Changelog
 

@@ -1,3 +1,26 @@
+---
+handoff: project-crux/007
+role: visual-designer
+status: accepted
+lane: divergence
+actor: codex
+model: unspecified
+source_sha:
+frozen_hash:
+inputs:
+  - projects/project-crux/charter.md
+  - projects/project-crux/visual/004-directions.md
+  - projects/project-crux/visual/006-place-mode.md
+outputs:
+  - projects/project-crux/visual/007-working-mode-challenger.md
+  - projects/project-crux/visual/mocks/option-07-challenger/working-stats.html
+  - projects/project-crux/visual/mocks/option-07-challenger/working-stats.png
+  - projects/project-crux/visual/mocks/option-07-challenger/working-bio.html
+  - projects/project-crux/visual/mocks/option-07-challenger/working-bio.png
+supersedes: none
+legacy: true
+---
+
 # Handoff Packet 007 — Visual Designer (Working-Mode Challenger)
 
 > **Destination in repo:** `projects/project-crux/handoff/007-visual-designer.md`

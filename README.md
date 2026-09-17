@@ -23,26 +23,33 @@ Every project starts as a raw brief. The **Creative Director** agent runs a brie
 docs/
   ARCHITECTURE.md              full framework spec: roles, stages, chaos mechanisms, model assignment philosophy
   PROJECT_CHARTER_TEMPLATE.md  the seed document every project starts from
-  team_charter/                operating rules imported from ai-project-operating-kit: roles, approval lanes, Done criteria — adapted for a design kit
-  activity_log/                append-only logs: activity, approvals, decisions
-  tasks/                       task template for tracking work at Standard/Hard-Gate tier
+  OPERATING_POLICY.md          the operational rulebook (Policy-Version 2.0): availability, roles, handoff lifecycle, git policy
+  STATE.md                     generated current state — what a new session reads first
+  team_charter/                retained principles from ai-project-operating-kit (core only; the rest is superseded)
+  activity_log/                generated activity log, decisions log, archive of the v1 log
 config/
   agent-models.yaml            role → model mapping, with rationale, reviewed as models evolve
 projects/
   <project-slug>/              one folder per project you run through the kit; charter + outputs live here
-prompts/                       new-session prompts for Claude, Codex, and cross-lab specialist agents (Gemini, Grok, etc.)
+prompts/
+  UNIVERSAL_SESSION_PROMPT.md  the one prompt pasted into Codex, Grok, and Claude Design (includes the airlock format)
 scripts/
-  verify-sync.sh               checks a branch is actually pushed before reporting "synced"
-CLAUDE.md                      how Claude Code should operate this kit day to day
+  handoff-check                validates a packet: header, inputs on main, path policy, freeze
+  publish                      the only writer to main: lands outputs, merges, regenerates STATE/index/log, prints the receipt
+CLAUDE.md                      how Claude Code operates this kit as Orchestrator and steward
 ```
 
 ## Operating model
 
-This kit's day-to-day operating rules — roles, approval lanes, task tiers, Done criteria — are imported from [ai-project-operating-kit](https://github.com/david-bloom/ai-project-operating-kit) and adapted in `docs/team_charter/`. The short version: **David is the Owner and sole Done Decider on every track, every time** — enforced through that kit's own Hard-Gate mechanism, not as a special case. See `docs/team_charter/AI_COLLABORATION_RULES.md` for the full role mapping (Main Conductor = Creative Director; QA Agent = Critic/Chaos Agent).
+`docs/OPERATING_POLICY.md` (Policy-Version 2.0) is the single operational rulebook: main-only availability, explicit handoff dispatch, a scripted Repository Steward (`scripts/handoff-check`, `scripts/publish`), a generated `docs/STATE.md`, and one generated Activity Log. **David is the Owner and sole Done Decider on every track, every time.** Claude Code is the Orchestrator of record; Codex, Grok, and Claude Design are specialists, the latter two returning work through the airlock format in `prompts/UNIVERSAL_SESSION_PROMPT.md`. `docs/team_charter/AI_COLLABORATION_RULES.md` keeps the principles inherited from [ai-project-operating-kit](https://github.com/david-bloom/ai-project-operating-kit); the engineering task machinery that used to be copied from it is retired here.
 
-For cross-lab roles (Brand Strategist on GPT, Visual Designer on Gemini, Chaos Agent on Grok — see `config/agent-models.yaml`), open that lab's own tool with repo access and hand it `prompts/CROSS_LAB_SPECIALIST_PROMPT.md`; there is no single tool that fans a task out to all labs automatically.
+A session is dispatched with three lines and nothing else:
 
-**GitHub is the source of truth — for every tool, not just Claude.** If a decision, a brief, or a model assignment isn't written into this repo, it doesn't count for operating purposes, no matter which tool's chat history it lives in. Two short trigger phrases, usable in any tool: `SESSION START` (read the repo and the last Session Close entry before doing anything) and `SESSION CLOSE` (write this session's `ACTIVITY_LOG.md` entry — summary, pending decisions, open risks, next action — before stopping). Add a project slug to scope either one to a specific project — `SESSION START: project-crux`, `SESSION CLOSE: project-crux` — so the session follows both this kit's shared rules and that project's own charter, without a new phrase needed per project. See `docs/team_charter/AI_COLLABORATION_RULES.md`.
+```text
+SESSION START: project-crux
+HANDOFF: project-crux/009
+ROLE: visual-designer
+```
 
 ## Status
 

@@ -1,3 +1,21 @@
+---
+handoff: project-crux/001
+role: visual-designer
+status: returned
+lane: divergence
+actor: codex
+model: unspecified
+source_sha:
+frozen_hash:
+inputs:
+  - projects/project-crux/charter.md
+  - docs/ARCHITECTURE.md
+outputs:
+  - projects/project-crux/visual/001-directions.md
+supersedes: none
+legacy: true
+---
+
 # Handoff Packet 001 — Visual Designer
 
 Task:

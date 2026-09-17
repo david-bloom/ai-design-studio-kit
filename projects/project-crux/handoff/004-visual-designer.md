@@ -1,3 +1,22 @@
+---
+handoff: project-crux/004
+role: visual-designer
+status: accepted
+lane: routine
+actor: codex
+model: unspecified
+source_sha:
+frozen_hash:
+inputs:
+  - projects/project-crux/charter.md
+  - projects/project-crux/visual/002-directions.md
+  - projects/project-crux/visual/003-directions.md
+outputs:
+  - projects/project-crux/visual/004-directions.md
+supersedes: none
+legacy: true
+---
+
 # Handoff Packet 004 — Visual Designer (consolidation for Critic review)
 
 > **Destination in repo:** `projects/project-crux/handoff/004-visual-designer.md`

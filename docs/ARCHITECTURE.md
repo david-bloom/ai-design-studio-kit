@@ -77,9 +77,9 @@ Any stage can be re-entered independently. There is no requirement to run tracks
 
 ## 7. AI-to-AI handoff
 
-The repo is the exchange mechanism between agents on different labs, not David relaying context by hand between chat windows. Before any stage that hands off to a different tool/lab (Gemini, Grok, GPT outside Claude), the current agent (typically the Creative Director) writes a **handoff packet** to `projects/<slug>/handoff/<NNN>-<role>.md`, using `docs/team_charter/HANDOFF_PACKET_TEMPLATE.md`, numbered sequentially so the next agent can find the latest by picking the highest `NNN`. The packet must be self-contained: what to read, what the role is, what NOT to touch, and exactly where output goes — so David only has to say "check the repo," not re-brief each tool by hand.
+The repo is the exchange mechanism between agents, not David relaying context by hand between chat windows. Before any stage that hands off to another actor, the Orchestrator writes a **handoff packet** to `projects/<slug>/handoff/<NNN>-<role>.md` with the YAML header defined in `docs/OPERATING_POLICY.md` §4 (handoff ID, role, status, lane, actor, declared inputs and outputs). The packet is self-contained: what to read, what the role is, and exactly where output goes.
 
-The receiving agent's prompt (`prompts/CROSS_LAB_SPECIALIST_PROMPT.md` for Gemini/Grok/other cross-lab specialists) is written to look for this file first. Log every handoff in the project's charter Stage log, same as any other stage.
+A receiving session is told its assignment explicitly (`SESSION START: <slug>` / `HANDOFF: <slug>/<NNN>` / `ROLE: <role>`); it never infers a role from `config/agent-models.yaml` and never selects a packet by number. The handoff is complete only when `scripts/publish` has verified the declared outputs on `main` (policy §1, §11). Actors without repository write access return their work through the airlock format in `prompts/UNIVERSAL_SESSION_PROMPT.md`. The generated `projects/<slug>/handoff/README.md` is the index of a project's handoffs and replaces the charter's Stage log for operational history.
 
 ## 8. Project folder contents
 
@@ -87,8 +87,8 @@ The receiving agent's prompt (`prompts/CROSS_LAB_SPECIALIST_PROMPT.md` for Gemin
 
 A project folder should contain:
 
-- **`charter.md`** — required. Carries what a separate per-project "tasks" folder would otherwise duplicate: a Stage log, Done Decider checklist, Constraint ledger, and a Model assignment *snapshot* (including any project-level overrides).
-- **`handoff/`** — handoff packets for this project's stage handoffs, numbered `NNN-role.md`.
+- **`charter.md`** — required. Carries the Origin brief, Expanded understanding, Active tracks, Done Decider checklist, Constraint ledger, and a Model assignment *snapshot*. Its Stage log is historical as of Policy-Version 2.0; operational history is the generated handoff index.
+- **`handoff/`** — handoff packets, numbered `NNN-role.md`, each with the policy §4 header, plus the generated `README.md` index.
 - **Track output folders**, created as tracks actually produce something — e.g. `visual/`, and eventually `brand/`, `chaos/`. Don't pre-create folders for tracks with nothing in them yet.
 
-**Task numbering.** The kit-level `docs/tasks/TASK_TEMPLATE.md` and `TASK-NNNN` IDs (imported from `ai-project-operating-kit`) are for kit-level, engineering-flavored work — installing the operating kit, a role consolidation, a framework change — tracked centrally in `docs/activity_log/`. They are **not** for routine project generative stages. A project's handoff packets and Stage log entries reference each other by the handoff's own number (`001`, `002`, ...) scoped to that project, not a global `TASK-NNNN`. Labeling project work `TASK-NNNN` with no actual task file behind it is a labeling error, not a lighter-weight convention — see the corrected entry in `projects/project-crux/charter.md`'s Stage log for a real example of the mistake and its fix.
+**Numbering.** Handoffs are identified as `<slug>/<NNN>` and nothing else. The former kit-level `TASK-NNNN` apparatus is retired (DECISION-0006); kit-level changes are `governance` events in the Activity Log.

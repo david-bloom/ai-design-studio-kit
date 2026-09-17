@@ -1,3 +1,22 @@
+---
+handoff: project-crux/006
+role: visual-designer
+status: landed
+lane: routine
+actor: codex
+model: unspecified
+source_sha:
+frozen_hash:
+inputs:
+  - projects/project-crux/charter.md
+  - projects/project-crux/visual/004-directions.md
+  - projects/project-crux/critic/005-review.md
+outputs:
+  - projects/project-crux/visual/006-place-mode.md
+supersedes: none
+legacy: true
+---
+
 # Handoff Packet 006 — Visual Designer (Place / Overview Mode)
 
 > **Destination in repo:** `projects/project-crux/handoff/006-visual-designer.md`

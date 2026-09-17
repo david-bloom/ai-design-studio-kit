@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+# handoff-check — validate a handoff packet against docs/OPERATING_POLICY.md.
+#
+# usage: scripts/handoff-check <packet-path> [--dry-run] [--no-fetch]
+#
+# draft      -> full validation; on pass (not dry-run) stamps source_sha and sets status: ready
+# ready      -> full validation (re-check)
+# dispatched -> validation + freeze check against frozen_hash
+# later      -> freeze check + report only
+# exit 0 = pass, 1 = fail, 2 = usage/error
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+. scripts/lib/studio.sh
+
+DRY=0; [ $# -ge 1 ] || die "usage: handoff-check <packet-path> [--dry-run] [--no-fetch]"
+PKT=$1; shift
+for a in "$@"; do case $a in --dry-run) DRY=1;; --no-fetch) NO_FETCH=1;; *) die "unknown flag $a";; esac; done
+[ -f "$PKT" ] || die "no such file: $PKT"
+PKT=${PKT#./}
+
+echo "handoff-check $PKT  (policy $POLICY_VERSION$( [ $DRY = 1 ] && echo ', dry-run'))"
+fetch_main
+
+# 1. header present and parseable
+hdr_present "$PKT" || { fail "no YAML front matter (first line must be ---)"; echo "FAIL ($FAILS)"; exit 1; }
+ID=$(hdr_get "$PKT" handoff); ROLE=$(hdr_get "$PKT" role); STATUS=$(hdr_get "$PKT" status)
+LANE=$(hdr_get "$PKT" lane); ACTOR=$(hdr_get "$PKT" actor); MODEL=$(hdr_get "$PKT" model)
+SUP=$(hdr_get "$PKT" supersedes); LEGACY=$(hdr_get "$PKT" legacy); SRC=$(hdr_get "$PKT" source_sha)
+FROZEN=$(hdr_get "$PKT" frozen_hash)
+mapfile -t INPUTS < <(hdr_list "$PKT" inputs); mapfile -t OUTPUTS < <(hdr_list "$PKT" outputs)
+
+for k in handoff role status lane actor supersedes; do
+  [ -n "$(hdr_get "$PKT" $k)" ] && ok "header: $k = $(hdr_get "$PKT" $k)" || fail "header: missing $k"
+done
+in_list "$ROLE" $ROLES     || fail "role '$ROLE' not in: $ROLES"
+in_list "$STATUS" $STATUSES|| fail "status '$STATUS' not in: $STATUSES"
+in_list "$LANE" $LANES     || fail "lane '$LANE' not in: $LANES"
+in_list "$ACTOR" $ACTORS   || fail "actor '$ACTOR' not in: $ACTORS"
+if in_list "$LANE" judgment divergence && { [ -z "$MODEL" ] || [ "$MODEL" = unspecified ]; }; then
+  warn "lane $LANE: model is 'unspecified' (required for diversity measurement; set at dispatch with --model)"
+fi
+
+# 2. filename / id agreement
+if path_parts "$PKT"; then
+  [ "$ID" = "$SLUG/$NNN" ] || fail "handoff id '$ID' != path-derived '$SLUG/$NNN'"
+  [ "$ROLE" = "$FROLE" ]   || fail "role '$ROLE' != filename role '$FROLE'"
+  ok "filename agrees with header ($SLUG/$NNN, $ROLE)"
+else
+  fail "path must be projects/<slug>/handoff/<NNN>-<role>.md"
+fi
+
+# 3. supersedes target must exist
+if [ "$SUP" != none ]; then
+  packet_from_id "$SUP" >/dev/null 2>&1 && ok "supersedes $SUP exists" || fail "supersedes '$SUP' not found"
+fi
+
+# 4. inputs available on main
+[ ${#INPUTS[@]} -gt 0 ] || warn "no inputs declared"
+for p in "${INPUTS[@]}"; do if on_main "$p"; then ok "input on main: $p"; elif [ "$LEGACY" = true ]; then warn "input not on main (legacy): $p"; else fail "input NOT on main: $p"; fi; done
+
+# 5. outputs: path policy and collision
+[ ${#OUTPUTS[@]} -gt 0 ] || fail "no outputs declared"
+for p in "${OUTPUTS[@]}"; do
+  case "$p" in projects/$SLUG/*) ;; *) fail "output outside projects/$SLUG/: $p";; esac
+  case "$STATUS" in
+    draft|ready|dispatched)
+      if on_main "$p"; then [ "$LEGACY" = true ] && warn "output already on main (legacy): $p" || fail "output collision (already on main): $p"; fi ;;
+    landed|accepted)
+      on_main "$p" && ok "output on main: $p" || fail "status $STATUS but output not on main: $p" ;;
+  esac
+done
+
+# 6. body path references must be available (branch-only or phantom refs are the 007 failure)
+while IFS= read -r ref; do
+  [ -z "$ref" ] && continue
+  in_list "$ref" "${OUTPUTS[@]}" && continue
+  if on_main "$ref"; then :; else
+    if [ "$LEGACY" = true ]; then warn "body references path not on main (legacy): $ref"
+    else fail "body references path not on main: $ref"; fi
+  fi
+done < <(body_path_refs "$PKT")
+
+# 7. completed handoffs are never re-run
+case "$STATUS" in
+  landed|accepted|returned|superseded) ok "status $STATUS: completed; nothing to dispatch (write a new handoff for new work)";;
+esac
+
+# 8. source_sha / freeze
+if [ -n "$SRC" ]; then
+  git cat-file -e "$SRC^{commit}" 2>/dev/null && git merge-base --is-ancestor "$SRC" origin/main 2>/dev/null \
+    && ok "source_sha $SRC is on main" || fail "source_sha '$SRC' is not a commit on main"
+fi
+if in_list "$STATUS" dispatched landed accepted returned; then
+  if [ -z "$FROZEN" ]; then
+    [ "$LEGACY" = true ] && warn "no frozen_hash (legacy)" || fail "status $STATUS but no frozen_hash"
+  else
+    [ "$(frozen_hash "$PKT")" = "$FROZEN" ] && ok "frozen body/header intact" \
+      || fail "packet body or role/lane/inputs/outputs changed after dispatch (only '## Amendments' may change)"
+  fi
+fi
+
+# 9. transition
+if [ $FAILS -eq 0 ] && [ "$STATUS" = draft ]; then
+  if [ $DRY = 1 ]; then ok "would set status: ready, source_sha: $(main_sha)"
+  else hdr_set "$PKT" source_sha "$(main_sha)"; hdr_set "$PKT" status ready
+       ok "set status: ready, source_sha: $(main_sha) (working tree only; commit with: publish $ID --actor <you>)"; fi
+fi
+
+echo "---"; if [ $FAILS -eq 0 ]; then echo "PASS  $ID  status=$(hdr_get "$PKT" status)  warnings=$WARNS"; exit 0
+else echo "FAIL  $ID  failures=$FAILS warnings=$WARNS"; exit 1; fi
