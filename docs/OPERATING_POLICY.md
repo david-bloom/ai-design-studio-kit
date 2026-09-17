@@ -81,6 +81,8 @@ Everything else (branch policy, validation, approval boundaries) defaults from t
 
 A specialist sets no state. A Critic review is its own handoff; there is no `reviewed` state.
 
+**Re-delivery.** A packet's outputs must not already exist on `main`, with one exception: a packet whose `supersedes:` names a `returned` handoff may declare that handoff's output paths again and overwrite them. This is how a returned deliverable is replaced; the defective version stays in history.
+
 **Freeze.** From `dispatched` onward the body above `## Amendments` is frozen at `frozen_hash`. Amendments may not change `role`, `lane`, `inputs`, or `outputs`; a change to any of those is a superseding handoff. Amendment format:
 
 ```markdown
@@ -107,7 +109,7 @@ A session with no `HANDOFF:` line is an orientation session: it reads state and 
 
 **Airlock.**
 
-The specialist returns exactly one block per declared file, plus an asset block per binary, in the format given in `prompts/UNIVERSAL_SESSION_PROMPT.md` §Airlock. The steward (`claude-code`) fetches any export URL immediately, lands the files at the declared paths, and records provenance trailers (`Generated-By`, `Integrated-By`, `Integration-Type: airlock`, `Source-Artifact`, `Content-Modified`). Modification is verified by the script, not asserted: `--content-modified none` means the landed file is byte-identical to the return (a raw copy, if present, must match); `formatting-only` requires the raw return at `<output>.airlock.txt` for every landed text output and passes only if the two are identical after removing all whitespace; `substantive` is exceptional, requires the raw copy and a `--reason`, and is recorded in the commit trailers. A normal airlock landing is `none` or `formatting-only`.
+The specialist returns exactly one block per declared file, plus an asset block per binary, in the format given in `prompts/UNIVERSAL_SESSION_PROMPT.md` §Airlock. The steward (`claude-code`) fetches any export URL immediately, lands the files at the declared paths, and records provenance trailers (`Generated-By`, `Integrated-By`, `Integration-Type: airlock`, `Source-Artifact`, `Content-Modified`). Modification is verified by the script, not asserted: `--content-modified none` means the landed file is byte-identical to the return (a raw copy, if present, must match); `formatting-only` requires the raw return at `<output>.airlock.txt` for every landed text output and passes only if the two are identical after removing all whitespace (the raw file may be the whole AIRLOCK RETURN, in which case the script extracts that output's FILE block; keeping the whole return is preferred, since it preserves the assumptions and limitations as provenance); `substantive` is exceptional, requires the raw copy and a `--reason`, and is recorded in the commit trailers. A normal airlock landing is `none` or `formatting-only`.
 
 ## 6. Git policy
 

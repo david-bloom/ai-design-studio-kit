@@ -58,13 +58,21 @@ fi
 [ ${#INPUTS[@]} -gt 0 ] || warn "no inputs declared"
 for p in "${INPUTS[@]}"; do if on_main "$p"; then ok "input on main: $p"; elif [ "$LEGACY" = true ]; then warn "input not on main (legacy): $p"; else fail "input NOT on main: $p"; fi; done
 
-# 5. outputs: path policy and collision
+# 5. outputs: path policy and collision (a superseding packet may re-deliver to a path that the
+#    packet it supersedes declared, if that packet is returned)
 [ ${#OUTPUTS[@]} -gt 0 ] || fail "no outputs declared"
+SUPPKT=""; SUPSTATUS=""; declare -a SUPOUT=()
+if [ "$SUP" != none ] && SUPPKT=$(packet_from_id "$SUP" 2>/dev/null); then SUPSTATUS=$(hdr_get "$SUPPKT" status); read_into SUPOUT hdr_list "$SUPPKT" outputs; fi
+redeliverable() { [ "$SUPSTATUS" = returned ] && in_list "$1" "${SUPOUT[@]}"; }
 for p in "${OUTPUTS[@]}"; do
   case "$p" in projects/$SLUG/*) ;; *) fail "output outside projects/$SLUG/: $p";; esac
   case "$STATUS" in
     draft|ready|dispatched)
-      if on_main "$p"; then [ "$LEGACY" = true ] && warn "output already on main (legacy): $p" || fail "output collision (already on main): $p"; fi ;;
+      if on_main "$p"; then
+        if redeliverable "$p"; then ok "output re-delivers a returned output of $SUP: $p"
+        elif [ "$LEGACY" = true ]; then warn "output already on main (legacy): $p"
+        else fail "output collision (already on main): $p (only a packet superseding a returned handoff may re-deliver its paths)"; fi
+      fi ;;
     landed|accepted)
       on_main "$p" && ok "output on main: $p" || fail "status $STATUS but output not on main: $p" ;;
   esac

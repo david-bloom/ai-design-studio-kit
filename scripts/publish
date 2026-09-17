@@ -217,13 +217,18 @@ if [ -n "$GENBY" ] && [ "$GENBY" != "$ACTOR" ]; then
   [ -n "$SOURCE" ] || die "--source required for airlock landings"
   in_list "$CMOD" none formatting-only substantive || die "--content-modified must be none|formatting-only|substantive"
   [ "$CMOD" = substantive ] && [ -z "$REASON" ] && die "--content-modified substantive requires --reason (and is exceptional: a normal airlock landing is none or formatting-only)"
+  # raw_for <output>: prints the raw text to compare against. The raw file may be the whole AIRLOCK RETURN
+  # (preferred: keeps assumptions/limitations as provenance) or just this file's content; the FILE block
+  # for this path is extracted when the delimiters are present.
+  raw_for() { local o=$1 raw="$1.airlock.txt"
+    if grep -q "^=== FILE: $o ===" "$raw" 2>/dev/null; then awk -v p="$o" '$0=="=== FILE: "p" ==="{f=1;next} f&&$0=="=== END FILE ==="{exit} f' "$raw"; else cat "$raw"; fi; }
   for o in "${LANDED[@]}"; do
     raw="$o.airlock.txt"
     grep -qI . "$o" 2>/dev/null || { [ "$CMOD" = none ] || die "binary output $o: only --content-modified none is allowed (fetched bytes are the raw return)"; continue; }
     case $CMOD in
-      none) if [ -f "$raw" ]; then cmp -s "$raw" "$o" || die "content-modified=none but $o differs from its raw return $raw"; fi;;
+      none) if [ -f "$raw" ]; then [ "$(raw_for "$o" | sha256)" = "$(sha256 < "$o")" ] || die "content-modified=none but $o differs from its raw return $raw"; fi;;
       formatting-only) [ -f "$raw" ] || die "content-modified=formatting-only requires the raw return at $raw for each landed output"
-        [ "$(tr -d '[:space:]' < "$raw" | sha256)" = "$(tr -d '[:space:]' < "$o" | sha256)" ] || die "$o differs from $raw beyond whitespace: that is substantive, not formatting-only";;
+        [ "$(raw_for "$o" | tr -d '[:space:]' | sha256)" = "$(tr -d '[:space:]' < "$o" | sha256)" ] || die "$o differs from $raw beyond whitespace: that is substantive, not formatting-only";;
       substantive) [ -f "$raw" ] || die "content-modified=substantive requires the raw return at $raw for each landed output";;
     esac
   done
@@ -314,7 +319,10 @@ git fetch -q origin main
 AVAIL=yes; echo "---"; echo "DELIVERY RECEIPT"
 echo "repository:   $(git remote get-url origin)"; echo "handoff:      ${ID:-none}"; echo "event:        $EVENT"; echo "integration:  $INTEG"
 echo "main sha:     $(git rev-parse --short=7 origin/main)  (work commit $SHA_A)"
-for o in "${OUTPUTS[@]}"; do if on_main "$o"; then echo "verified:     $o @ $(git log -1 --format=%h origin/main -- "$o")"; else echo "MISSING:      $o"; AVAIL=no; fi; done
+for o in "${OUTPUTS[@]}"; do
+  if on_main "$o"; then echo "verified:     $o @ $(git log -1 --format=%h origin/main -- "$o")"
+  elif [ $EVENT = output-landed ]; then echo "MISSING:      $o"; AVAIL=no
+  else echo "pending:      $o (not yet produced)"; fi; done
 [ $INTEG = branch ] && echo "branch:       $BR merged --no-ff and deleted" || echo "branch:       none (direct to main)"
 echo "validation:   passed${big:+ (size override: $REASON)}"
 [ -n "$NEWSTATUS" ] && echo "status:       $STATUS → $NEWSTATUS"
