@@ -63,15 +63,23 @@ for p in "${INPUTS[@]}"; do if on_main "$p"; then ok "input on main: $p"; elif [
 [ ${#OUTPUTS[@]} -gt 0 ] || fail "no outputs declared"
 SUPPKT=""; SUPSTATUS=""; declare -a SUPOUT=()
 if [ "$SUP" != none ] && SUPPKT=$(packet_from_id "$SUP" 2>/dev/null); then SUPSTATUS=$(hdr_get "$SUPPKT" status); read_into SUPOUT hdr_list "$SUPPKT" outputs; fi
-redeliverable() { [ "$SUPSTATUS" = returned ] && in_list "$1" "${SUPOUT[@]}"; }
+REV=$(hdr_get "$PKT" revises); [ -n "$REV" ] || REV=none
+REVPKT=""; REVSTATUS=""; declare -a REVOUT=()
+if [ "$REV" != none ]; then
+  if REVPKT=$(packet_from_id "$REV" 2>/dev/null); then REVSTATUS=$(hdr_get "$REVPKT" status); read_into REVOUT hdr_list "$REVPKT" outputs
+    in_list "$REVSTATUS" landed accepted && ok "revises $REV ($REVSTATUS)" || fail "revises '$REV' must be a landed or accepted handoff (is $REVSTATUS)"
+  else fail "revises '$REV' not found"; fi
+fi
+# re-delivery: outputs of the superseded handoff (returned or blocked); revision: outputs of the revised handoff (landed or accepted)
+redeliverable() { { in_list "$SUPSTATUS" returned blocked && in_list "$1" "${SUPOUT[@]}"; } || { in_list "$REVSTATUS" landed accepted && in_list "$1" "${REVOUT[@]}"; }; }
 for p in "${OUTPUTS[@]}"; do
   case "$p" in projects/$SLUG/*) ;; *) fail "output outside projects/$SLUG/: $p";; esac
   case "$STATUS" in
     draft|ready|dispatched)
       if on_main "$p"; then
-        if redeliverable "$p"; then ok "output re-delivers a returned output of $SUP: $p"
+        if redeliverable "$p"; then ok "output overwrites an existing deliverable (re-delivery of $SUP / revision of $REV): $p"
         elif [ "$LEGACY" = true ]; then warn "output already on main (legacy): $p"
-        else fail "output collision (already on main): $p (only a packet superseding a returned handoff may re-deliver its paths)"; fi
+        else fail "output collision (already on main): $p (declare supersedes: <returned|blocked handoff> to re-deliver, or revises: <accepted handoff> to revise its outputs)"; fi
       fi ;;
     landed|accepted)
       on_main "$p" && ok "output on main: $p" || fail "status $STATUS but output not on main: $p" ;;
