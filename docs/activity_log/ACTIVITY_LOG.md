@@ -15,3 +15,8 @@ Entry shape:
 ## 2026-09-17T19:22Z — governance — kit — claude-code
 - Landed @ 65bda0d: docs/activity_log/DECISIONS_LOG.md
 - Note: Cutover to Policy 2.0: DECISION-0006 approved, state regenerated
+
+## 2026-09-17T19:32Z — output-landed — project-crux/009 — claude-code
+- Landed @ 3090784: projects/project-crux/critic/009-decision-brief.md
+- Status: dispatched → landed
+- Next: orchestrator: accept or return
