@@ -1,12 +1,12 @@
 ---
 handoff: project-crux/015
 role: visual-designer
-status: ready
+status: dispatched
 lane: routine
 actor: codex
-model: unspecified
+model: Codex / GPT-Sol (OpenAI)
 source_sha: 72f0d59
-frozen_hash:
+frozen_hash: e9c32f26161c0238922c1ffbc0de40d0834704d952f7e48277945e04f8c49423
 inputs:
   - projects/project-crux/charter.md
   - projects/project-crux/visual/014-register-directions.md
