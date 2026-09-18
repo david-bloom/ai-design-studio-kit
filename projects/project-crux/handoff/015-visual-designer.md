@@ -1,7 +1,7 @@
 ---
 handoff: project-crux/015
 role: visual-designer
-status: landed
+status: accepted
 lane: routine
 actor: codex
 model: Codex / GPT-Sol (OpenAI)
