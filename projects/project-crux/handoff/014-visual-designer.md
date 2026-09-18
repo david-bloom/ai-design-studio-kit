@@ -1,12 +1,12 @@
 ---
 handoff: project-crux/014
 role: visual-designer
-status: ready
+status: dispatched
 lane: divergence
 actor: codex
-model: unspecified
+model: Codex / GPT-Sol (OpenAI)
 source_sha: a77b9bc
-frozen_hash:
+frozen_hash: 55dd4e6f089bcc00518a6eef2eb07859ba86d002665172580c8d7277f19c3f38
 inputs:
   - projects/project-crux/charter.md
   - projects/project-crux/visual/004-directions.md
