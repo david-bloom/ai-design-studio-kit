@@ -83,3 +83,8 @@ Entry shape:
 ## 2026-09-18T00:46Z — governance — kit — claude-code
 - Landed @ a493b02: projects/project-crux/charter.md
 - Note: charter (project-crux): teen-register intelligence + Nike/IG/Depop/Hollister inspiration + soft register constraint (expert brand review)
+
+## 2026-09-18T01:37Z — output-landed — project-crux/014 — claude-code
+- Landed @ 45258bf: projects/project-crux/visual/014-register-directions.md
+- Status: dispatched → landed
+- Next: orchestrator: accept or return
