@@ -88,3 +88,8 @@ Entry shape:
 - Landed @ 45258bf: projects/project-crux/visual/014-register-directions.md
 - Status: dispatched → landed
 - Next: orchestrator: accept or return
+
+## 2026-09-18T20:56Z — output-landed — project-crux/015 — claude-code
+- Landed @ 76e72f3: projects/project-crux/visual/mocks/head-to-head-014/signal-proof/openhand-stats.html; projects/project-crux/visual/mocks/head-to-head-014/signal-proof/openhand-stats.png; projects/project-crux/visual/mocks/head-to-head-014/daybreak-relay/openhand-stats.html; projects/project-crux/visual/mocks/head-to-head-014/daybreak-relay/openhand-stats.png; projects/project-crux/visual/mocks/head-to-head-014/open-window/openhand-stats.html; projects/project-crux/visual/mocks/head-to-head-014/open-window/openhand-stats.png; projects/project-crux/visual/mocks/head-to-head-014/midnight-standard-control/openhand-stats.html; projects/project-crux/visual/mocks/head-to-head-014/midnight-standard-control/openhand-stats.png; projects/project-crux/visual/mocks/head-to-head-014/manifest.md
+- Status: dispatched → landed
+- Next: orchestrator: accept or return
