@@ -79,3 +79,7 @@ Entry shape:
 ## 2026-09-17T21:53Z — governance — kit — claude-code
 - Landed @ 67092b5: 
 - Note: records for merged PR #8: v1 machinery retired; Policy 2.0 migration complete
+
+## 2026-09-18T00:46Z — governance — kit — claude-code
+- Landed @ a493b02: projects/project-crux/charter.md
+- Note: charter (project-crux): teen-register intelligence + Nike/IG/Depop/Hollister inspiration + soft register constraint (expert brand review)
