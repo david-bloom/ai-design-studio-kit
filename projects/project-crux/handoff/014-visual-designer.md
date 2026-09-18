@@ -1,7 +1,7 @@
 ---
 handoff: project-crux/014
 role: visual-designer
-status: landed
+status: accepted
 lane: divergence
 actor: codex
 model: Codex / GPT-Sol (OpenAI)
