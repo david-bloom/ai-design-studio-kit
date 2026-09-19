@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Blue Hour Cabinet · AP Statistics · Open Hand · full picture — Open Window</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:900px;overflow:hidden;background:#fdfdfb;color:#111;font-family:Figtree,"Helvetica Neue",Arial,sans-serif;font-size:15px;line-height:1.45}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.plate{position:relative;width:1440px;height:900px;overflow:hidden}
+#ground{position:absolute;inset:0;width:1440px;height:900px}
+.grid{stroke:#111;stroke-opacity:.08;stroke-width:1}
+.ax{stroke:#111;stroke-width:2}
+.tk{font-size:13px;font-weight:600;fill:#6d6d6a}
+.axl{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:15px;fill:#111;letter-spacing:.02em}
+.pt{fill:#111}
+.fit{stroke:#111;stroke-width:3;fill:none}
+.inf{fill:#fdfdfb;stroke:#111;stroke-width:3.5}
+.gl{font-size:13px;font-weight:600;fill:#111}
+.chip{position:absolute;display:flex;align-items:center;gap:14px;background:#111;color:#fdfdfb;border-radius:999px;padding:10px 18px;font-weight:600;font-size:13px}
+.chip b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:15px}
+.chip span.dim{opacity:.6}
+.locchip{position:absolute;display:flex;gap:10px;align-items:center;border:2px solid #111;border-radius:999px;padding:9px 16px;font-weight:600;font-size:13px;background:rgba(253,253,251,.75);backdrop-filter:blur(8px)}
+.locchip .dim{color:#6d6d6a}
+.locchip:hover{background:#fff}
+.win{position:absolute;background:rgba(255,255,255,.72);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border:1.5px solid rgba(17,17,17,.9);border-radius:18px;box-shadow:0 18px 50px -20px rgba(17,17,17,.35),0 2px 0 rgba(17,17,17,.06);display:none;flex-direction:column;overflow:hidden}
+.win.open{display:flex}
+.win .bar{display:flex;align-items:center;gap:10px;padding:12px 16px 10px;cursor:grab;user-select:none}
+.win .bar h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:14px;letter-spacing:.01em}
+.win .bar small{font-weight:500;color:#6d6d6a;font-size:12px}
+.win .bar .x{margin-left:auto;width:26px;height:26px;border-radius:50%;border:1.5px solid #111;display:grid;place-items:center;font-size:14px;line-height:1}
+.win .bar .x:hover{background:#111;color:#fff}
+.win .bd{padding:4px 18px 18px;overflow:auto;flex:1}
+h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:28px;line-height:1.1;letter-spacing:-.015em;text-wrap:pretty}
+.crit{display:grid;grid-template-columns:24px 1fr auto;gap:10px 12px;padding:12px 0;border-top:1.5px solid rgba(17,17,17,.15)}
+.crit:first-child{border-top:0;padding-top:4px}
+.crit h4{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:15px}
+.crit .pts{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:16px}
+.crit p{grid-column:2/4;font-size:13px;line-height:1.45;color:#333}
+.crit p b{color:#111}
+.anc{width:20px;height:20px;display:inline-grid;place-items:center;position:relative;flex:0 0 20px}
+.anc.e::before{content:"";width:15px;height:15px;border-radius:4px;background:#111}
+.anc.l::before{content:"";width:16px;height:16px;border-radius:50%;border:2.5px solid #111}
+.anc.l::after{content:"";position:absolute;width:9px;height:2.5px;background:#111}
+.legend{display:flex;gap:16px;font-size:12px;color:#6d6d6a;font-weight:600;padding-top:10px;border-top:1.5px solid rgba(17,17,17,.15);margin-top:4px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend .anc{transform:scale(.75)}
+.seg{display:inline-flex;border-radius:999px;background:rgba(17,17,17,.08);padding:3px;margin:4px 0 14px}
+.seg button{padding:7px 14px;border-radius:999px;font-weight:700;font-size:13px}
+.seg button[aria-pressed="true"]{background:#e8365d;color:#fff}
+.rhead{display:flex;align-items:center;gap:16px}
+.tally{margin-left:auto;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:26px;white-space:nowrap}
+.tally small{display:block;font-family:Figtree,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#6d6d6a;line-height:1}
+.para{display:grid;grid-template-columns:20px 1fr;gap:12px;padding:10px 0;border-top:1.5px solid rgba(17,17,17,.15);font-size:15px;line-height:1.5}
+.para:first-of-type{border-top:0}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:#111;color:#fff;border-radius:999px;padding:2px 8px;margin-left:4px;vertical-align:2px;white-space:nowrap}
+.ded{margin-top:6px;font-size:13px;display:flex;gap:8px;color:#333}
+.ded b{color:#111;white-space:nowrap}
+.card h5{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6d6d6a;margin:12px 0 4px}
+.card p,.card li{font-size:14px;line-height:1.5}
+.card ul{padding-left:18px}
+.card dt{font-weight:700;margin-top:6px}
+.card dd{color:#333}
+.dd h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:24px;line-height:1.1}
+.dd .sub{color:#6d6d6a;font-weight:500;font-size:13px;margin:4px 0 10px}
+.acc{border-top:1.5px solid rgba(17,17,17,.15)}
+.acc .h{width:100%;display:flex;justify-content:space-between;align-items:center;text-align:left;padding:10px 0;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:15px}
+.acc .b{display:none;padding:0 0 12px;font-size:14px;line-height:1.5}
+.acc.open .b{display:block}
+.units{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding-top:6px}
+.unit h6{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:12px;line-height:1.3;min-height:46px;border-bottom:2px solid #111;padding-bottom:8px;margin-bottom:8px}
+.unit button{display:block;width:100%;text-align:left;font-size:13px;font-weight:500;padding:7px 8px;border-radius:8px;line-height:1.3}
+.unit button:hover{background:rgba(17,17,17,.06)}
+.unit button.cur{background:#111;color:#fff;font-weight:700}
+.unit button i{font-style:normal;opacity:.6;margin-right:6px;font-variant-numeric:tabular-nums}
+.dock{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;gap:6px;background:#111;border-radius:999px;padding:6px}
+.dock button{display:flex;align-items:center;gap:8px;color:#fdfdfb;padding:9px 16px;border-radius:999px;font-weight:600;font-size:13px;white-space:nowrap}
+.dock button:hover{background:rgba(255,255,255,.12)}
+.dock button::before{content:"";width:8px;height:8px;border-radius:50%;border:1.5px solid #fdfdfb}
+.dock button.on::before{background:#fdfdfb}
+</style>
+</head>
+<body>
+<div class="plate" id="plate">
+  <svg id="ground" viewBox="0 0 1440 900"></svg>
+  <div class="chip" style="left:48px;top:32px"><b>The Blue Hour Cabinet</b><span>AP Statistics</span><span class="dim">Open Hand · full picture</span></div>
+  <button class="locchip" id="locbtn" style="left:48px;top:84px"><span class="dim" id="locu">Unit 2 · Exploring Two-Variable Data</span><span id="loct">2.3 · Least-Squares Regression</span><span>· map</span></button>
+
+  <section class="win open" id="w-q" style="left:48px;top:136px;width:600px">
+    <div class="bar"><h3>The question</h3><button class="x" data-w="w-q" aria-label="Close">×</button></div>
+    <div class="bd"><h1>Describe the association between weekly practice time and free-response score, and interpret the slope in context.</h1></div>
+  </section>
+
+  <section class="win open" id="w-r" style="left:940px;top:32px;width:452px">
+    <div class="bar"><h3>How points move</h3><small>3 criteria · 4 points available</small><button class="x" data-w="w-r">×</button></div>
+    <div class="bd">
+      <div class="crit"><span class="anc e" id="a1"></span><h4>Describe the association</h4><span class="pts">+2</span><p id="r1"></p></div>
+      <div class="crit"><span class="anc e" id="a2"></span><h4>Interpret the slope</h4><span class="pts">+1</span><p id="r2"></p></div>
+      <div class="crit"><span class="anc e" id="a3"></span><h4>Explain influence</h4><span class="pts">+1</span><p id="r3"></p></div>
+      <div class="legend"><span><span class="anc e"></span>Earned</span><span><span class="anc l"></span>Lost</span><span>shapes follow the response state</span></div>
+    </div>
+  </section>
+
+  <section class="win open" id="w-m" style="left:800px;top:404px;width:592px">
+    <div class="bar"><h3>Model response</h3><small>diagnosis → reasoning → move</small><button class="x" data-w="w-m">×</button></div>
+    <div class="bd">
+      <div class="rhead"><div class="seg" role="group" aria-label="Credit toggle"><button id="tfull" aria-pressed="true">Full credit (4 / 4)</button><button id="tlost" aria-pressed="false">Points lost (1 / 4)</button></div><div class="tally"><small>Score</small><span id="tally">4 / 4</span></div></div>
+      <div id="paras"></div>
+    </div>
+  </section>
+
+  <section class="win card" id="w-f" style="left:48px;top:400px;width:420px;max-height:420px">
+    <div class="bar"><h3>For this question</h3><small>reference card</small><button class="x" data-w="w-f">×</button></div>
+    <div class="bd"><h5 style="margin-top:0">Topic</h5><p>Two-variable quantitative data — describing scatterplots and fitting a least-squares regression line.</p><h5>Skills involved</h5><ul><li>Describe association: direction · form · strength · unusual</li><li>Interpret slope &amp; intercept in context</li><li>Identify and reason about influential points</li></ul><h5>Vocabulary</h5><dl><dt>Influential point</dt><dd>An observation whose removal substantially changes the fitted model.</dd><dt>Residual</dt><dd>Observed minus predicted response for a point.</dd><dt>Slope (b)</dt><dd>Predicted change in y per one-unit change in x.</dd></dl></div>
+  </section>
+
+  <section class="win dd" id="w-d" style="left:420px;top:300px;width:560px;max-height:560px">
+    <div class="bar"><h3>Deep dive · the CED gate</h3><button class="x" data-w="w-d">×</button></div>
+    <div class="bd"><h2>Classifying variables</h2><div class="sub">Categorical vs quantitative · discrete vs continuous</div>
+      <div class="acc open"><button class="h"><span>Core idea</span><span>−</span></button><div class="b">Categorical-vs-quantitative and discrete-vs-continuous is pure vocabulary with no formula attached — but the CED treats it as a gate: using a mean or standard deviation on a categorical variable, or a bar chart on a continuous one, is scored as a <b>category error</b>, not partial credit for a numeric mistake.</div></div>
+      <div class="acc"><button class="h"><span>What students need to understand</span><span>+</span></button><div class="b">This classification step determines which graphs, statistics, and inference procedures are even valid to reach for later in the course, so misclassifying a variable here can invalidate an otherwise-correct calculation several units later.</div></div>
+      <div class="acc"><button class="h"><span>How this becomes points</span><span>+</span></button><div class="b">Multiple-choice and free-response items expect a stated variable to be correctly classified before any statistic or graph choice is judged — picking the right numeric answer for the wrong variable type earns <b>no credit</b> for the classification component.</div></div>
+      <div class="acc"><button class="h"><span>Answer move</span><span>+</span></button><div class="b">When a question gives you a variable description, decide <b>categorical vs quantitative first</b>, then — if quantitative — <b>discrete vs continuous</b>, before choosing any graph or statistic. This step is about <i>reading</i> the variable, not analyzing it.</div></div>
+    </div>
+  </section>
+
+  <section class="win" id="w-n" style="left:48px;top:136px;width:900px">
+    <div class="bar"><h3>Study map · 5 units · 13 topics</h3><small>Follows the AP curriculum</small><button class="x" data-w="w-n">×</button></div>
+    <div class="bd"><div class="units" id="units"></div></div>
+  </section>
+
+  <nav class="dock" id="dock">
+    <button data-w="w-n">Map</button><button data-w="w-q">Question</button><button data-w="w-r">How points move</button><button data-w="w-m">Model response</button><button data-w="w-f">For this question</button><button data-w="w-d">Deep dive</button>
+  </nav>
+</div>
+<script>
+const PTS=[[2,3.5],[3,4.8],[4,5.4],[5,6.9],[6,7.1],[7,8.6],[8,9.0],[9,10.4]],INF=[1.5,6.7],B0=3.29,B1=0.72;
+const MAP=[["Unit 1 — Exploring One-Variable Data",[["1.1","Variables & classification"],["1.2","Representing data"],["1.3","Summaries & distributions"]]],["Unit 2 — Exploring Two-Variable Data",[["2.1","Two categorical variables"],["2.2","Scatterplots & correlation"],["2.3","Least-squares regression"]]],["Unit 3 — Collecting Data",[["3.1","Sampling methods"],["3.2","Experiments & studies"]]],["Unit 4 — Probability & Distributions",[["4.1","Probability foundations"],["4.2","Random variables"],["4.3","Binomial & geometric"]]],["Unit 5 — Inference",[["5.1","Confidence intervals"],["5.2","Significance tests"]]]];
+// ground plot: x 0..10 → 90..900px, y 0..12 → 810..110px
+const sx=x=>90+x/10*810,sy=y=>810-y/12*700;
+let g='';
+for(let x=0;x<=10;x++)g+=`<line class="grid" x1="${sx(x)}" y1="40" x2="${sx(x)}" y2="860"/>`;
+for(let y=0;y<=12;y++)g+=`<line class="grid" x1="40" y1="${sy(y)}" x2="1400" y2="${sy(y)}"/>`;
+g+=`<line class="ax" x1="${sx(0)}" y1="${sy(12)}" x2="${sx(0)}" y2="${sy(0)}"/><line class="ax" x1="${sx(0)}" y1="${sy(0)}" x2="${sx(10)}" y2="${sy(0)}"/>`;
+for(let x=0;x<=10;x+=2)g+=`<text class="tk" x="${sx(x)}" y="${sy(0)+22}" text-anchor="middle">${x}</text>`;
+for(let y=0;y<=12;y+=2)g+=`<text class="tk" x="${sx(0)-14}" y="${sy(y)+4}" text-anchor="end">${y}</text>`;
+g+=`<text class="axl" x="${sx(10)-6}" y="${sy(0)-14}" text-anchor="end">Practice time (hours/week) →</text><text class="axl" transform="translate(36 ${sy(6)}) rotate(-90)" text-anchor="middle">Free-response score</text>`;
+g+=`<line class="fit" x1="${sx(0.4)}" y1="${sy(B0+B1*.4)}" x2="${sx(10)}" y2="${sy(B0+B1*10)}"/><text class="gl" x="${sx(6.9)}" y="${sy(B0+B1*6.9)+36}">ŷ = 3.29 + 0.72x  ·  least-squares line, n = 9</text>`;
+g+=PTS.map(p=>`<circle class="pt" cx="${sx(p[0])}" cy="${sy(p[1])}" r="10"/>`).join('');
+const ix=sx(INF[0]),iy=sy(INF[1]);
+g+=`<circle class="inf" cx="${ix}" cy="${iy}" r="15"/><circle cx="${ix}" cy="${iy}" r="4" fill="#111"/><line x1="${ix-24}" y1="${iy}" x2="${ix+24}" y2="${iy}" stroke="#111" stroke-width="2"/><line x1="${ix}" y1="${iy-24}" x2="${ix}" y2="${iy+24}" stroke="#111" stroke-width="2"/><text class="gl" x="${ix+32}" y="${iy-6}">Influential point (1.5 h, 6.7)</text><text class="gl" x="${ix+32}" y="${iy+12}" style="fill:#6d6d6a">pulls the fitted line down · flattens the slope</text>`;
+ground.innerHTML=g;
+// rubric + response
+const RE=[`<b>Earned:</b> Direction, form, strength, and unusual features — stated in context.`,`<b>Earned:</b> Say what changes, per what, on average, in context.`,`<b>Earned:</b> Name the influential point and how it pulls the fitted line.`];
+const RL=[`<b>Lost when</b> a feature is skipped or given without variables/units.`,`<b>Lost when</b> the number is stated with no context.`,`<b>Lost when</b> influence is asserted with no mechanism.`];
+const FULL=[`The association is positive, moderately strong, and roughly linear <span class="tag">✦ describe</span>. Students who practice more tend to earn higher scores, on average.`,`The slope of <b>0.72</b> means that each additional hour of weekly practice predicts about <b>0.72 more points</b> on the free-response, on average <span class="tag">✦ slope in context</span>.`,`One student practices far less than their score would suggest — an <b>influential point</b> that pulls the fitted line down and flattens the slope <span class="tag">✦ influence</span>.`];
+const LOST=[`The association is positive and strong <span class="tag">✦ partial</span>.<div class="ded"><b>−1</b><span>form not named (linear?) and strength not tied to the data</span></div>`,`The slope is 0.72.<div class="ded"><b>−1</b><span>a number with no context — name what changes, per what, in context</span></div>`,`Practice helps scores.<div class="ded"><b>−1</b><span>influence asserted with no mechanism; the influential point is never named</span></div>`];
+function setState(full){paras.innerHTML=(full?FULL:LOST).map(p=>`<div class="para"><span class="anc ${full?'e':'l'}" style="margin-top:3px"></span><div>${p}</div></div>`).join('');for(let i=1;i<=3;i++){document.getElementById('r'+i).innerHTML=(full?RE:RL)[i-1];document.getElementById('a'+i).className='anc '+(full?'e':'l')}tally.textContent=full?'4 / 4':'1 / 4';tfull.setAttribute('aria-pressed',full);tlost.setAttribute('aria-pressed',!full)}
+tfull.onclick=()=>setState(true);tlost.onclick=()=>setState(false);setState(true);
+// windows
+let z=10;
+function sync(){dock.querySelectorAll('button').forEach(b=>b.classList.toggle('on',document.getElementById(b.dataset.w).classList.contains('open')))}
+function toggle(id,force){const w=document.getElementById(id);const on=force!==undefined?force:!w.classList.contains('open');w.classList.toggle('open',on);if(on)w.style.zIndex=++z;sync()}
+dock.querySelectorAll('button').forEach(b=>b.onclick=()=>toggle(b.dataset.w));
+document.querySelectorAll('.x').forEach(b=>b.onclick=e=>{e.stopPropagation();toggle(b.dataset.w,false)});
+document.querySelectorAll('.win').forEach(w=>{w.addEventListener('pointerdown',()=>{w.style.zIndex=++z});const bar=w.querySelector('.bar');bar.addEventListener('pointerdown',e=>{if(e.target.closest('.x'))return;const r=w.getBoundingClientRect(),pr=plate.getBoundingClientRect(),dx=e.clientX-r.left,dy=e.clientY-r.top;const mv=ev=>{w.style.left=Math.max(0,Math.min(1440-r.width,ev.clientX-pr.left-dx))+'px';w.style.top=Math.max(0,Math.min(900-r.height,ev.clientY-pr.top-dy))+'px'};const up=()=>{window.removeEventListener('pointermove',mv);window.removeEventListener('pointerup',up)};window.addEventListener('pointermove',mv);window.addEventListener('pointerup',up)})});
+document.querySelectorAll('.acc .h').forEach(h=>h.onclick=()=>{const a=h.parentElement;a.classList.toggle('open');h.lastElementChild.textContent=a.classList.contains('open')?'−':'+'});
+// map
+let cur='2.3';
+function drawMap(){units.innerHTML=MAP.map(u=>`<div class="unit"><h6>${u[0]}</h6>${u[1].map(t=>`<button data-t="${t[0]}" class="${t[0]===cur?'cur':''}"><i>${t[0]}</i>${t[1]}</button>`).join('')}</div>`).join('');units.querySelectorAll('button').forEach(b=>b.onclick=()=>{cur=b.dataset.t;const u=MAP.find(u=>u[1].some(t=>t[0]===cur)),t=u[1].find(t=>t[0]===cur);locu.textContent=u[0].replace(' — ',' · ');loct.textContent=`${cur} · ${t[1]}`;drawMap();toggle('w-n',false)})}
+drawMap();locbtn.onclick=()=>toggle('w-n');sync();
+</script>
+</body>
+</html>
