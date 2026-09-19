@@ -1,12 +1,12 @@
 ---
 handoff: project-crux/017
 role: visual-designer
-status: ready
+status: dispatched
 lane: divergence
 actor: claude-design
-model: fable (claude-fable-5-1)
+model: fable
 source_sha: b27b252
-frozen_hash:
+frozen_hash: 96fc5f8bef0f93adff0b26368e3d2a13362a9ea5ee6e7a165b8bfe69f5d73b74
 inputs:
   - projects/project-crux/charter.md
 outputs:
