@@ -1,7 +1,7 @@
 ---
 handoff: project-crux/017
 role: visual-designer
-status: dispatched
+status: landed
 lane: divergence
 actor: claude-design
 model: fable

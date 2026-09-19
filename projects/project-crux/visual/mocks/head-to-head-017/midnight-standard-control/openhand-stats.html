@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Blue Hour Cabinet · AP Statistics · Open Hand · full picture — Midnight Standard (control)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:900px;overflow:hidden;background:#f3f4f6;color:#101828;font-family:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;font-size:13px;line-height:1.45}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.mono{font-family:"IBM Plex Mono",Menlo,monospace;font-variant-numeric:tabular-nums}
+.plate{width:1440px;height:900px;display:grid;grid-template-rows:52px 1fr;padding:0 36px 24px}
+.mast{display:flex;align-items:baseline;gap:20px;border-bottom:1px solid #101828;padding-top:16px;padding-bottom:8px}
+.mast .brand{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:17px;letter-spacing:.01em}
+.mast .sc{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4b5566;font-weight:500;white-space:nowrap}
+.mast .sc b{color:#101828;font-weight:600}
+.mast .folio{margin-left:auto;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4b5566}
+.cols{display:grid;grid-template-columns:280px 1fr 470px;gap:0;min-height:0}
+.col{min-height:0;padding-top:16px}
+.col+.col{border-left:1px solid #9aa3b2;padding-left:24px;margin-left:24px}
+h6.k{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#4b5566;font-weight:600;margin-bottom:8px}
+/* navigator ledger */
+.navh{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:18px;line-height:1.2}
+.navs{color:#4b5566;font-size:12px;margin:2px 0 12px;font-style:italic;font-family:Newsreader,Georgia,serif}
+.ledger{border-top:1px solid #101828}
+.ledger .u{display:grid;grid-template-columns:50px 1fr;gap:8px;padding:9px 0 4px;font-weight:600;font-size:12.5px;border-bottom:1px solid #d3d7de}
+.ledger .u span:first-child{font-family:"IBM Plex Mono",monospace;color:#4b5566;font-weight:500}
+.ledger button{display:grid;grid-template-columns:50px 1fr 14px;gap:8px;width:100%;text-align:left;padding:5px 0 5px 6px;font-size:12.5px;border-bottom:1px solid #e3e6eb;line-height:1.35}
+.ledger button:hover{background:#e8ebf0}
+.ledger button .n{font-family:"IBM Plex Mono",monospace;color:#4b5566}
+.ledger button.cur{background:#101828;color:#f3f4f6;font-weight:500}
+.ledger button.cur .n{color:#c9d0dc}
+.ledger button.cur::after{content:"◀";font-size:9px;align-self:center}
+.navfoot{margin-top:14px;font-size:11.5px;color:#4b5566;line-height:1.5}
+.navfoot b{color:#101828;font-weight:600}
+/* center */
+.ctr{display:grid;grid-template-rows:auto auto 1fr;gap:14px;min-height:0}
+h1{font-family:Newsreader,Georgia,serif;font-weight:500;font-size:25px;line-height:1.25;text-wrap:pretty;letter-spacing:-.005em}
+.fig{border-top:1px solid #101828;border-bottom:1px solid #101828;padding:10px 0 8px;display:grid;grid-template-columns:1fr 200px;gap:16px}
+.fig svg{width:100%;height:330px;display:block;overflow:visible}
+.cap{font-size:11.5px;color:#4b5566;line-height:1.5;padding-top:4px}
+.cap b{color:#101828;font-weight:600}
+.cap dl{margin-top:8px;display:grid;grid-template-columns:auto 1fr;gap:2px 10px}
+.cap dt{font-family:"IBM Plex Mono",monospace;color:#101828}
+.grid{stroke:#101828;stroke-opacity:.12;stroke-width:1;stroke-dasharray:2 3}
+.ax{stroke:#101828;stroke-width:1.2}
+.tk{font-size:10.5px;fill:#4b5566;font-family:"IBM Plex Mono",monospace}
+.axl{font-size:11px;fill:#101828;font-weight:500}
+.pt{fill:#101828}
+.fit{stroke:#101828;stroke-width:1.6;fill:none}
+.alt{stroke:#101828;stroke-width:1;fill:none;stroke-dasharray:4 3;opacity:.55}
+.inf{fill:#f3f4f6;stroke:#101828;stroke-width:1.8}
+.gl{font-size:10.5px;fill:#101828;font-family:"IBM Plex Mono",monospace}
+.resp{min-height:0;display:grid;grid-template-rows:auto 1fr;gap:10px}
+.rh{display:flex;align-items:center;gap:14px}
+.rh h2{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:17px}
+.seg{display:inline-flex;border:1px solid #101828;margin-left:auto}
+.seg button{padding:5px 12px;font-size:12px;font-weight:500;white-space:nowrap}
+.seg button+button{border-left:1px solid #101828}
+.seg button[aria-pressed="true"]{background:#2457c5;color:#fff}
+.tally{font-family:"IBM Plex Mono",monospace;font-size:15px;font-weight:500;min-width:88px;text-align:right}
+.tally small{display:block;font-family:"IBM Plex Sans",sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#4b5566;font-weight:600}
+.para{display:grid;grid-template-columns:22px 18px 1fr;gap:8px;padding:9px 0;border-top:1px solid #d3d7de;font-size:13.5px;line-height:1.5}
+.para:first-child{border-top:0}
+.para .i{font-family:"IBM Plex Mono",monospace;color:#4b5566;font-size:12px}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;border:1px solid #101828;padding:0 5px;margin-left:4px;vertical-align:1px;white-space:nowrap}
+.ded{margin-top:4px;font-size:12.5px;display:flex;gap:8px;color:#4b5566}
+.ded b{font-family:"IBM Plex Mono",monospace;color:#101828;white-space:nowrap}
+.anc{width:16px;height:16px;display:inline-grid;place-items:center;position:relative;margin-top:2px}
+.anc.e::before{content:"";width:11px;height:11px;background:#101828}
+.anc.l::before{content:"";width:12px;height:12px;border-radius:50%;border:1.6px solid #101828}
+.anc.l::after{content:"";position:absolute;width:15px;height:1.6px;background:#101828;transform:rotate(-45deg)}
+/* right */
+.rgt{display:grid;grid-template-rows:auto auto minmax(0,1fr);gap:10px;min-height:0;overflow:hidden}
+table{width:100%;border-collapse:collapse;border-top:1px solid #101828}
+th{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#4b5566;font-weight:600;text-align:left;padding:6px 0;border-bottom:1px solid #101828}
+th.r,td.r{text-align:right}
+td{padding:5px 0;border-bottom:1px solid #d3d7de;vertical-align:top;font-size:12px;line-height:1.38}
+td.c{font-weight:600;white-space:nowrap;padding-right:10px;font-size:12.5px}
+td .ern,td .lst{display:block}
+td .lst{color:#4b5566;margin-top:2px}
+td .ern b,td .lst b{font-weight:600;color:#101828}
+td.a{width:22px}
+td.p{font-family:"IBM Plex Mono",monospace;width:40px;text-align:right}
+tfoot td{border-bottom:0;font-family:"IBM Plex Mono",monospace;font-size:12px;color:#4b5566}
+.legend{font-size:11px;color:#4b5566;display:flex;gap:14px;margin-top:6px}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend .anc{transform:scale(.8);margin:0}
+.ref{border-top:1px solid #101828;padding-top:8px}
+.ref h3{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:15px;margin-bottom:6px}
+.ref .row{display:grid;grid-template-columns:78px 1fr;gap:10px;padding:3px 0;font-size:11.5px;line-height:1.4;border-bottom:1px solid #e3e6eb}
+.ref .row span:first-child{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#4b5566;font-weight:600;padding-top:2px}
+.ref .row ul{list-style:none}
+.ref .row li::before{content:"· "}
+.ref dl dt{display:inline;font-weight:600}
+.ref dl dd{display:inline}
+.ref dl div{margin-bottom:2px}
+.dd{border-top:1px solid #101828;padding-top:8px;min-height:0;display:grid;grid-template-rows:auto auto 1fr;gap:4px}
+.dd h3{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:15px}
+.dd .sub{font-family:Newsreader,Georgia,serif;font-style:italic;color:#4b5566;font-size:12.5px;margin-bottom:4px}
+.dd .list{min-height:0;overflow:auto;scrollbar-width:none}
+.acc .h{width:100%;display:flex;justify-content:space-between;text-align:left;padding:5px 0;font-weight:600;font-size:12px;border-bottom:1px solid #d3d7de}
+.acc .h span:last-child{font-family:"IBM Plex Mono",monospace;color:#4b5566}
+.acc .b{display:none;font-size:12px;line-height:1.45;padding:4px 0 8px;border-bottom:1px solid #d3d7de;color:#1f2937}
+.acc.open .b{display:block}
+.acc.open .h{border-bottom:0}
+</style>
+</head>
+<body>
+<div class="plate">
+  <header class="mast">
+    <span class="brand">The Blue Hour Cabinet</span>
+    <span class="sc"><b>AP Statistics</b></span>
+    <span class="sc">Open Hand · <b>full picture</b></span>
+    <span class="folio" id="folio">Unit 2 · 2.3 · Least-Squares Regression</span>
+  </header>
+  <div class="cols">
+    <aside class="col">
+      <div class="navh">Study map · 5 units · 13 topics</div>
+      <div class="navs">Follows the AP curriculum</div>
+      <div class="ledger" id="ledger"></div>
+      <div class="navfoot">Current location: <b id="locline">Unit 2 · Exploring Two-Variable Data, topic 2.3 · Least-Squares Regression</b>. Select any row to move.</div>
+    </aside>
+    <main class="col ctr">
+      <div><h6 class="k">The question</h6><h1>Describe the association between weekly practice time and free-response score, and interpret the slope in context.</h1></div>
+      <div class="fig">
+        <svg viewBox="0 0 640 330" id="svg"></svg>
+        <div class="cap"><b>Figure 1.</b> Weekly practice time against free-response score for nine students, with the least-squares line. The open marker is an influential point: low practice time, higher-than-expected score. Dashed: the line refit without it.
+          <dl><dt>ŷ</dt><dd>3.29 + 0.72x</dd><dt>n</dt><dd>9</dd><dt>b (w/o pt)</dt><dd>0.94</dd></dl></div>
+      </div>
+      <section class="resp">
+        <div class="rh"><h2>Model response</h2><div class="seg" role="group" aria-label="Credit toggle"><button id="tfull" aria-pressed="true">Full credit (4 / 4)</button><button id="tlost" aria-pressed="false">Points lost (1 / 4)</button></div><div class="tally"><small>Tally</small><span id="tally">4 / 4</span></div></div>
+        <div id="paras"></div>
+      </section>
+    </main>
+    <aside class="col rgt">
+      <div>
+        <h6 class="k">How points move</h6>
+        <table>
+          <thead><tr><th></th><th>Criterion</th><th class="r">Pts</th></tr></thead>
+          <tbody>
+            <tr><td class="a"><span class="anc e" id="a1"></span></td><td><span class="c">Describe the association</span><span class="ern"><b>Earned:</b> Direction, form, strength, and unusual features — stated in context.</span><span class="lst"><b>Lost when</b> a feature is skipped or given without variables/units.</span></td><td class="p">+2</td></tr>
+            <tr><td class="a"><span class="anc e" id="a2"></span></td><td><span class="c">Interpret the slope</span><span class="ern"><b>Earned:</b> Say what changes, per what, on average, in context.</span><span class="lst"><b>Lost when</b> the number is stated with no context.</span></td><td class="p">+1</td></tr>
+            <tr><td class="a"><span class="anc e" id="a3"></span></td><td><span class="c">Explain influence</span><span class="ern"><b>Earned:</b> Name the influential point and how it pulls the fitted line.</span><span class="lst"><b>Lost when</b> influence is asserted with no mechanism.</span></td><td class="p">+1</td></tr>
+          </tbody>
+          <tfoot><tr><td></td><td>Total available</td><td class="p">4</td></tr></tfoot>
+        </table>
+        <div class="legend"><span><span class="anc e"></span>earned (filled square)</span><span><span class="anc l"></span>lost (struck circle)</span></div>
+      </div>
+      <div class="ref">
+        <h3>For this question</h3>
+        <div class="row"><span>Topic</span><span>Two-variable quantitative data — describing scatterplots and fitting a least-squares regression line.</span></div>
+        <div class="row"><span>Skills</span><ul><li>Describe association: direction · form · strength · unusual</li><li>Interpret slope &amp; intercept in context</li><li>Identify and reason about influential points</li></ul></div>
+        <div class="row"><span>Vocabulary</span><dl><div><dt>Influential point</dt> — <dd>An observation whose removal substantially changes the fitted model.</dd></div><div><dt>Residual</dt> — <dd>Observed minus predicted response for a point.</dd></div><div><dt>Slope (b)</dt> — <dd>Predicted change in y per one-unit change in x.</dd></div></dl></div>
+      </div>
+      <div class="dd">
+        <h6 class="k" style="margin:0">Deep dive · the CED gate</h6>
+        <div><h3>Classifying variables</h3><div class="sub">Categorical vs quantitative · discrete vs continuous</div></div>
+        <div class="list">
+          <div class="acc open"><button class="h"><span>1. Core idea</span><span>−</span></button><div class="b">Categorical-vs-quantitative and discrete-vs-continuous is pure vocabulary with no formula attached — but the CED treats it as a gate: using a mean or standard deviation on a categorical variable, or a bar chart on a continuous one, is scored as a <b>category error</b>, not partial credit for a numeric mistake.</div></div>
+          <div class="acc"><button class="h"><span>2. What students need to understand</span><span>+</span></button><div class="b">This classification step determines which graphs, statistics, and inference procedures are even valid to reach for later in the course, so misclassifying a variable here can invalidate an otherwise-correct calculation several units later.</div></div>
+          <div class="acc"><button class="h"><span>3. How this becomes points</span><span>+</span></button><div class="b">Multiple-choice and free-response items expect a stated variable to be correctly classified before any statistic or graph choice is judged — picking the right numeric answer for the wrong variable type earns <b>no credit</b> for the classification component.</div></div>
+          <div class="acc"><button class="h"><span>4. Answer move</span><span>+</span></button><div class="b">When a question gives you a variable description, decide <b>categorical vs quantitative first</b>, then — if quantitative — <b>discrete vs continuous</b>, before choosing any graph or statistic. This step is about <i>reading</i> the variable, not analyzing it.</div></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+<script>
+const PTS=[[2,3.5],[3,4.8],[4,5.4],[5,6.9],[6,7.1],[7,8.6],[8,9.0],[9,10.4]],INF=[1.5,6.7],B0=3.29,B1=0.72,A0=1.78,A1=0.942;
+const MAP=[["Unit 1","Exploring One-Variable Data",[["1.1","Variables & classification"],["1.2","Representing data"],["1.3","Summaries & distributions"]]],["Unit 2","Exploring Two-Variable Data",[["2.1","Two categorical variables"],["2.2","Scatterplots & correlation"],["2.3","Least-squares regression"]]],["Unit 3","Collecting Data",[["3.1","Sampling methods"],["3.2","Experiments & studies"]]],["Unit 4","Probability & Distributions",[["4.1","Probability foundations"],["4.2","Random variables"],["4.3","Binomial & geometric"]]],["Unit 5","Inference",[["5.1","Confidence intervals"],["5.2","Significance tests"]]]];
+const W=640,H=330,L=44,R=14,T=12,Bm=42,sx=x=>L+x/10*(W-L-R),sy=y=>H-Bm-y/12*(H-T-Bm);
+let s='';
+for(let y=2;y<=12;y+=2)s+=`<line class="grid" x1="${L}" y1="${sy(y)}" x2="${W-R}" y2="${sy(y)}"/>`;
+s+=`<line class="ax" x1="${L}" y1="${T}" x2="${L}" y2="${H-Bm}"/><line class="ax" x1="${L}" y1="${H-Bm}" x2="${W-R}" y2="${H-Bm}"/>`;
+for(let x=0;x<=10;x+=1)s+=`<line class="ax" x1="${sx(x)}" y1="${H-Bm}" x2="${sx(x)}" y2="${H-Bm+4}"/>`+(x%2?'':`<text class="tk" x="${sx(x)}" y="${H-Bm+16}" text-anchor="middle">${x}</text>`);
+for(let y=0;y<=12;y+=2)s+=`<line class="ax" x1="${L-4}" y1="${sy(y)}" x2="${L}" y2="${sy(y)}"/><text class="tk" x="${L-8}" y="${sy(y)+3.5}" text-anchor="end">${y}</text>`;
+s+=`<text class="axl" x="${(L+W-R)/2}" y="${H-6}" text-anchor="middle">Practice time (hours/week)</text><text class="axl" transform="translate(10 ${(T+H-Bm)/2}) rotate(-90)" text-anchor="middle">Free-response score</text>`;
+s+=`<line class="alt" x1="${sx(1)}" y1="${sy(A0+A1)}" x2="${sx(10)}" y2="${sy(A0+A1*10)}"/><line class="fit" x1="${sx(0.4)}" y1="${sy(B0+B1*.4)}" x2="${sx(10)}" y2="${sy(B0+B1*10)}"/>`;
+s+=PTS.map(p=>`<circle class="pt" cx="${sx(p[0])}" cy="${sy(p[1])}" r="4"/>`).join('');
+const ix=sx(INF[0]),iy=sy(INF[1]);
+s+=`<circle class="inf" cx="${ix}" cy="${iy}" r="6.5"/><text class="gl" x="${ix+12}" y="${iy-6}">influential (1.5, 6.7)</text><text class="gl" x="${sx(7.4)}" y="${sy(B0+B1*7.4)+22}">ŷ = 3.29 + 0.72x</text>`;
+svg.innerHTML=s;
+const FULL=[`The association is positive, moderately strong, and roughly linear <span class="tag">✦ describe</span>. Students who practice more tend to earn higher scores, on average.`,`The slope of <b>0.72</b> means that each additional hour of weekly practice predicts about <b>0.72 more points</b> on the free-response, on average <span class="tag">✦ slope in context</span>.`,`One student practices far less than their score would suggest — an <b>influential point</b> that pulls the fitted line down and flattens the slope <span class="tag">✦ influence</span>.`];
+const LOST=[`The association is positive and strong <span class="tag">✦ partial</span>.<div class="ded"><b>−1</b><span>form not named (linear?) and strength not tied to the data</span></div>`,`The slope is 0.72.<div class="ded"><b>−1</b><span>a number with no context — name what changes, per what, in context</span></div>`,`Practice helps scores.<div class="ded"><b>−1</b><span>influence asserted with no mechanism; the influential point is never named</span></div>`];
+function setState(full){paras.innerHTML=(full?FULL:LOST).map((p,i)=>`<div class="para"><span class="i">¶${i+1}</span><span class="anc ${full?'e':'l'}"></span><div>${p}</div></div>`).join('');for(let i=1;i<=3;i++)document.getElementById('a'+i).className='anc '+(full?'e':'l');tally.textContent=full?'4 / 4':'1 / 4';tfull.setAttribute('aria-pressed',full);tlost.setAttribute('aria-pressed',!full)}
+tfull.onclick=()=>setState(true);tlost.onclick=()=>setState(false);setState(true);
+let cur='2.3';
+function draw(){ledger.innerHTML=MAP.map(u=>`<div class="u"><span>${u[0]}</span><span>${u[1]}</span></div>`+u[2].map(t=>`<button data-t="${t[0]}" class="${t[0]===cur?'cur':''}"><span class="n">${t[0]}</span><span>${t[1]}</span></button>`).join('')).join('');
+ ledger.querySelectorAll('button').forEach(b=>b.onclick=()=>{cur=b.dataset.t;const u=MAP.find(u=>u[2].some(t=>t[0]===cur)),t=u[2].find(t=>t[0]===cur);locline.textContent=`${u[0]} · ${u[1]}, topic ${cur} · ${t[1]}`;folio.textContent=`${u[0]} · ${cur} · ${t[1]}`;draw()})}
+draw();
+document.querySelectorAll('.acc .h').forEach(h=>h.onclick=()=>{const a=h.parentElement;a.classList.toggle('open');h.lastElementChild.textContent=a.classList.contains('open')?'−':'+'});
+</script>
+</body>
+</html>
