@@ -1,6 +1,6 @@
 # Project Charter — project-crux
 
-Status: **Brief development complete. Charter complete — approved to generate.** Filled per `docs/ARCHITECTURE.md` §2 and `docs/PROJECT_CHARTER_TEMPLATE.md`. Living document — update in place; history in the changelog.
+Status: **Build-out phase (Phase 2, from 2026-09-21) — provocation locked; building the design system + templates.** (Exploration and brief development complete.) Filled per `docs/ARCHITECTURE.md` §2 and `docs/PROJECT_CHARTER_TEMPLATE.md`. Living document — update in place; history in the changelog. Current phase decisions and data-readiness are in "Build-out phase" below.
 
 **A note on what this file deliberately does not say.** This project runs as a clean-room, blind-start exercise (see constraints). Generative agents (Brand Strategist, Visual Designer, Marketing Creative Designer, Critic, and anyone else pointed at this repo) are expected to read this charter in full. **Category-level information is included below deliberately** (David's call, 2026-09-15 — see "Why this project exists" for the resolved open question). What remains withheld from this repo entirely, known only to David and the originating Creative Director session: the product's **real name/brand identity**, the identity and content of any **existing design work already produced for it** (this project's own or the source product's), and **any prior visual/UX design exploration already produced for this brief in another session**. Do not add any of that to this file, `README.md`, the logs, or any handoff packet. If you are a generative agent reading this and were not shown that material, that is intentional — do not infer, guess, or reconstruct it.
 
@@ -36,7 +36,35 @@ Process constraints, agreed before any brief was written:
 - **Reference/competitive context:** differentiate from worksheet/LMS edtech, heavy-gamification apps (points/streak coercion), and drill-heavy test prep (Kaplan/Fiveable-style). These are the "generic median" the kit exists to counteract; the inspiration set above is the intended counterweight.
 - **Audience visual-register intelligence (added 2026-09-18 — expert brand review relayed by David):** A recognized brand-development expert reviewed the leading direction and found the project's register skewing cool, muted, and mature. Brands that resonate with teens tend toward **higher contrast, generous white space, warm color accents, and black sans-serif headline type**. This is register/palette/type intelligence about audience fit; it converges with the Critic's open "register hit" finding (009 / N4) and reframes the live product's "bleh" reception as plausibly cool-muted-generic rather than too-energetic. **New register inspiration set for audience fit:** Nike, Instagram, Depop, Hollister — metabolize the *principle* (bold contrast, negative space, confident warm energy, decisive sans type), never re-skin the marks. Held as a *soft* constraint (below): guidance to design toward, deliberately kept testable against a falsification control.
 - **Retention/UX principles (David's research — requirements, not design solutions):** (1) spatial memory — curriculum navigable as a place, mastery legible as terrain, recommendation as destination (navigation only, never inside a session); (2) progressive disclosure/chunking — minimal defaults, pull complexity; (3) contextual pop-overs / persistent glossary — in-place term definitions with tiny visuals; (4) interactive simulation / kinetic feedback — per-topic simulation *slots* plus rubric-lit grading as the primary kinetic payoff; (5) visual anchors / high-contrast typography (Von Restorff) — one consistent meaning per anchor (points won vs. lost). Implied architecture: an overview/navigation mode and a focused single-topic working mode. *(How these are visually expressed is for the Visual Designer to originate — no prior solution is carried into this repo.)*
-- **Open questions (non-blocking):** exact app name and final brand; which additional subjects at launch; whether the two cognitive profiles become explicit modes or one adaptive interface.
+- **Open questions (non-blocking):** exact app name and final brand; which additional subjects at launch. *(Resolved 2026-09-21: one adaptive interface, not explicit A/B cognitive-profile modes — see Build-out phase.)*
+
+## Build-out phase (Phase 2 — from 2026-09-21)
+
+The project has moved from divergent exploration to **build-out / production specification**. The provocation is locked; the work is a **design system + templates** for the Open Hand and the regular MCQ/FRQ pages, applied to the already-built engine and content. The sanitized data contract and the coverage/defect audit live under `plan/`.
+
+**Decisions (David; dates noted):**
+- **Provocation locked (2026-09-21).** Direction chosen; templates are built to a confirmed pattern, not diverged. The only genuinely new *design* is the Open Hand provocation; other surfaces inherit the confirmed pattern.
+- **One adaptive interface (2026-09-19)** — not explicit A/B cognitive-profile modes; density pulled via progressive disclosure.
+- **Mode/assist consolidation (2026-09-20):** Cram, Course, and Homework collapse into one mode ("Learn"). Default year-round entry is **BYOQ** (the student's real homework); product-directed practice from the cell-mastery queue is secondary; both route into one teach-first Open Hand loop.
+- **Open Hand = teach-first, never answer-first (hard principle):** skill explainer → worked example with scoring face-up → the student's own cold attempt. For BYOQ, teach on a vetted *parallel* problem and hand the real question back **unsolved**.
+- **BYOQ hint scaffolding (2026-09-20):** the Open Hand components (rubric, topic brief, vocab, answer-move) are student-exposable as **tracked hints**; the number and type of hints drive feedback and the adaptive fade ("try another without the rubric and vocabulary"). The reference rail *is* the exposable component set.
+- **Mastery rule (2026-09-21):** mastery = answering **multiple distinct questions with zero hints** (cold). Any hint = "good, not mastered." Hints never earn mastery credit (consistent with the engine's existing binary rule; no graded-scoring rebuild).
+- **Student home + progress combined (2026-09-20)** into one adaptive, mastery-aware surface (due-queue "start here", skills rail, course position).
+- **Parent-pay reinstated as scope, and it is NET-NEW (2026-09-19, corrected 2026-09-20):** purchaser ≠ entitlement-holder (parent marketing page + buy-for-a-student). The gifting/purchaser-not-holder mechanic does **not** exist today — design-and-build from scratch, not a reskin.
+- **Marketing track reactivated (partial):** parent marketing page, blog (reskin), marketing home. Campaigns/channels still out.
+- **No subscription (reaffirmed):** one-time by subject or bundle (single / 2 / 3 / unlimited).
+- **Diagnostic deprioritized (seasonal):** parked, not removed.
+- **Build against the production `app.*` model:** the flat prototype tables and the Dev sandbox are not build targets.
+- **Seeded on Biology** (mature content); designed subject-agnostic.
+
+**Clean-room — retired 2026-09-21 (direction locked).** The clean-room existed to prevent design convergence during exploration; with the direction locked, that safeguard has served its purpose, so the build-out **may reference the existing product build**. This is a David-approved hard-constraint change. **The product's real name/identity remains withheld from this repo** unless David explicitly reveals it — a separate §10 gate, not done here. Continue writing "the product" / project-crux in repository content.
+
+**Data readiness (blocks generate-and-ship, not design)** — see `plan/DATA_ISSUES.md` and the audit handed to David:
+- Unit-level question coverage is 100% (Bio 8/8, Stats 5/5); **topic-level tagging is absent** (items are unit-tagged only) → a **tagging backfill** is the prerequisite to any per-topic work, not new authoring.
+- **Difficulty labels effectively absent** (empty taxonomy; only partial AP-Stats-MCQ on an off-scheme scale) → a labeling backfill if difficulty is to drive the fade.
+- **`subject_key` not normalized** (hyphen vs underscore) → canonical = `ap-<slug>` hyphen (incl. `subjects.biology → ap-biology`); engineering migration before new data code.
+
+**Phase-1 build order:** design system + component library (scoring anchors, reference rail, collapsed-assist panel, glossary popover) → the parametric Working/Study template (Open Hand → attempt → collapsed assist → rubric-lit graded feedback; FRQ + MCQ; product-directed + typed BYOQ) → student home + progress. **Deferred:** curriculum "place" mode, signup + payments (incl. net-new parent-pay), marketing home, blog, account, photo/hand-drawn BYOQ capture.
 
 ## Active tracks
 
@@ -44,7 +72,7 @@ Process constraints, agreed before any brief was written:
 |---|---|---|
 | Visual Design | **Yes** | Core of the ask — color, type, layout system, visual anchor system, component look-and-feel serving both cognitive profiles. |
 | Brand Identity | **Yes** | The ask explicitly names "brand" alongside UX and visual identity. Runs without a locked app name — produce a brand system that will carry a name once one exists, not one that depends on it. |
-| Marketing Templates | **No — not this pass** | Nothing in the brief addresses go-to-market, campaigns, or channels; v1 explicitly excludes any parent-facing surface. Revisit as a separate charter update if/when marketing work is actually needed. |
+| Marketing Templates | **Yes — partial** *(changed 2026-09-19)* | Parent-facing marketing page, blog (reskin), and marketing home are in scope; go-to-market campaigns/channels remain out. |
 | UX | **Yes** | Core of the ask. Primary UX problem: express the overview/navigation "place" mode vs. focused single-topic "working" mode, and the "Open Hand" concept, in a way that serves Learner A's density needs and Learner B's low-decision, short-session needs from one coherent system. |
 
 ## Done Decider checklist (per active track)
@@ -69,20 +97,31 @@ Drafted here as a starting point — David is the Done Decider and should edit t
 - Progressive disclosure is evident: minimal defaults, complexity pulled rather than pushed.
 - The contextual pop-over / persistent glossary pattern and the kinetic-feedback-tied-to-rubric-grading loop are both present and legible.
 
+**Working / Study template (build-out, added 2026-09-21):**
+- Open Hand teaches first (skill explainer → worked example with scoring face-up → the student's own cold attempt); for BYOQ it teaches on a vetted *parallel* problem and returns the real question **unsolved** — never answer-vending.
+- One parametric template renders FRQ and MCQ, and product-directed and typed-BYOQ sources, without reading as different products.
+- The collapsed assist ("Learn") exposes the Open Hand components as **tracked hints**; the graded-feedback state lights rubric criteria (earned vs. not-earned) via the anchor system.
+- Mastery = multiple distinct questions answered with **zero hints**; any hint = "good, not mastered."
+- A 10–20 min session (Open Hand → attempt → feedback) is completable with low decisions and visible momentum.
+
+**Student home + progress (combined, added 2026-09-21):**
+- Starts a productive session in one–two decisions (recommended, or self-guided by topic/format) with a session length.
+- Is mastery-aware (due-queue "start here", skills rail, course position) without nag/guilt patterns.
+
 ## Constraint ledger
 
 | Constraint | Hard (must survive) or Soft (fair game for Chaos Agent) | Source |
 |---|---|---|
-| No exposure of generative agents to the source product's existing visual identity brief, prototype files, or the source product's real name/identity | Hard (process constraint) | David, 2026-09-15 |
-| No exposure of generative agents to any prior visual/UX design exploration already produced for this brief in another session | Hard (process constraint) | David, 2026-09-15 |
+| No exposure of generative agents to the source product's real name/identity (the **design-artifact** part of this exclusion is **retired 2026-09-21** at direction-lock — see Build-out phase) | Hard for identity; design-exclusion retired | David, 2026-09-15; retired-in-part 2026-09-21 |
+| Prior visual/UX design-exploration exclusion — **retired 2026-09-21** (clean-room lifted at direction-lock; build-out may reference the existing build) | Retired | David, 2026-09-21 |
 | Laptop-first web app (not phone-first, not native mobile) | Hard | Origin brief, 2026-09-15 |
 | Design presents the existing engine/content (curriculum, grading, question formats); does not alter what it does | Hard | Origin brief, 2026-09-15 |
-| No parent-facing UI in v1 | Hard | Origin brief, 2026-09-15 |
+| Parent-facing marketing + buy-for-a-student (purchaser ≠ entitlement) flow — **in scope; NET-NEW build** (reverses "no parent UI in v1"; the gifting/purchaser≠holder mechanic does not exist today) | Hard | David, 2026-09-19 |
 | No subscription/paywall-nag UI patterns | Hard | Origin brief, 2026-09-15 |
 | "Help them learn efficiently; do not do the work for them" — no answer-vending shortcut UX | Hard | Origin brief, 2026-09-15 |
 | Exact visual expression of the spatial-memory/navigation metaphor | Soft | Expanded understanding, 2026-09-15 |
 | Exact visual anchor system design (only the *principle* — one meaning per anchor — is hard) | Soft | Expanded understanding, 2026-09-15 |
-| Whether the two cognitive profiles are explicit modes vs. one adaptive interface | Soft — open question | Origin brief, 2026-09-15 |
+| Two cognitive profiles → **one adaptive interface** (not explicit modes; density pulled via progressive disclosure) | Resolved | David, 2026-09-21 |
 | App name / final brand identity | Soft — deferred | Origin brief, 2026-09-15 |
 | Which additional subjects beyond AP Statistics/Biology at launch | Soft — open question | Origin brief, 2026-09-15 |
 | Visual register should match contemporary teen brand language — high contrast, generous white space, warm color accents, black sans-serif headline type | Soft — audience-fit guidance, deliberately testable against a control | David (relayed expert brand review), 2026-09-18 |
@@ -144,3 +183,4 @@ Also: handoff 006's actual output (`projects/project-crux/visual/006-place-mode.
 - `2026-09-15` — Model assignment table updated for the UX Critic/Usability Tester → Critic consolidation (DECISION-0001).
 - `2026-09-15` — Charter completed: Origin brief, Expanded understanding, Active tracks, Done Decider checklist, Constraint ledger, and Model assignment (with GPT-Sol/Grok overrides) filled in. Top-of-file note updated to reflect the resolved category-anonymization decision.
 - `2026-09-18` — Added audience visual-register intelligence from an expert brand review (relayed by David): teen-resonant register (high contrast, generous white space, warm color accents, black sans-serif headers) and a new register inspiration set (Nike, Instagram, Depop, Hollister). Recorded in Expanded understanding and as a new Soft constraint in the Constraint ledger. Motivates Handoff 014 — re-diverge on the updated register brief, with a control direction that defends the cool/mature register.
+- `2026-09-21` — **Build-out phase opened (Phase 2).** Provocation locked; scope = design system + templates for Open Hand and regular MCQ/FRQ pages. Recorded: one adaptive interface (not A/B modes); Cram/Course/Homework consolidated into one "Learn" mode with BYOQ as default entry; Open Hand teach-first (for BYOQ, teach on a parallel problem and return the real question unsolved); BYOQ hint-scaffolding (Open Hand components as tracked hints driving feedback + adaptive fade); mastery = multiple cold/no-hint questions; student home + progress combined; parent-pay reinstated as NET-NEW; Marketing track reactivated (partial); no subscription reaffirmed; diagnostic deprioritized; build against the production `app.*` model; seeded on Biology. **Clean-room retired** at direction-lock (design-artifact exclusion lifted; product identity still withheld from repo). Data-readiness gaps recorded in `plan/DATA_ISSUES.md` (topic-tagging absent → backfill; difficulty labels absent; `subject_key` canonical = `ap-<slug>` hyphen). Orchestrator granted read access to the production DB/hosting/content repo for a sanitized data contract + audit.
