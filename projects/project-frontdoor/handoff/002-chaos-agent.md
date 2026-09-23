@@ -1,12 +1,12 @@
 ---
 handoff: project-frontdoor/002
 role: chaos-agent
-status: ready
+status: dispatched
 lane: divergence
 actor: grok
-model: unspecified
+model: grok (xAI)
 source_sha: b1e6d77
-frozen_hash:           # written by publish at dispatched
+frozen_hash: 9c01c87c964525ee3db9538802f3ec31d8ed4785b01e4a6b65acb465897aa80b
 inputs:
   - projects/project-frontdoor/charter.md
   - projects/project-frontdoor/design-system/SOURCE.md
