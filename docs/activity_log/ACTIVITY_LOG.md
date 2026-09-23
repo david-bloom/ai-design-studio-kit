@@ -102,3 +102,7 @@ Entry shape:
 ## 2026-09-23T22:38Z — recovery — kit — claude-code
 - Landed @ 990d932: projects/project-frontdoor/charter.md; projects/project-frontdoor/design-system/SOURCE.md; projects/project-frontdoor/design-system/TOKENS.md; projects/project-frontdoor/design-system/VISUAL_IDENTITY.md; projects/project-frontdoor/design-system/styles.css; projects/project-frontdoor/design-system/tokens/colors.css; projects/project-frontdoor/design-system/tokens/elevation.css; projects/project-frontdoor/design-system/tokens/fonts.css … (11 files)
 - Note: Land project-frontdoor scaffolding (charter + pinned design-system mirror cramapple@5341d4d) stranded on branch claude/sharp-faraday-ap5xoj / PR #9
+
+## 2026-09-23T23:06Z — governance — kit — claude-code
+- Landed @ a707b32: docs/activity_log/DECISIONS_LOG.md
+- Note: DECISION-0007 Approved: Cramapple design system Done (orange-masthead Project-Crux direction, internally BlueHour Cabinet); David's 2026-09-23 in-session selection is the approval of record
