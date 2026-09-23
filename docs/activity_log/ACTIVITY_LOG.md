@@ -98,3 +98,7 @@ Entry shape:
 - Landed @ bc8c5dc: projects/project-crux/visual/mocks/head-to-head-017/signal-proof/openhand-stats.html; projects/project-crux/visual/mocks/head-to-head-017/signal-proof/openhand-stats.png; projects/project-crux/visual/mocks/head-to-head-017/daybreak-relay/openhand-stats.html; projects/project-crux/visual/mocks/head-to-head-017/daybreak-relay/openhand-stats.png; projects/project-crux/visual/mocks/head-to-head-017/open-window/openhand-stats.html; projects/project-crux/visual/mocks/head-to-head-017/open-window/openhand-stats.png; projects/project-crux/visual/mocks/head-to-head-017/midnight-standard-control/openhand-stats.html; projects/project-crux/visual/mocks/head-to-head-017/midnight-standard-control/openhand-stats.png; projects/project-crux/visual/mocks/head-to-head-017/manifest.md
 - Status: dispatched → landed
 - Next: orchestrator: accept or return
+
+## 2026-09-23T22:38Z — recovery — kit — claude-code
+- Landed @ 990d932: projects/project-frontdoor/charter.md; projects/project-frontdoor/design-system/SOURCE.md; projects/project-frontdoor/design-system/TOKENS.md; projects/project-frontdoor/design-system/VISUAL_IDENTITY.md; projects/project-frontdoor/design-system/styles.css; projects/project-frontdoor/design-system/tokens/colors.css; projects/project-frontdoor/design-system/tokens/elevation.css; projects/project-frontdoor/design-system/tokens/fonts.css … (11 files)
+- Note: Land project-frontdoor scaffolding (charter + pinned design-system mirror cramapple@5341d4d) stranded on branch claude/sharp-faraday-ap5xoj / PR #9
