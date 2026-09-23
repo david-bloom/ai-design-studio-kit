@@ -106,3 +106,7 @@ Entry shape:
 ## 2026-09-23T23:06Z — governance — kit — claude-code
 - Landed @ a707b32: docs/activity_log/DECISIONS_LOG.md
 - Note: DECISION-0007 Approved: Cramapple design system Done (orange-masthead Project-Crux direction, internally BlueHour Cabinet); David's 2026-09-23 in-session selection is the approval of record
+
+## 2026-09-23T23:56Z — recovery — kit — claude-code
+- Landed @ b334869: projects/project-crux/charter.md; projects/project-crux/plan/CHARTER_UPDATE_2026-09-21.md; projects/project-crux/plan/DATA_CONTRACT_AUDIT.md; projects/project-crux/plan/DATA_ISSUES.md; projects/project-crux/plan/PHASE1_SURFACE_MAP.md; projects/project-crux/plan/WORK_ORDER_empty_cells.md
+- Note: Land project-crux Phase 2 build-out work stranded on branch claude/optimistic-bell-b8bxwn: charter refresh + plan/ set (charter update, data-contract audit, data issues, Phase-1 surface map, empty-cells work order)
