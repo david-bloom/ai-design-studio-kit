@@ -1,6 +1,6 @@
 # Project Charter — project-frontdoor
 
-Status: **Shell — brief development in progress.** Copied from `docs/PROJECT_CHARTER_TEMPLATE.md`. This file is the seed everything else reads. Update in place as understanding changes; log changes in the changelog rather than silently rewriting history.
+Status: **Brief complete — approved to generate.** Copied from `docs/PROJECT_CHARTER_TEMPLATE.md`. This file is the seed everything else reads. Update in place as understanding changes; log changes in the changelog rather than silently rewriting history.
 
 *Slug note:* `project-frontdoor` = the product's public front door (home page). Kept category-neutral by convention, **not** for clean-room reasons — this project is a deliberate extension of an existing, named product's design system (see the contamination note below), so its identity is not withheld. Rename to something explicit (e.g. `cramapple-homepage`) if clarity is preferred over convention.
 
@@ -8,35 +8,42 @@ Status: **Shell — brief development in progress.** Copied from `docs/PROJECT_C
 
 ## Origin brief
 
-> David's direction as given, verbatim substance (2026-09-23). **In progress — to be completed by the Creative Director brief-development conversation.**
+> David's direction as given, verbatim substance (2026-09-23).
 
 - A **home page** for the product (an AP/high-school test-prep study app; the same product project-crux designed the app UX/brand for).
-- Primary job: **convert the buyer.** For this product the **buyer is the student** (the end user is the purchaser), not a parent — this differs from a typical edtech home page aimed at parents.
-- **Show, don't tell.** The page leans into **interactive screenshots / live product demonstration**, not persuasive marketing language. The product does the talking.
-- Must **live inside the app's locked design system** (extension, not a sibling register).
-- Must **avoid the generic landing-page median.**
+- **Primary job: convert the buyer.** For this product the **buyer is the student** (the end user is the purchaser), not a parent — this differs from a typical edtech home page aimed at parents.
+- **The conversion action is to buy, entered via a 7-day trial.** The page's actual conversion event is *start the 7-day trial*; the purchase happens downstream, inside the trial.
+- **Show, don't tell.** The page leans into **interactive product demonstration**, not persuasive marketing language. The product does the talking.
+- **Money moments named by David:** the "Open Hand" concept; hand-drawn / photographed work upload; BYOQ (bring your own question); and copying all the hints so the student can build topic-level notes.
+- **Fidelity — David leans live:** the student can change subject, open hints, enter an answer and see grading, even upload their own question.
+- **Proof:** no quotes or proof points exist yet; the demo must carry the sale. Proof to be added later, once there is usage.
+- **Device reality:** students *use* the product on laptops, but may *buy* on their phones.
+- Must **live inside the app's locked design system** (extension, not a sibling register), and must **avoid the generic landing-page median.**
 
 ## Expanded understanding
 
-*To be filled by the Creative Director brief-development conversation. The open questions below are the ones flagged as brief-completing; close them before generation.*
+What the brief-development conversation (David + Creative Director, 2026-09-23) resolved beyond the raw brief:
 
-- **Real audience:** the student-as-buyer. Note the two cognitive profiles carried from project-crux (Learner A: strong executive function, tolerates density; Learner B: mild ADHD, needs low-decision / short-attention / visible momentum). A distractible student will bounce, not read — the home page inherits that constraint. *What is the visitor's entry context — cold (search/ad), referral (friend/teacher), or returning?*
-- **The conversion action:** *What exactly does the buyer do?* Access model carried from project-crux: one-time purchase, tiers by subjects unlocked, no subscription/paywall-nag. *Does the page drive to a direct purchase, a free sample, or the "Open Hand" demo — and what is free vs. paid?*
-- **The money moment(s) to demonstrate:** show-don't-tell needs a subject. Candidate signatures from the product: the **"Open Hand"** concept (scoring mechanics shown face-up), rubric-lit grading of written/photographed answers, the overview↔working modes. *Which 1–3 moments, shown interactively, make a student "get it" in seconds?*
-- **Fidelity of the "interactive screenshots":** *live, attemptable product embedded in the page (e.g. actually try an Open Hand question), or high-fidelity annotated mocks?* This is a real fork — it changes build complexity, novelty ceiling, and how convincing "show don't tell" can be.
-- **Proof without persuasion:** conversion usually leans on proof, but persuasive copy is out **and** testimonials/logo bars are the median. *How is credibility established — is the live demo itself the proof, or is any evidence (score outcomes, "augments your teacher, doesn't replace them") needed?*
-- **First-view job:** laptop-first (inherited). *What must land in the first ~5 seconds for Learner B before a scroll?*
-- **Reference/competitive context:** differentiate from worksheet/LMS edtech, heavy-gamification apps, and drill-heavy test prep (Kaplan/Fiveable) — the anti-references. The generic SaaS/edtech home-page median is the primary thing to counteract.
-- **Open questions:** final app name still deferred (project-crux); which subjects are shown on the page at launch.
+- **Real audience:** the student-as-buyer. The two cognitive profiles carried from project-crux still apply (Learner A: strong executive function, tolerates density; Learner B: mild ADHD, needs low-decision / short-attention / visible momentum). A distractible student bounces rather than reads — the home page inherits that constraint, so the first view must land the core value without copy.
+- **The funnel:** land → start 7-day trial → buy. The home page's job is to get the student *into the trial*, not to argue for a purchase in prose.
+- **Page spine — two beats, not a feature menu.** Four co-equal money moments would read as a menu (i.e. the median) to a low-attention student. Ranked and combined into a two-beat spine:
+  1. **Hero — live Open Hand.** The signature concept, self-explanatory, the "get it in five seconds" beat. This is the first view.
+  2. **The input→output loop.** BYOQ + photograph-your-handwritten-work (input) and hints → topic-level notes (output) are *one story*: **throw your real, messy work at it; get back clean study material.** This is the depth/retention beat that separates the product from a drill app — it comes after the hero has earned interest.
+- **Fidelity is tiered, deliberately.** Exactly **one** fully-live sandbox — the Open Hand hero (open hints, type an answer, watch the rubric light up on a *pre-loaded* question). The input→output loop is a **scripted showcase** (a pre-baked example stepped through), not a second live engine. Two reasons this is a design decision, not a compromise: (a) build cost — one live grading engine embedded in a marketing page is ambitious, two (one handling arbitrary uploads) is a project; (b) it is forced by the trial boundary below.
+- **The demo is the trial's front porch.** The live hero runs on rails (a pre-loaded question). The moment the experience turns *personal and unbounded* — upload your own question, switch to your own subjects, save your notes — is exactly where **"Start your 7-day trial"** fires. Live proves the magic; the trial unlocks it *for you*. This welds demo → trial → buy into one continuous motion instead of three separate asks, and it resolves the demo-vs-trial tension (a fully-live "bring anything" would give away the trial).
+- **Two surfaces, two device realities.** The *app* is laptop-first (inherited, hard). The *home page* is a storefront that must **convert on a phone.** Consequences: the live sandbox is a laptop experience and must **not** be forced onto a phone — the device split maps onto the fidelity split (**laptop → live sandbox; phone → scripted showcase**, CTA prominent on both). And a **buy-on-phone → use-on-laptop handoff** is required: the mobile flow must bridge to the laptop (email-a-link / continue-on-desktop) so a phone purchase does not strand the student away from where the product works.
+- **Proof without persuasion:** the live demo carries v1. No fake proof and no median testimonial/logo-bar section. Design a **graceful, empty-for-now slot** where real proof drops in once usage exists, so adding it later is not a redesign. Acknowledged risk: shipping a paid product with zero proof is a real conversion risk — the working demo is the accepted bet against it.
+- **Reference/competitive context:** differentiate from worksheet/LMS edtech, heavy-gamification apps, and drill-heavy test prep (Kaplan/Fiveable). The generic SaaS/edtech home-page median is the primary thing to counteract.
+- **Open questions (non-blocking):** final app name still deferred (project-crux); which subjects appear on the page at launch; the exact form of the scripted showcase's interactivity (step-through vs. lightly interactive).
 
 ## Active tracks
 
 | Track | In scope? | Notes |
 |---|---|---|
-| Visual Design | **Yes** | The home page's visual system — but strictly *within* the locked design system. Novelty is in composition/layout, not palette or type. |
+| Visual Design | **Yes** | The home page's visual system — strictly *within* the locked design system. Novelty is in composition/layout/motion, not palette or type. |
 | Brand Identity | **No — inherit** | The brand and design system are already locked; this project consumes them, it does not re-open them. That inheritance is the point. |
 | Marketing Templates | **Yes (scoped)** | This is the product's acquisition/conversion surface. Scoped to the home page itself, **not** a reusable campaign-template library or any parent-facing GTM. |
-| UX | **Yes** | Core problem: the "show don't tell" interactive-demonstration mechanic, and a first-view that converts a low-attention student without persuasive copy. |
+| UX | **Yes** | Core problem: the two-beat show-don't-tell spine, the live-hero/trial-gate boundary, the device-tiered fidelity, and the buy-on-phone→use-on-laptop handoff. |
 
 ## Done Decider checklist (per active track)
 
@@ -48,12 +55,14 @@ Drafted as a starting point — David is the Done Decider and should edit these 
 - Novelty is legibly in layout / motion / narrative, not in re-skinned color or type.
 
 **Marketing Templates (conversion surface):**
-- Has one clear, defined conversion action for the student-buyer; the path to it is obvious without persuasive copy.
-- Establishes enough credibility to convert **through demonstration**, not testimonials or claims.
+- One clear conversion action — *start the 7-day trial* — reachable without persuasive copy; the demo→trial→buy motion reads as continuous, not three asks.
+- Establishes enough credibility to convert **through demonstration**, not testimonials or claims; a graceful slot exists for real proof later without a redesign.
+- Converts on a phone, and the buy-on-phone → use-on-laptop handoff is present and obvious.
 
 **UX:**
-- "Show don't tell" is real: the page demonstrates the product interactively rather than describing it.
-- A low-attention student (Learner B) gets the core value in the first view without reading, and can reach the conversion action in a short, low-decision path.
+- The two-beat spine is legible: a **live** Open Hand hero, then a **scripted** input→output loop (bring-your-own / photo → hints → topic notes). Exactly one live sandbox.
+- The trial gate fires at the personal/unbounded moment (upload your own, your subjects, save notes) — not before (would cannibalize the trial) and not after (would fail to convert).
+- A low-attention student (Learner B) gets the core value in the first view without reading, on laptop *and* phone, and can reach the trial in a short, low-decision path.
 - Serves Learner A's tolerance for density without alienating Learner B — one page, both profiles, per the design system's existing dual-mode discipline.
 
 ## Constraint ledger
@@ -64,14 +73,20 @@ Drafted as a starting point — David is the Done Decider and should edit these 
 | Design-system primitives — tokens, type, register, anchor discipline — are inherited, not re-opened | Hard | David, 2026-09-23 |
 | Show, don't tell: interactive product demonstration carries the message, not persuasive copy | Hard | David, 2026-09-23 |
 | Primary job is to convert the buyer, and the buyer is the student (end user = purchaser) | Hard | David, 2026-09-23 |
+| Conversion action = **start the 7-day trial** (buy happens downstream, inside the trial) | Hard | David, 2026-09-23 |
+| Page spine is **two beats**: (1) live Open Hand hero, (2) scripted input→output loop (BYOQ/photo → hints → topic notes). Not a co-equal feature menu | Hard (framing) | David, 2026-09-23 |
+| Fidelity tiering: **exactly one** fully-live sandbox (Open Hand); everything else is a scripted showcase | Hard | David, 2026-09-23 |
+| Demo is the trial's **front porch**: live on a pre-loaded question; personal/unbounded actions (upload your own, your subjects, save notes) are the trial gate | Hard | David, 2026-09-23 |
+| No proof in v1 — the demo carries it; no fake proof, no median testimonial/logo-bar section; leave a graceful slot for real proof later | Hard | David, 2026-09-23 |
+| Home page must **convert on mobile** (distinct from the app's laptop-first constraint) | Hard | David, 2026-09-23 |
+| Device-tiered fidelity: laptop → live sandbox; phone → scripted showcase; CTA prominent on both | Hard | David, 2026-09-23 |
+| Buy-on-phone → use-on-laptop **handoff bridge** required (email-a-link / continue-on-desktop) | Hard | David, 2026-09-23 |
 | No generic landing-page median (hero + feature cards + logo bar + testimonial + CTA and equivalents) | Hard (anti-reference) | David, 2026-09-23 |
 | Novelty budget is layout / motion / narrative only | Hard (framing) | David, 2026-09-23 |
-| Laptop-first (not phone-first) | Hard | Inherited, project-crux origin brief |
+| The **app** is laptop-first (not phone-first) — applies to the product, not this storefront | Hard | Inherited, project-crux origin brief |
 | No subscription/paywall-nag UI patterns | Hard | Inherited, product ground truth |
-| Exact interactive-screenshot / demo mechanic | Soft | To be set in brief dev |
-| Live-attemptable demo vs. annotated high-fidelity mocks | Soft — open fork | To be decided in brief dev |
-| Amount and placement of any supporting copy | Soft | To be set in brief dev |
-| Which subjects are shown on the page at launch | Soft — open question | To be set in brief dev |
+| Exact form of the scripted showcase's interactivity (step-through vs. lightly interactive) | Soft | To be set in generation |
+| Which subjects are shown on the page at launch | Soft — open question | To be set in generation |
 
 ## Model assignment (snapshot at project start)
 
@@ -95,3 +110,4 @@ Snapshot of `config/agent-models.yaml` as of 2026-09-23. This is a snapshot, not
 ## Changelog
 
 - `2026-09-23` — initial charter shell. Extension-not-sibling decision, inverted contamination model (seed with design system; quarantine the generic landing-page median), and the decided constraints recorded. Origin brief and Expanded understanding left for the Creative Director brief-development conversation to complete.
+- `2026-09-23` — brief development complete (David + CD). Origin brief filled (buy via 7-day trial; four named money moments; live fidelity lean; demo carries proof; buy-on-phone/use-on-laptop). Expanded understanding resolved: two-beat page spine (live Open Hand hero + scripted input→output loop), fidelity tiering to exactly one live sandbox, demo-as-trial-front-porch gate, device-tiered fidelity with a buy-on-phone→use-on-laptop handoff, and no-proof-in-v1 with a graceful slot. Constraint ledger and Done Decider checklist updated accordingly; the app-vs-home-page device distinction made explicit. **Status → approved to generate.**
