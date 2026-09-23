@@ -98,16 +98,18 @@ Drafted as a starting point — David is the Done Decider and should edit these 
 
 Snapshot of `config/agent-models.yaml` as of 2026-09-23. This is a snapshot, not a live reference — a later global swap does not retroactively change what this project reasoned with. **"GPT-Sol" is David's name for his Codex (OpenAI) instance.**
 
+Project-level assignment set by David, 2026-09-23. This deviates from the global snapshot: **no Grok** — this project runs without a Critic and without a Chaos Agent.
+
 | Role | Model | Snapshot date |
 |---|---|---|
 | Creative Director | claude-opus (Anthropic) | 2026-09-23 |
 | Brand Strategist | N/A — brand inherited, track not active | 2026-09-23 |
-| Visual Designer | Codex / GPT-Sol (OpenAI) — global default | 2026-09-23 |
-| Marketing Creative Designer | gpt-image (OpenAI) — global default (text-in-image fidelity) | 2026-09-23 |
-| Critic | grok (xAI) — global default, decorrelated from the generative labs | 2026-09-23 |
-| Chaos Agent | grok (xAI) | 2026-09-23 |
+| Visual Designer | Codex / GPT-Sol (OpenAI) | 2026-09-23 |
+| Marketing Creative Designer | N/A — not this pass (the home page is produced by the Visual Designer, not a separate text-in-image role) | 2026-09-23 |
+| Critic | **N/A — no Critic on this project** (David, 2026-09-23) | 2026-09-23 |
+| Chaos Agent | **N/A — not used** (David, 2026-09-23) | 2026-09-23 |
 
-*Decorrelation note:* if a direction leans hard on both Visual Designer and Marketing Creative Designer, consider a project-level override to keep them from sharing blind spots — see `config/agent-models.yaml` brand_strategist rationale for the pattern.
+*Consequence of no Critic (recorded, David's call):* project-crux's decorrelated Grok Critic was the outside check that caught direction convergence (handoff 015 → the 017 re-run). Without it, the only convergence guards on this project are the **SSoT anti-convergence protocol** in the generative handoff and **David's own review**. The handoff leans on SSoT accordingly; if the three directions come back too similar, the divergence-lane fallback is to re-run split across two labs (`ARCHITECTURE.md` §5), not to add a Critic.
 
 ## Stage log
 
@@ -118,3 +120,4 @@ Snapshot of `config/agent-models.yaml` as of 2026-09-23. This is a snapshot, not
 - `2026-09-23` — initial charter shell. Extension-not-sibling decision, inverted contamination model (seed with design system; quarantine the generic landing-page median), and the decided constraints recorded. Origin brief and Expanded understanding left for the Creative Director brief-development conversation to complete.
 - `2026-09-23` — brief development complete (David + CD). Origin brief filled (buy via 7-day trial; four named money moments; live fidelity lean; demo carries proof; buy-on-phone/use-on-laptop). Expanded understanding resolved: two-beat page spine (live Open Hand hero + scripted input→output loop), fidelity tiering to exactly one live sandbox, demo-as-trial-front-porch gate, device-tiered fidelity with a buy-on-phone→use-on-laptop handoff, and no-proof-in-v1 with a graceful slot. Constraint ledger and Done Decider checklist updated accordingly; the app-vs-home-page device distinction made explicit. **Status → approved to generate.**
 - `2026-09-23` — design-system input landed and initiative reconciled. Confirmed (David) the locked system is the orange-masthead Project-Crux system that ships in the Cramapple app ("BlueHour Cabinet" internally), canonical at `cramapple:.claude/skills/cramapple-design/`; a commit-pinned read-only mirror of the token contract landed at `design-system/` (`cramapple@5341d4d`). Deploy target resolved: the "New Cramapple Marketing" Lovable project, where every page except the homepage already carries the design system — so frontdoor designs the one remaining page, must cohere with its restyled siblings, and outputs to that Lovable project. Ledger updated with the sibling-coherence and Lovable-deploy constraints.
+- `2026-09-23` — project-level role/model assignment set (David): Creative Director = Claude, Visual Designer = Sol (Codex/GPT-Sol), **no Grok — no Critic and no Chaos Agent.** Recorded the consequence (SSoT + David's review are the only convergence guards; split-across-labs is the fallback, not a Critic). Handoff 001's model-assignment section updated to match. First generative handoff (`project-frontdoor/001`, Visual Designer, 3 divergent directions) drafted and staged.

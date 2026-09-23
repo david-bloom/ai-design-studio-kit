@@ -119,7 +119,8 @@ Keep the manifest a plain record. It selects nothing and ranks nothing.
 
 ## Model assignment for this run
 
-- Charter default Visual Designer = **Codex / GPT-Sol (OpenAI)**. The divergence lane requires a model named at dispatch (`publish --dispatch --model …`); `model:` stays `unspecified` in this draft and David sets it at dispatch. **Decorrelation option, David's call:** project-crux found a single model in a single context converged (handoff 015 → the 017 re-run); if you want insurance against the three directions collapsing, dispatch on a second lab, or split the three across two labs. Recommended default: Codex/GPT-Sol, with the SSoT guard doing the anti-convergence work.
+- **Visual Designer = Codex / GPT-Sol (OpenAI)**; Creative Director / Orchestrator = Claude (David, 2026-09-23). The divergence lane requires a model named at dispatch (`publish --dispatch --model …`); `model:` stays `unspecified` in this draft and is set at dispatch.
+- **No Critic and no Chaos Agent on this project** (David, 2026-09-23). There is therefore **no independent decorrelated review pass** after generation — David reviews the three directions directly and decides Done. That makes the **SSoT anti-convergence guard above the primary defense against the three collapsing into one skin** — enforce it, and record each seed. If the three do come back too similar, the divergence-lane fallback is to re-run split across two labs (`ARCHITECTURE.md` §5), not to add a Critic.
 
 ## Files / Systems Affected
 
