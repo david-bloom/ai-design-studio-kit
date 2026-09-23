@@ -98,7 +98,7 @@ Drafted as a starting point — David is the Done Decider and should edit these 
 
 Snapshot of `config/agent-models.yaml` as of 2026-09-23. This is a snapshot, not a live reference — a later global swap does not retroactively change what this project reasoned with. **"GPT-Sol" is David's name for his Codex (OpenAI) instance.**
 
-Project-level assignment set by David, 2026-09-23. This deviates from the global snapshot: **no Grok** — this project runs without a Critic and without a Chaos Agent.
+Project-level assignment set by David, 2026-09-23. This deviates from the global snapshot: **no Critic** (Grok as Critic was judged unhelpful on project-crux), but the **Chaos Agent is retained** — its job (decorrelated lateral variance, not evaluative judgment) is still valued.
 
 | Role | Model | Snapshot date |
 |---|---|---|
@@ -106,10 +106,10 @@ Project-level assignment set by David, 2026-09-23. This deviates from the global
 | Brand Strategist | N/A — brand inherited, track not active | 2026-09-23 |
 | Visual Designer | Codex / GPT-Sol (OpenAI) | 2026-09-23 |
 | Marketing Creative Designer | N/A — not this pass (the home page is produced by the Visual Designer, not a separate text-in-image role) | 2026-09-23 |
-| Critic | **N/A — no Critic on this project** (David, 2026-09-23) | 2026-09-23 |
-| Chaos Agent | **N/A — not used** (David, 2026-09-23) | 2026-09-23 |
+| Critic | **N/A — no Critic on this project** (David, 2026-09-23; Grok-as-Critic judged unhelpful) | 2026-09-23 |
+| Chaos Agent | **Retained — model TBD (David).** Must be a lab decorrelated from the generative pipeline (Claude + Sol), so not Anthropic and not OpenAI: Grok (xAI, default), or DeepSeek / Llama per `config/agent-models.yaml` alternates | 2026-09-23 |
 
-*Consequence of no Critic (recorded, David's call):* project-crux's decorrelated Grok Critic was the outside check that caught direction convergence (handoff 015 → the 017 re-run). Without it, the only convergence guards on this project are the **SSoT anti-convergence protocol** in the generative handoff and **David's own review**. The handoff leans on SSoT accordingly; if the three directions come back too similar, the divergence-lane fallback is to re-run split across two labs (`ARCHITECTURE.md` §5), not to add a Critic.
+*Consequences (recorded, David's call):* project-crux's Grok Critic was judged unhelpful and is dropped, so there is **no evaluative review pass** — the convergence guards are the **SSoT protocol** in the generative handoff plus **David's own review**, with split-across-labs as the fallback if the three directions collapse. The **Chaos Agent is not a convergence check** (it doesn't evaluate the three directions); it adds a decorrelated, deliberately lateral wildcard, output to `projects/project-frontdoor/chaos/`, never silently merged — David decides whether any of it survives (`ARCHITECTURE.md` §5).
 
 ## Stage log
 
