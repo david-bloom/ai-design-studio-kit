@@ -197,3 +197,38 @@ Governance PR introduces the policy, scripts, prompt, `CLAUDE.md`, legacy header
 Codex's ability to run the scripts is unverified until the Codex pilot. Read access to `main` for Grok and Claude Design must be confirmed at preflight. Binary growth is bounded by policy §7 limits, not LFS, until every tool is confirmed to resolve LFS pointers.
 
 **Approval:** recorded by David merging the governance PR; this entry's Status is set to Approved in the cutover governance commit.
+
+## DECISION-0007 — Cramapple app design system Done: the orange-masthead Project-Crux direction ("BlueHour Cabinet")
+
+**Date:** 2026-09-23
+**Decision Owner:** David Bloom
+**Status:** Proposed
+**Related Task:** project-crux (Visual Design + Brand Identity tracks)
+**Area:** Design
+
+*Drafting note (Orchestrator):* David selected this direction in session on 2026-09-23. Status is **Proposed** only because this entry was drafted from a branch-bound session that cannot write `main`; it flips to **Approved** when landed via `scripts/publish` from a main-capable session, David's in-session selection being the approval of record.
+
+### Context
+
+project-crux ran a multi-round, clean-room visual/UX/brand exploration for the Cramapple app: the 002–004 direction sets, the "Blue Hour Cabinet" challenger (007) and its color resolution (007b), the register re-diverge (014), and the head-to-head sets (015 / 017). Handoff `project-crux/016` (Critic, Grok) was **dispatched and had not returned** when this decision was made. Separately, a design system was already productionized and deployed — into the Cramapple app and the "New Cramapple Marketing" Lovable project (every page except the home page) — canonical at `cramapple:.claude/skills/cramapple-design/`. So the record and reality had drifted: crux's `STATE` showed no Done decision while the winning direction had already shipped.
+
+### Decision
+
+The Cramapple app design system is **Done**: the **orange-masthead Project-Crux direction**, known internally as **"BlueHour Cabinet."** Concretely — orange (`#f54900` / `#ca3500`) masthead and the single primary action; blue = points earned / rubric, maroon = points lost, purple = the student's own work, green = reference, yellow = costly hints; square corners (`--radius-all: 0`), zero-motion tokens, 16px reading floor; Bungee (wordmark) / Passion One (display) / Source Sans 3 (body) / STIX Two Math. **Canonical source of truth:** `cramapple:.claude/skills/cramapple-design/` (live style guide: the "New Cramapple Marketing" Lovable preview). This closes the crux Visual Design and Brand Identity tracks' selection.
+
+### Rationale
+
+The direction was carried through the crux exploration and then productionized and shipped; this Done decision **ratifies what shipped and reconciles the record with reality** — the app and marketing surfaces already run on it, so a home page (project-frontdoor) can extend a settled, single source of truth. "Blue Hour Cabinet" is an internal/legacy label from the 007 lineage; the shipped system is the orange-masthead register. Name and register are recorded together here so future readers aren't misled — crux's 007b color-study used a warm-white/Fraunces variant that did **not** ship.
+
+### Consequences
+
+- Handoff `project-crux/016` (Critic, Grok) is **overtaken** by this Done decision. Critique is advisory; the Owner's Done call does not require 016's return. On landing, 016 should be closed (`publish --set-status returned`, moot — advisory review overtaken by the Done decision), not left `dispatched`.
+- crux's generated `STATE` and handoff index reconcile to "track selection Done" on landing.
+- project-frontdoor consumes this system as its declared, commit-pinned input (already mirrored at `projects/project-frontdoor/design-system/`, `cramapple@5341d4d`).
+- No change to `config/agent-models.yaml` or any governance file — this is a Design Done decision, landed as a `DECISIONS_LOG` entry via `publish`, not a human-review PR.
+
+### Risks / Follow-ups
+
+- **Naming hygiene:** "BlueHour Cabinet" vs. the orange-masthead reality will keep confusing anyone who opens crux's 007b warm-white plates. Follow-up: add a one-line pointer in crux's `visual/` notes that the shipped system is the orange-masthead register, not the 007b color-study.
+- **016 must actually be closed on landing**, or the crux index keeps showing a dangling dispatched critic review.
+- This entry is not in the durable record until landed on `main` via `scripts/publish`.
