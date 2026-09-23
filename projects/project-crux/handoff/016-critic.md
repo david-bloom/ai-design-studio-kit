@@ -1,7 +1,7 @@
 ---
 handoff: project-crux/016
 role: critic
-status: dispatched
+status: blocked
 lane: judgment
 actor: grok
 model: grok (xAI)
@@ -99,3 +99,6 @@ You cannot write the repository. Return exactly one AIRLOCK RETURN in the format
 ## Next Expected Output
 
 - `projects/project-crux/critic/016-review.md`: per-direction severity-tagged findings and Learner A / Learner B scenario walkthroughs; a cross-cutting anti-convergence and control-logic section; an explicit split between review-settleable findings and learner-test hypotheses; an optional, clearly-advisory comparative read that selects nothing and marks nothing Done.
+
+## Blocked
+2026-09-23 — claude-code: mooted by DECISION-0007 (Cramapple design system Done decided without the Grok critic review; advisory, no successor handoff)
