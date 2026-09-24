@@ -1,12 +1,12 @@
 ---
 handoff: project-frontdoor/003
 role: visual-designer
-status: ready
+status: dispatched
 lane: divergence
 actor: codex
-model: unspecified
+model: Codex / GPT-Sol (OpenAI)
 source_sha: 1b0a5ad
-frozen_hash:
+frozen_hash: ff28048f77c508889927559654bd199fc8bf3e8f1c6cf0f9838049b9108b1171
 inputs:
   - projects/project-frontdoor/charter.md
   - projects/project-frontdoor/design-system/SOURCE.md
