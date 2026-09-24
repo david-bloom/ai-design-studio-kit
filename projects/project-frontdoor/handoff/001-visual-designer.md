@@ -1,7 +1,7 @@
 ---
 handoff: project-frontdoor/001
 role: visual-designer
-status: landed
+status: returned
 lane: divergence
 actor: codex
 model: Codex / GPT-Sol (OpenAI)
